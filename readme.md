@@ -10,7 +10,14 @@ SmartScapes is an interactive web app that replaces static maps with dynamic, cu
 
 ## 2. Domain
 
-The application collects and analyzes developers' activity on different projects based on GIT commits.
+SmartScapes is an interactive mapping platform for parks and attractions that provides:
+
+- Dynamic, interactive guides
+- Route tracking and check-ins
+- User reviews and photo sharing
+- Points of Interest (POI) management
+- Custom route creation and sharing
+- Administrative content moderation
 
 ## 3. Requirements
 
@@ -95,11 +102,11 @@ As we are already using js on both frontend and backend it would be useful to sh
 
 1. [Zod](https://github.com/colinhacks/zod) — a schema validator
 
-## 6. How to Run
+## 6. Running The Project
 
-### 6.1 Manually
+### 6.1 Getting Started
 
-1. Create and fill all .env files. These files are:
+1. Copy and fill env files:
 
 - apps/frontend/.env
 - apps/backend/.env
@@ -108,7 +115,7 @@ You should use .env.example files as a reference.
 
 1. Install dependencies: `npm install`.
 
-2. Install pre-commit hooks: `npm run git:hooks:prepare`. This hook is used to verify code style on commit.
+2. Install pre-commit hooks: `npm run git:hooks:prepare`. Those hooks are used to verify code style on commit.
 
 3. Build shared: `npm run build:shared`
 
@@ -120,21 +127,48 @@ You should use .env.example files as a reference.
 
 7. Run frontend: `npm run start:dev -w apps/frontend`
 
+### 6.2 Available Scripts
+
+- `npm install` - Install all workspaces’ dependencies
+- `npm run lint` - Run all linting checks
+- `npm run format` - Auto‑format the entire codebase with Prettier
+- `npm run start:dev -w apps/backend` - Start the backend in development mode
+- `npm run start:dev -w apps/frontend` - Start the frontend in development mode
+- `npm run migrate:dev -w apps/backend` - Apply the latest database migrations in development
+- `npm run git:hooks:prepare` - Set up pre-commit hooks
+- `npm run build` - Build shared, backend, frontend
+- `npm run start` - Run the production backend
+
+For a full list of more specialized scripts (lint:js, lint:types, build:shared, lint:unused, etc.), see the scripts section of the corresponding `package.json`.
+
 ## 7. Development Flow
 
-### 7.1 Pull Request Flow
+### 7.1 Commit Message Format
+
+We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) to handle commit messages.
 
 ```
-<type>: <ticket-title> <project-prefix>-<issue-number>
+<type>(<scope>): <subject> <issue-prefix><issue-number>
 ```
 
-For the full list of types check [Conventional Commits](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
+- type: `build`, `chore`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `revert`, `style`, `test`
+- scope: `root`, `release`, `frontend`, `backend`, `shared`
+- subject: short description
+- issue‑prefix: `ss-`, `release-`
+- issue‑number: the number of the issue
 
 Examples:
 
-- `feat: add dashboard screen ss-123`
+- `feat(frontend): add dashboard component ss-45`
+- `fix(shared/backend): update dashboard card size ss-212`
+- `chore(root): update eslint config ss-12`
 
-### 7.2 Branch Flow
+> [!IMPORTANT]
+> The scope field is required and must be one of the enums above.
+> To target multiple scopes, join them with a slash, e.g. `frontend/shared`
+> Every commit must reference an issue using the configured prefixes.
+
+### 7.2 Branch Naming
 
 ```
 <issue-number>-<type>-<short-desc>
@@ -146,18 +180,17 @@ Examples:
 - `12-feat-add-user-flow`
 - `34-fix-user-flow`
 
-### 7.3 Commit Flow
+### 7.3 Pull Request Format
 
-We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0) to handle commit messages.
+Pull Request title should follow the same format as your commit messages.
 
 ```
-<type>: <description> <project-prefix>-<issue-number>
+<type>(<scope>): <subject> <issue-prefix><issue-number>
 ```
 
 Examples:
 
-- `feat: add dashboard component ss-45`
-- `fix: update dashboard card size ss-212`
+- `feat(frontend): add dashboard component ss-45`
 
 ## 8. Deployment
 
