@@ -29,6 +29,9 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
       - name: Add Folder Labels
         uses: actions/labeler@v5
 
