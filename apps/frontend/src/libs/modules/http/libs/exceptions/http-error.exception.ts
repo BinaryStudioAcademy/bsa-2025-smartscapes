@@ -1,4 +1,4 @@
-import { HTTPError as LibraryHTTPError } from "@smart-scapes/shared";
+import { HTTPError as LibraryHTTPError } from "@smartscapes/shared";
 
 import { type ServerErrorType } from "~/libs/enums/enums.js";
 import { type ServerErrorDetail, type ValueOf } from "~/libs/types/types.js";

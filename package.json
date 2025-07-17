@@ -1,10 +1,11 @@
 {
-	"name": "smart-scapes",
+	"name": "smartscapes",
 	"version": "0.0.0",
 	"type": "module",
 	"workspaces": [
-		"apps/*",
-		"packages/*"
+		"apps/backend",
+		"apps/frontend",
+		"packages/shared"
 	],
 	"engines": {
 		"node": ">=22.10.0 <23.0.0",

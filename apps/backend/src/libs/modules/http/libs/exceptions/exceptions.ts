@@ -1,1 +1,1 @@
-export { HTTPError } from "@smart-scapes/shared";
+export { HTTPError } from "@smartscapes/shared";

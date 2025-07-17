@@ -1,1 +1,1 @@
-export { configureString } from "@smart-scapes/shared";
+export { configureString } from "@smartscapes/shared";

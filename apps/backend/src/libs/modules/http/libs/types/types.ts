@@ -1,1 +1,1 @@
-export { type HTTPMethod } from "@smart-scapes/shared";
+export { type HTTPMethod } from "@smartscapes/shared";

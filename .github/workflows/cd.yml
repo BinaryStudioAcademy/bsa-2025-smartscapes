@@ -41,7 +41,7 @@ jobs:
   #   runs-on: ubuntu-24.04
   #   environment:
   #     name: development
-  #     url: http://smart-scapes-development.eu-central-1.elasticbeanstalk.com/
+  #     url: http://smartscapes-development.eu-central-1.elasticbeanstalk.com/
 
   #   steps:
   #     - name: Checkout Source Code

@@ -1,1 +1,1 @@
-export { type Storage } from "@smart-scapes/shared";
+export { type Storage } from "@smartscapes/shared";

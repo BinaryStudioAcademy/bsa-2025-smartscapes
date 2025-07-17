@@ -1,5 +1,5 @@
 {
-	"name": "@smart-scapes/shared",
+	"name": "@smartscapes/shared",
 	"version": "0.0.0",
 	"type": "module",
 	"main": "build/index.js",

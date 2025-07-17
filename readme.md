@@ -1,12 +1,11 @@
 # SmartScapes
 
-Collect and analyze developers activity on projects.
+SmartScapes is an interactive web app that replaces static maps with dynamic, custom guides for large parks and attractions. Users can track and save routes by “checking in” at points of interest, leave reviews and photos, and filter or share personalized recommendations. An admin panel lets moderators create and manage routes, POIs, media and user‑submitted content.
 
 ## 1. Introduction
 
 ### 1.1 Useful Links
 
-- [Project specification](./docs/specification.md).
 - Pay attention, that we have certain [quality criteria](https://github.com/BinaryStudioAcademy/quality-criteria/blob/production/src/javascript.md), which we should follow during application development.
 
 ## 2. Domain

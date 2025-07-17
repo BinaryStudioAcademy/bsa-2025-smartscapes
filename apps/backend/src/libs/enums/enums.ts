@@ -1,1 +1,1 @@
-export { APIPath, AppEnvironment, ServerErrorType } from "@smart-scapes/shared";
+export { APIPath, AppEnvironment, ServerErrorType } from "@smartscapes/shared";

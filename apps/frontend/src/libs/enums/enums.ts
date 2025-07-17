@@ -5,4 +5,4 @@ export {
 	AppEnvironment,
 	ContentType,
 	ServerErrorType,
-} from "@smart-scapes/shared";
+} from "@smartscapes/shared";

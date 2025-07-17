@@ -4,7 +4,6 @@ const config: KnipConfig = {
 	workspaces: {
 		".": {
 			entry: ["./dangerfile.ts"],
-			ignore: ["apps/build/**"],
 		},
 		"apps/backend": {
 			entry: ["src/db/migrations/*.ts", "knexfile.ts"],

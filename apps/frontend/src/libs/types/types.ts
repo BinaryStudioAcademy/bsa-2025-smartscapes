@@ -4,4 +4,4 @@ export {
 	type ServerErrorResponse,
 	type ValidationSchema,
 	type ValueOf,
-} from "@smart-scapes/shared";
+} from "@smartscapes/shared";

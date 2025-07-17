@@ -1,1 +1,1 @@
-export { type HTTP, type HTTPOptions } from "@smart-scapes/shared";
+export { type HTTP, type HTTPOptions } from "@smartscapes/shared";
