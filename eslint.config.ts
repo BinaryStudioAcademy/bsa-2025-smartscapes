@@ -228,6 +228,7 @@ const overridesConfigs: Linter.Config[] = [
 			"knip.config.ts",
 			"lint-staged.config.js",
 			"eslint.config.ts",
+			"packages.d.ts",
 		],
 		rules: {
 			"import/no-default-export": ["off"],
