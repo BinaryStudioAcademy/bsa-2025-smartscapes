@@ -1,7 +1,7 @@
 {
 	"name": "@smart-scapes/frontend",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "module",
 	"engines": {
 		"node": ">=22.10.0 <23.0.0",
