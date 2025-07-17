@@ -52,17 +52,17 @@ TBD
 1. assets - static assets (images, global styles)
 2. libs - shared libraries and utilities
 
-   2.1 components - plain react components
+   2.1. components - plain react components
 
-   2.2 enums
+   2.2. enums
 
-   2.3 helpers
+   2.3. helpers
 
-   2.4 hooks
+   2.4. hooks
 
-   2.5 modules - separate features or functionalities
+   2.5. modules - separate features or functionalities
 
-   2.6 types
+   2.6. types
 
 3. modules - separate app features or functionalities
 4. pages - app pages
@@ -80,15 +80,15 @@ TBD
 1. db - database data (migrations, seeds)
 2. libs - shared libraries and utilities
 
-   2.1 enums
+   2.1. enums
 
-   2.2 exceptions
+   2.2. exceptions
 
-   2.3 helpers
+   2.3. helpers
 
-   2.4 modules - separate features or functionalities
+   2.4. modules - separate features or functionalities
 
-   2.5 types
+   2.5. types
 
 3. modules - separate app features or functionalities
 
@@ -164,9 +164,10 @@ Examples:
 - `chore(root): update eslint config ss-12`
 
 > [!IMPORTANT]
-> The scope field is required and must be one of the enums above.
-> To target multiple scopes, join them with a slash, e.g. `frontend/shared`
-> Every commit must reference an issue using the configured prefixes.
+>
+> - The scope field is required and must be one of the enums above.
+> - To target multiple scopes, join them with a slash, e.g. `frontend/shared`.
+> - Every commit must reference an issue using the configured prefixes.
 
 ### 7.2 Branch Naming
 
