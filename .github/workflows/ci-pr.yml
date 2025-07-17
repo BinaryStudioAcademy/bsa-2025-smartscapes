@@ -35,23 +35,6 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           sync-labels: true
 
-  dependencies:
-    name: Install Dependencies
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Checkout Source Code
-        uses: actions/checkout@v4.2.2
-
-      - name: Install NodeJS
-        uses: actions/setup-node@v4.4.0
-        with:
-          node-version-file: .nvmrc
-          cache: 'npm'
-
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
-
   lint-pr:
     permissions:
       contents: read
@@ -71,7 +54,10 @@ jobs:
         uses: actions/setup-node@v4.4.0
         with:
           node-version-file: .nvmrc
-          cache: 'npm'
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Lint Commits
         uses: wagoid/commitlint-github-action@v6.2.1
@@ -80,5 +66,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-        run: |
-          npx danger ci --failOnErrors --text-only
+        run: npx danger ci --failOnErrors --text-only
