@@ -11,6 +11,8 @@ on:
       - labeled
       - unlabeled
       - ready_for_review
+      - milestoned
+      - demilestoned
 
   workflow_dispatch:
 
