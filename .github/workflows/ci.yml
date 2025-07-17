@@ -1,7 +1,7 @@
 name: Continuous Integration
 
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
 
@@ -18,10 +18,10 @@ jobs:
 
     steps:
       - name: Checkout Source Code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Install NodeJS
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: "npm"
@@ -38,10 +38,10 @@ jobs:
 
     steps:
       - name: Checkout Source Code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Install NodeJS
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: "npm"
