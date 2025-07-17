@@ -18,10 +18,6 @@ createRoot(document.querySelector("#root") as HTMLElement).render(
 					{
 						children: [
 							{
-								element: "Root",
-								path: AppRoute.ROOT,
-							},
-							{
 								element: <Auth />,
 								path: AppRoute.SIGN_IN,
 							},

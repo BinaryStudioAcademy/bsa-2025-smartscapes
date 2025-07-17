@@ -48,7 +48,7 @@ const Auth = (): React.JSX.Element => {
 
 	return (
 		<main className={styles["container"]}>
-			state: {dataStatus}
+			<p>State: {dataStatus}</p>
 			{handleFormRender(pathname)}
 		</main>
 	);

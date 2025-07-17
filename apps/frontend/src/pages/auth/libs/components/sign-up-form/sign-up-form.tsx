@@ -6,6 +6,7 @@ import {
 } from "~/modules/users/users.js";
 
 import { DEFAULT_SIGN_UP_PAYLOAD } from "./libs/constants/constants.js";
+import styles from "./styles.module.css";
 
 type Properties = {
 	onSubmit: (payload: UserSignUpRequestDto) => void;
@@ -27,7 +28,7 @@ const SignUpForm = ({ onSubmit }: Properties): React.JSX.Element => {
 	);
 
 	return (
-		<>
+		<div className={styles["container"]}>
 			<h1>Sign Up</h1>
 			<form onSubmit={handleFormSubmit}>
 				<p>
@@ -52,7 +53,7 @@ const SignUpForm = ({ onSubmit }: Properties): React.JSX.Element => {
 				</p>
 				<Button label="Sign up" type="submit" />
 			</form>
-		</>
+		</div>
 	);
 };
 

@@ -9,6 +9,8 @@ import {
 } from "~/libs/hooks/hooks.js";
 import { actions as userActions } from "~/modules/users/users.js";
 
+import styles from "./styles.module.css";
+
 const App = (): React.JSX.Element => {
 	const { pathname } = useLocation();
 	const dispatch = useAppDispatch();
@@ -26,7 +28,7 @@ const App = (): React.JSX.Element => {
 	}, [isRoot, dispatch]);
 
 	return (
-		<>
+		<div className={styles["container"]}>
 			<img alt="logo" className="App-logo" src={reactLogo} width="30" />
 
 			<ul className="App-navigation-list">
@@ -47,8 +49,8 @@ const App = (): React.JSX.Element => {
 			</div>
 			{isRoot && (
 				<>
-					<h2>Users:</h2>
-					<h3>Status: {dataStatus}</h3>
+					<p>State: {dataStatus}</p>
+					<h3>Users:</h3>
 					<ul>
 						{users.map((user) => (
 							<li key={user.id}>{user.email}</li>
@@ -56,7 +58,7 @@ const App = (): React.JSX.Element => {
 					</ul>
 				</>
 			)}
-		</>
+		</div>
 	);
 };
 
