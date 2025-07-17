@@ -215,7 +215,7 @@ const jsdocConfig: Linter.Config = {
 
 const explicitGenericsConfig: Linter.Config = {
 	plugins: {
-		"require-explicit-generics": explicitGenericsPlugin as ESLint.Plugin,
+		"require-explicit-generics": explicitGenericsPlugin,
 	},
 };
 

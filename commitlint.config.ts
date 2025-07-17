@@ -11,10 +11,15 @@ const config: UserConfig = {
 	},
 	rules: {
 		"references-empty": [RuleConfigSeverity.Error, "never"],
+		"scope-empty": [RuleConfigSeverity.Error, `never`],
 		"scope-enum": [
 			RuleConfigSeverity.Error,
 			"always",
-			[...ProjectPrefix.SCOPES.APPS, ...ProjectPrefix.SCOPES.PACKAGES],
+			[
+				...ProjectPrefix.SCOPE.COMMON,
+				...ProjectPrefix.SCOPE.APPS,
+				...ProjectPrefix.SCOPE.PACKAGES,
+			],
 		],
 	},
 };

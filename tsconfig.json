@@ -1,7 +1,7 @@
 {
 	"include": ["**/*.ts", "**/*.js"],
 	"exclude": ["node_modules", "apps", "packages", "dangerfile.ts"],
-	"files": ["index.d.ts"],
+	"files": ["packages.d.ts"],
 	"compilerOptions": {
 		"strict": true,
 		"noUncheckedIndexedAccess": true,

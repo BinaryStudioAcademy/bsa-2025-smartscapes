@@ -13,7 +13,7 @@ const config = {
 				ignorePseudoClasses: ["global"],
 			},
 		],
-		"unit-disallowed-list": ["em", "rem"],
+		"unit-disallowed-list": ["em"],
 	},
 };
 
