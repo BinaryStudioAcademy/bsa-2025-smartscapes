@@ -1,0 +1,68 @@
+{
+	"name": "smart-scapes",
+	"version": "0.0.0",
+	"type": "module",
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"engines": {
+		"node": ">=22.10.0 <23.0.0",
+		"npm": "11.x.x"
+	},
+	"scripts": {
+		"lint": "concurrently \"npm:lint:*\" && npm run lint --workspaces",
+		"lint:editor": "editorconfig-checker",
+		"lint:files": "ls-lint",
+		"lint:types": "npx tsc --noEmit",
+		"lint:js": "npx  eslint . --max-warnings=0 --no-warn-ignored",
+		"lint:format": "npx prettier \"**/*.{js,ts,tsx,json,md,css,html}\" --check",
+		"lint:unused": "knip",
+		"format": "npx prettier \"**/*.{js,ts,tsx,json,md,css,html}\" --write",
+		"build": "npm run build:shared && npm run build:backend && npm run build:frontend && npm run build:prepare",
+		"build:shared": "npm run build -w packages/shared",
+		"build:frontend": "npm run build -w apps/frontend",
+		"build:backend": "npm run build -w apps/backend",
+		"build:prepare": "sh ./prepare-build.sh",
+		"git:hooks:prepare": "simple-git-hooks",
+		"git:hooks:precommit": "lint-staged --cwd .",
+		"git:hooks:commit": "npx @commitlint/cli --edit",
+		"prestart": "npm install --include=dev && npm run build",
+		"start": "cd apps/build/backend && npm run start"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "19.8.1",
+		"@commitlint/config-conventional": "19.8.1",
+		"@commitlint/types": "19.8.1",
+		"@eslint/js": "9.31.0",
+		"@ls-lint/ls-lint": "2.3.1",
+		"@stylistic/eslint-plugin": "5.1.0",
+		"@typescript-eslint/eslint-plugin": "8.37.0",
+		"@typescript-eslint/parser": "8.37.0",
+		"concurrently": "9.2.0",
+		"danger": "13.0.4",
+		"editorconfig-checker": "6.0.1",
+		"eslint": "9.31.0",
+		"eslint-import-resolver-typescript": "4.4.4",
+		"eslint-plugin-import": "2.32.0",
+		"eslint-plugin-jsdoc": "51.3.4",
+		"eslint-plugin-perfectionist": "4.15.0",
+		"eslint-plugin-require-explicit-generics": "1.0.0",
+		"eslint-plugin-sonarjs": "3.0.4",
+		"eslint-plugin-unicorn": "59.0.1",
+		"globals": "16.3.0",
+		"knip": "5.61.3",
+		"lint-staged": "16.1.2",
+		"prettier": "3.6.2",
+		"simple-git-hooks": "2.13.0",
+		"stylelint": "16.21.1",
+		"stylelint-config-recess-order": "7.1.0",
+		"stylelint-config-standard": "38.0.0",
+		"tsc-alias": "1.8.16",
+		"typescript": "5.8.3"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "npm run lint:types && npm run git:hooks:precommit",
+		"commit-msg": "npm run git:hooks:commit"
+	}
+}
