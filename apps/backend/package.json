@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"engines": {
 		"node": ">=22.10.0 <23.0.0",
-		"npm": "11.x.x"
+		"npm": "10.x.x"
 	},
 	"scripts": {
 		"lint:types": "npx tsc --noEmit",
