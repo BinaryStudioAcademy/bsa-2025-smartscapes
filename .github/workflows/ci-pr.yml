@@ -41,7 +41,6 @@ jobs:
       pull-requests: write
 
     name: Lint Pull Request
-    needs: dependencies
     runs-on: ubuntu-24.04
 
     steps:

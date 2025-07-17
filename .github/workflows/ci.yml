@@ -14,7 +14,6 @@ concurrency:
 jobs:
   lint:
     name: Lint Code
-    needs: dependencies
     runs-on: ubuntu-24.04
 
     steps:
@@ -35,7 +34,6 @@ jobs:
 
   build:
     name: Build Code
-    needs: dependencies
     runs-on: ubuntu-24.04
 
     steps:
