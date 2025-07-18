@@ -7,7 +7,6 @@ const LABELS_EMPTY_LENGTH = 0;
 type GitHubPRDSL = {
 	labels: unknown[];
 	milestone: null | Record<string, unknown>;
-	project_id: null | string;
 } & LibraryGitHubDSL;
 
 type DangerConfig = {
