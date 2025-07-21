@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.0.0...backend-v1.1.0) (2025-07-21)
+
+
+### Features
+
+* **backend/frontend/shared:** unify api response, improve server structure ss-1 ([#11](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/11)) ([75221e0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/75221e0a432d1480fa5c5e6647e359a0f51dc1de))
+
 ## 1.0.0 (2025-07-18)
 
 
