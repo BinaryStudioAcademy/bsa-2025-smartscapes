@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.2.0...shared-v1.3.0) (2025-07-24)
+
+
+### Features
+
+* **backend:** generate authorization token ss-18 ([#54](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/54)) ([b7deca2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b7deca202c7c892e676e4ab88d5f75e474a51710))
+* **frontend:** add error handling middleware with toast notifications ss-20 ([#43](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/43)) ([01674c6](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/01674c6f4d77c674c16a94b58e7a2c01b38263da))
+
 ## [1.2.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.1.0...shared-v1.2.0) (2025-07-24)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.2.0...backend-v1.3.0) (2025-07-24)
+
+
+### Features
+
+* **backend:** generate authorization token ss-18 ([#54](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/54)) ([b7deca2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b7deca202c7c892e676e4ab88d5f75e474a51710))
+
 ## [1.2.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.1.0...backend-v1.2.0) (2025-07-24)
 
 
