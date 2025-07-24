@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.1.0...frontend-v1.2.0) (2025-07-24)
+
+
+### Features
+
+* **backend/shared:** signup flow ss-16 ([#41](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/41)) ([471ab3d](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/471ab3da2a672b4aa75219edf7e5329fd9af3ded))
+* **frontend:** add common button ss-29 ([#40](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/40)) ([9952c7c](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/9952c7c7db1824975beecf960a4e4d81ce17dda1))
+* **frontend:** add common input component ss-28 ([#44](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/44)) ([b22a399](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b22a399f664f7696af6d773342179bce2e4acb77))
+* **frontend:** add CSS variables ss-46 ([#56](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/56)) ([d54261f](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d54261f0ee0f318ed4a92a8be47a16ce281d80d6))
+* **frontend:** add not found page ss-25 ([#50](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/50)) ([7a60df7](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/7a60df798f3753962ec5d6691521c6ab13a3a26c))
+* **frontend:** create reusable loader component ss-19 ([#30](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/30)) ([d2929a6](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d2929a60ec693e5e949f7fc2359a8487a8dd2ac0))
+
 ## [1.1.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.0.0...frontend-v1.1.0) (2025-07-21)
 
 ### Features
