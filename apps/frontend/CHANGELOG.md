@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.3.0...frontend-v1.4.0) (2025-07-25)
+
+
+### Features
+
+* **frontend:** create header component ss-21 ([#42](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/42)) ([91977c1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/91977c13bf49d909ecfaf73d3d7bff85a7633e64))
+
 ## [1.3.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.2.0...frontend-v1.3.0) (2025-07-24)
 
 
