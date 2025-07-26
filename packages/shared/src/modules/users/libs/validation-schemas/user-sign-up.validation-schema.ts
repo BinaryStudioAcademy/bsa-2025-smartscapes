@@ -25,5 +25,4 @@ const userSignUp: ZodType<UserSignUpRequestDto> = z.strictObject({
 		error: UserValidationMessage.PASSWORD_MINIMUM_LENGTH,
 	}),
 });
-
 export { userSignUp };

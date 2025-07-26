@@ -15,5 +15,5 @@ export {
 	type UserGetAllItemResponseDto,
 	type UserSignUpRequestDto,
 } from "./libs/types/types.js";
-export { userSignUpValidationSchema } from "./libs/validation-schemas/validation-schemas.js";
+export { userSignUpFormValidationSchema } from "./libs/validation-schemas/validation-schemas.js";
 export { actions, reducer } from "./slices/users.js";

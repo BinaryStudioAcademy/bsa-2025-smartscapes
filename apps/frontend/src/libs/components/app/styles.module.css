@@ -1,7 +1,11 @@
 .container {
 	display: flex;
+	flex-grow: 1;
 	flex-direction: column;
 	justify-content: center;
-	width: 350px;
-	margin: 50px auto;
+}
+
+.outlet-container {
+	display: flex;
+	flex-grow: 1;
 }

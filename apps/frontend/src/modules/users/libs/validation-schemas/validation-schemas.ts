@@ -1,1 +1,1 @@
-export { userSignUpValidationSchema } from "@smartscapes/shared";
+export { userSignUpFormValidationSchema } from "@smartscapes/shared";

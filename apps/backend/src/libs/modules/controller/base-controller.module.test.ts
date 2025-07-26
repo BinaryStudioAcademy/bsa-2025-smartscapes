@@ -43,7 +43,11 @@ describe("BaseController", () => {
 
 		baseController.addRoute(routeOptions);
 
-		assert.partialDeepStrictEqual(baseController.routes, [
+		const actualRoutes = baseController.routes.map(({ method, path }) => ({
+			method,
+			path,
+		}));
+		assert.partialDeepStrictEqual(actualRoutes, [
 			{
 				method: routeOptions.method,
 				path: `${apiPath}${routeOptions.path}`,

@@ -1,3 +1,30 @@
 .container {
 	width: 100%;
+	max-width: 364px;
+}
+
+.form-title {
+	margin: 0 0 48px;
+	font-size: var(--font-size-h1);
+	font-weight: var(--font-weight-semibold);
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	margin: 0 0 24px;
+}
+
+.label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.login-link-text {
+	margin: 0;
+	font-size: var(--font-size-tiny);
+	font-weight: var(--font-weight-regular);
+	color: var(--color-text-weak);
 }
