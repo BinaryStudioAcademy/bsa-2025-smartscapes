@@ -1,2 +1,2 @@
-export { type EncyptedDataResponse } from "./encription-data-response.type.js";
-export { type Encryption } from "./encription.type.js";
+export { type EncyptedDataResponse } from "./encryption-data-response.type.js";
+export { type Encryption } from "./encryption.type.js";

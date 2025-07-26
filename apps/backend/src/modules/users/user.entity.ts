@@ -84,6 +84,24 @@ class UserEntity implements Entity {
 		});
 	}
 
+	public getId(): number {
+		if (this.id === null) {
+			throw new Error(
+				"User id is null. It is not possible to create token for a user without an id.",
+			);
+		}
+
+		return this.id;
+	}
+
+	public getPasswordHash(): string {
+		return this.passwordHash;
+	}
+
+	public getPasswordSalt(): string {
+		return this.passwordSalt;
+	}
+
 	public toNewObject(): {
 		email: string;
 		firstName: string;

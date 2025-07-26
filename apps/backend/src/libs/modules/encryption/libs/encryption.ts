@@ -1,6 +1,6 @@
 import { config } from "~/libs/modules/config/config.js";
 
-import { BaseEncryption } from "./base-encription.module.js";
+import { BaseEncryption } from "./base-encryption.module.js";
 
 const encryption = new BaseEncryption(config);
 

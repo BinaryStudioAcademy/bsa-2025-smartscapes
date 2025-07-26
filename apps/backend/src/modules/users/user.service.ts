@@ -1,4 +1,4 @@
-import { encryption } from "~/libs/modules/encryption/libs/encription.js";
+import { encryption } from "~/libs/modules/encryption/libs/encryption.js";
 import { HTTPCode } from "~/libs/modules/http/http.js";
 import { type CollectionResult, type Service } from "~/libs/types/types.js";
 import { UserExceptionMessage } from "~/modules/users/libs/enums/enums.js";

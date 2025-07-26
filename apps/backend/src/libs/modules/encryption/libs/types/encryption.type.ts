@@ -1,4 +1,4 @@
-import { type EncyptedDataResponse } from "./encription-data-response.type.js";
+import { type EncyptedDataResponse } from "./encryption-data-response.type.js";
 
 type Encryption = {
 	compare(data: string, hash: string): Promise<boolean>;
