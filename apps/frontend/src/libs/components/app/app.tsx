@@ -5,7 +5,9 @@ import {
 	Link,
 	Loader,
 	RouterOutlet,
+	Sidebar,
 } from "~/libs/components/components.js";
+import { NAVIGATION_ITEMS } from "~/libs/constants/constants.js";
 import { AppRoute } from "~/libs/enums/enums.js";
 import {
 	useAppDispatch,
@@ -38,6 +40,8 @@ const App = (): React.JSX.Element => {
 	return (
 		<div className={styles["container"]}>
 			<Header user={mockUserWithoutAvatar} />
+			<Sidebar navigationItems={NAVIGATION_ITEMS} />
+
 			<img alt="logo" className="App-logo" src={reactLogo} width="30" />
 			<ul className="App-navigation-list">
 				<li>
