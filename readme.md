@@ -66,6 +66,17 @@ erDiagram
       varchar key
   }
 
+  reviews {
+    int id PK
+    dateTime created_at
+    dateTime updated_at
+    int user_id
+    text content
+    int likes_count
+    int route_id
+    int poi_id
+  }
+
   users }|--|| groups : group_id
   groups ||--|{ groups_to_permissions : group_id
   permissions ||--|{ groups_to_permissions : permission_id

@@ -27,6 +27,11 @@ export {
 } from "./libs/types/types.js";
 export { AuthApiPath } from "./modules/auth/auth.js";
 export {
+	reviewCreateValidationSchema,
+	type ReviewRequestDto,
+	type ReviewResponseDto,
+} from "./modules/reviews/reviews.js";
+export {
 	type UserAuthResponseDto,
 	UserExceptionMessage,
 	type UserGetAllItemResponseDto,
