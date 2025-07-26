@@ -5,6 +5,8 @@ export { type Service } from "./service.type.js";
 export {
 	type APIErrorResponse,
 	type APIResponse,
+	type HTTPMethod,
+	type UserAuthResponseDto,
 	type ValidationSchema,
 	type ValueOf,
 } from "@smartscapes/shared";

@@ -1,1 +1,1 @@
-export { ValidationError } from "@smartscapes/shared";
+export { HTTPError, ValidationError } from "@smartscapes/shared";

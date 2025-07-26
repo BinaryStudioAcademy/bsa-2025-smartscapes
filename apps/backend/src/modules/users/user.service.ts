@@ -60,6 +60,12 @@ class UserService implements Service {
 
 		return user ? user.toObject() : null;
 	}
+
+	public async findById(id: number): Promise<null | UserGetAllItemResponseDto> {
+		const user = await this.userRepository.findById(id);
+
+		return user ? user.toObject() : null;
+	}
 }
 
 export { UserService };

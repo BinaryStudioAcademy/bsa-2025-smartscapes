@@ -11,7 +11,12 @@ import Fastify, {
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { APIErrorType, AppEnvironment } from "~/libs/enums/enums.js";
+import {
+	APIErrorType,
+	APIPath,
+	AppEnvironment,
+	AuthApiPath,
+} from "~/libs/enums/enums.js";
 import { ValidationError } from "~/libs/exceptions/exceptions.js";
 import { type Config } from "~/libs/modules/config/config.js";
 import { type Database } from "~/libs/modules/database/database.js";
@@ -22,6 +27,7 @@ import {
 	type ValidationSchema,
 } from "~/libs/types/types.js";
 
+import { authPlugin } from "../plugins/plugins.js";
 import {
 	type ServerApplication,
 	type ServerApplicationApi,
@@ -69,6 +75,8 @@ class BaseServerApplication implements ServerApplication {
 		await this.initMiddlewares();
 
 		await this.initServe();
+
+		await this.initRoutesProtection();
 
 		this.initRoutes();
 
@@ -193,6 +201,14 @@ class BaseServerApplication implements ServerApplication {
 		const routers = this.apis.flatMap((api) => api.routes);
 
 		this.addRoutes(routers);
+	}
+
+	private async initRoutesProtection(): Promise<void> {
+		const whiteRoutesList = [AuthApiPath.SIGN_IN, AuthApiPath.SIGN_UP].map(
+			(path) => ({ method: "POST" as const, path: APIPath.AUTH + path }),
+		);
+
+		await this.app.register(authPlugin, { whiteRoutesList });
 	}
 
 	private async initServe(): Promise<void> {
