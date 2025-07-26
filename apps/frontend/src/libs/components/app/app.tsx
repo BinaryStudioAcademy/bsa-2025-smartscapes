@@ -4,6 +4,7 @@ import {
 	Header,
 	Link,
 	Loader,
+	RouteCard,
 	RouterOutlet,
 } from "~/libs/components/components.js";
 import { AppRoute } from "~/libs/enums/enums.js";
@@ -66,6 +67,14 @@ const App = (): React.JSX.Element => {
 						))}
 					</ul>
 					<Button label="Button for test" type="button" />
+					<section className={styles["popular-section"]}>
+						<p className={styles["title"]}>Popular Routes</p>
+						<ul className={styles["cards"]}>
+							<RouteCard imageUrl={null} name="Kralovska obora" />
+							<RouteCard imageUrl={null} name="Kralovska obora" />
+							<RouteCard imageUrl={null} name="Kralovska obora" />
+						</ul>
+					</section>
 				</>
 			)}
 		</div>
