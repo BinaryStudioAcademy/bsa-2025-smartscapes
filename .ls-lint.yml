@@ -16,6 +16,7 @@ ls:
 
 ignore:
   - .git
+  - .vscode
   - "**/node_modules"
   - "**/build"
   - "**/CHANGELOG.md"
