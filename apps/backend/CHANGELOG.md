@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.3.0...backend-v1.4.0) (2025-07-26)
+
+
+### Features
+
+* **backend:** eliminate unnecessary payload nesting when creating JWT token ss-85 ([#86](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/86)) ([f9c62ff](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/f9c62fffdfb2485f3c4ff5f6bcfb8437929da8ba))
+
 ## [1.3.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.2.0...backend-v1.3.0) (2025-07-24)
 
 
