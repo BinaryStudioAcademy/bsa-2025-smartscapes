@@ -8,9 +8,12 @@ import {
 	ToastContainer,
 } from "~/libs/components/components.js";
 import { AppRoute } from "~/libs/enums/enums.js";
+import { pwaModule } from "~/libs/modules/pwa/pwa.js";
 import { store } from "~/libs/modules/store/store.js";
 import { Auth } from "~/pages/auth/auth.jsx";
 import { NotFound } from "~/pages/not-found/not-found.jsx";
+
+pwaModule.register();
 
 createRoot(document.querySelector("#root") as HTMLElement).render(
 	<StrictMode>

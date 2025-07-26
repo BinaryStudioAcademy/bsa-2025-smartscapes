@@ -1,0 +1,7 @@
+User-agent: *
+
+# Allow crawling of public assets
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/
