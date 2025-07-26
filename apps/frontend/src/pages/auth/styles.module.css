@@ -1,4 +1,28 @@
 .container {
 	display: flex;
+	min-height: 100vh;
+}
+
+.left-panel {
+	position: relative;
+	display: flex;
+	flex: 0 0 50%;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--bg-base);
+}
+
+.right-panel {
+	flex: 0 0 50%;
+	background-image: url("../../assets/images/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.left-panel-logo {
+	position: absolute;
+	top: 32px;
+	left: 48px;
 }
