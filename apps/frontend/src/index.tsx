@@ -12,6 +12,8 @@ import { store } from "~/libs/modules/store/store.js";
 import { Auth } from "~/pages/auth/auth.jsx";
 import { NotFound } from "~/pages/not-found/not-found.jsx";
 
+import { Landing } from "./libs/components/landing/landing.jsx";
+
 createRoot(document.querySelector("#root") as HTMLElement).render(
 	<StrictMode>
 		<StoreProvider store={store.instance}>
@@ -29,6 +31,10 @@ createRoot(document.querySelector("#root") as HTMLElement).render(
 							},
 						],
 						element: <App />,
+						path: AppRoute.APP,
+					},
+					{
+						element: <Landing />,
 						path: AppRoute.ROOT,
 					},
 					{

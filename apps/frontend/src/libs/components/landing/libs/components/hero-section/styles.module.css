@@ -1,0 +1,35 @@
+.hero-section {
+	display: flex;
+	flex-direction: column;
+	gap: 100px;
+	width: 100%;
+	margin-top: 100px;
+}
+
+.hero-section-title {
+	margin-bottom: 0;
+	font-size: var(--font-size-display);
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-strong);
+	text-align: center;
+}
+
+.hero-section-description {
+	margin: 0;
+	font-size: var(--font-size-h4);
+	font-weight: var(--font-weight-regular);
+	color: var(--color-text-weak);
+	text-align: center;
+}
+
+.hero-section-cover img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.hero-section-cover {
+	padding: 0;
+	margin: 0;
+}

@@ -13,3 +13,11 @@
 	src: url("/assets/fonts/inter/inter-semibold.woff") format("woff");
 	font-display: swap;
 }
+
+@font-face {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 700;
+	src: url("/assets/fonts/inter/inter-bold.woff2") format("woff2");
+	font-display: swap;
+}
