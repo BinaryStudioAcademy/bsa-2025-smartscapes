@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.4.0...frontend-v1.5.0) (2025-07-29)
+
+
+### Features
+
+* **frontend/shared:** add sign up flow to the frontend ss-15 ([#47](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/47)) ([127f561](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/127f5610808e212cc051b5c12882d2a5bbc1b85c))
+* **frontend:** create sidebar component ss-22 ([#45](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/45)) ([62b1cc1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/62b1cc16e260ce456550ea9735380e087d8411eb))
+
 ## [1.4.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.3.0...frontend-v1.4.0) (2025-07-25)
 
 

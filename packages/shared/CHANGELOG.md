@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.3.0...shared-v1.4.0) (2025-07-29)
+
+
+### Features
+
+* **frontend/shared:** add sign up flow to the frontend ss-15 ([#47](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/47)) ([127f561](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/127f5610808e212cc051b5c12882d2a5bbc1b85c))
+
 ## [1.3.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.2.0...shared-v1.3.0) (2025-07-24)
 
 

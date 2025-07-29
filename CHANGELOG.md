@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.4.0...v1.5.0) (2025-07-29)
+
+
+### Features
+
+* **backend:** add groups and permissions tables and seeds ss-49 ([#55](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/55)) ([c30a214](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c30a214b14a5a93435ceab298cefcb26296a6706))
+* **backend:** eliminate unnecessary payload nesting when creating JWT token ss-85 ([#86](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/86)) ([f9c62ff](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/f9c62fffdfb2485f3c4ff5f6bcfb8437929da8ba))
+* **frontend/shared:** add sign up flow to the frontend ss-15 ([#47](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/47)) ([127f561](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/127f5610808e212cc051b5c12882d2a5bbc1b85c))
+* **frontend:** create sidebar component ss-22 ([#45](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/45)) ([62b1cc1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/62b1cc16e260ce456550ea9735380e087d8411eb))
+* **release:** update cd workflow ss-10 ([#92](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/92)) ([2bf5c7d](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2bf5c7d7cb3666ee5bf252e77cfbb627156cfad0))
+* **root:** update linter rules ss-15 ([#103](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/103)) ([0abe1d2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/0abe1d26e7ef84d598f3c81de366b469daf0a352))
+
 ## [1.4.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.3.0...v1.4.0) (2025-07-25)
 
 
