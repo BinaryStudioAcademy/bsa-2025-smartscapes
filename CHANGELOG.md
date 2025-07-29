@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.6.0...v1.6.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* **frontend:** button line-height ss-105 ([#108](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/108)) ([03e6b54](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/03e6b548d310596611c3d63142612f7794266a5c))
+* **frontend:** change cursor to pointer when button hover ss-109 ([#118](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/118)) ([5af1897](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/5af1897cd1f6581e90397c71469c50d29d969592))
+* **frontend:** fix routing ss-115 ([#117](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/117)) ([572110b](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/572110b1b2124c5bf2cca5d7bcc5dc8c9cb2fe3f))
+
 ## [1.6.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.5.0...v1.6.0) (2025-07-29)
 
 
