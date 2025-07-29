@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.4.0...backend-v1.5.0) (2025-07-29)
+
+
+### Features
+
+* **backend/shared:** add POIs module ss-52 ([#59](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/59)) ([15ef7fc](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/15ef7fc22a60b2a310f8bd52e6c068258fe89cdd))
+* **frontend/shared:** add sign-in flow to the frontend ss-14 ([#57](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/57)) ([f376d4a](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/f376d4a0d69949f98dd5a3258db9d2664deea568))
+
 ## [1.4.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.3.0...backend-v1.4.0) (2025-07-29)
 
 

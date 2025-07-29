@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.5.0...frontend-v1.6.0) (2025-07-29)
+
+
+### Features
+
+* **frontend/shared:** add sign-in flow to the frontend ss-14 ([#57](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/57)) ([f376d4a](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/f376d4a0d69949f98dd5a3258db9d2664deea568))
+* **frontend:** add link to header logo ss-98 ([#99](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/99)) ([b3e0581](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b3e0581383ae487fb831a2561a1f5d525b504652))
+* **frontend:** landing and application separation ss-53 ([#74](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/74)) ([d8522b3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d8522b3f222ee2fb0843263f2ba656442f2283e6))
+
 ## [1.5.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.4.0...frontend-v1.5.0) (2025-07-29)
 
 
