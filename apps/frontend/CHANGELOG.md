@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.9.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.8.0...frontend-v1.9.0) (2025-07-31)
+
+
+### Features
+
+* **frontend:** add mobile responsiveness for sign in and sign up ss-114 ([#139](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/139)) ([36888ae](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/36888aedbf4fb9fda99dfc2a4c774c9ba538a889))
+
+
+### Bug Fixes
+
+* **frontend:** fix landing page ui issues, remove unused styles ss-152 ([#156](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/156)) ([48bd01f](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/48bd01fceb0bfb5a625148966f447d8bf0ab3002))
+
 ## [1.8.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.7.0...frontend-v1.8.0) (2025-07-31)
 
 
