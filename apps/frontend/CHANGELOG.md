@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.7.0...frontend-v1.8.0) (2025-07-31)
+
+
+### Features
+
+* **frontend:** add authenticated user flow on the frontend ss-27 ([#101](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/101)) ([aaebf88](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/aaebf88c868c0844aa75f899d23fefe91bf7bf2a))
+
 ## [1.7.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.6.1...frontend-v1.7.0) (2025-07-31)
 
 

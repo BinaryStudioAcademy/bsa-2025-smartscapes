@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.6.0...backend-v1.6.1) (2025-07-31)
+
+
+### Bug Fixes
+
+* **backend:** fix white listing rules ss-148 ([#150](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/150)) ([2adff00](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2adff007dac3f3b00cae3540fd65854cdbf2a728))
+
 ## [1.6.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.5.0...backend-v1.6.0) (2025-07-31)
 
 
