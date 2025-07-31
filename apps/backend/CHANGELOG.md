@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.6.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.5.0...backend-v1.6.0) (2025-07-31)
+
+
+### Features
+
+* **backend/shared:** add protected routing ss-23 ([#82](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/82)) ([bc5ff87](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/bc5ff87c7b10b2550eb02aabc4bcad86ccb4155e))
+* **backend/shared:** add reviews module ss-75 ([#90](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/90)) ([30aead5](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/30aead509166e1b06ebd4301a738364313a55f8e))
+* **backend/shared:** add sign in flow to the backend ss-17 ([#67](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/67)) ([dc3f06d](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/dc3f06da34c840187d7644b23893ed7fca06ad43))
+* **backend:** add route categories module ss-76 ([#97](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/97)) ([c94a521](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c94a521cfbbd9b113c1d705b7f97f9c82a7db30d))
+* **backend:** add user auth flow ss-26 ([#122](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/122)) ([abd0433](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/abd0433761fadcab8b9111d871b6fa9a8da496ab))
+
+
+### Bug Fixes
+
+* **backend:** change error message for user with same email ss-134 ([#140](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/140)) ([1f6dbb6](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/1f6dbb692d18f54f8bed9f8507b88813c05a6b34))
+
 ## [1.5.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.4.0...backend-v1.5.0) (2025-07-29)
 
 

@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.7.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.6.1...frontend-v1.7.0) (2025-07-31)
+
+
+### Features
+
+* **backend/shared:** add protected routing ss-23 ([#82](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/82)) ([bc5ff87](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/bc5ff87c7b10b2550eb02aabc4bcad86ccb4155e))
+* **backend:** add user auth flow ss-26 ([#122](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/122)) ([abd0433](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/abd0433761fadcab8b9111d871b6fa9a8da496ab))
+* **frontend:** add carousel component ss-87 ([#93](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/93)) ([4f2c0ed](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/4f2c0edaa746a3983747c23ae8432efe5f0e3624))
+* **frontend:** add favicon ss-94 ([#95](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/95)) ([8588782](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8588782459211bd1a16b668cb3a2b2edabc59d34))
+* **frontend:** popular routes section ss-51 ([#64](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/64)) ([1deb979](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/1deb979efaffe2570ec0f5244e2f59111c8099aa))
+
+
+### Bug Fixes
+
+* **frontend:** add link to logo at auth pages ss-98 ([#126](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/126)) ([177aaa9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/177aaa9ee0dae36b7996916b8ee57e8bb880133b))
+
 ## [1.6.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.6.0...frontend-v1.6.1) (2025-07-29)
 
 
