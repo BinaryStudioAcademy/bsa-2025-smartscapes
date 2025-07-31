@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.9.0...v1.9.1) (2025-07-31)
+
+
+### Bug Fixes
+
+* **frontend:** popular routes typo ss-165 ([#167](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/167)) ([397503a](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/397503aee26885fb650c8f98f5fa8929f31ce547))
+* **frontend:** store token in localstorage after successful login ss-159 ([#164](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/164)) ([a0deeb6](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a0deeb69dab222040ad7507d870ba26035d8da23))
+
 ## [1.9.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.8.0...v1.9.0) (2025-07-31)
 
 

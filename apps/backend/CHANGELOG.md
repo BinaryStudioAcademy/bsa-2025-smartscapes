@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.6.1...backend-v1.6.2) (2025-07-31)
+
+
+### Bug Fixes
+
+* **backend:** attach token to swagger requests ss-149 ([#154](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/154)) ([740b897](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/740b8974816b46813ec8c95b3a7e7c6b4737da9c))
+
 ## [1.6.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.6.0...backend-v1.6.1) (2025-07-31)
 
 
