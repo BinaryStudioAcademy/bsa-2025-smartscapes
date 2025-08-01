@@ -1,4 +1,4 @@
-import { ToastContainer as LibraryToastContainer } from "react-toastify";
+import { ToastContainer as LibraryToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./styles.module.css";
@@ -6,10 +6,10 @@ import "./styles.module.css";
 const ToastContainer = (): React.JSX.Element => {
 	return (
 		<LibraryToastContainer
-			autoClose={5000}
+			autoClose={3000}
 			closeOnClick
 			draggable
-			hideProgressBar={false}
+			hideProgressBar
 			limit={3}
 			newestOnTop={false}
 			pauseOnFocusLoss
@@ -17,6 +17,7 @@ const ToastContainer = (): React.JSX.Element => {
 			position="top-right"
 			rtl={false}
 			theme="light"
+			transition={Slide}
 		/>
 	);
 };
