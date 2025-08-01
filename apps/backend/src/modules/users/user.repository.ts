@@ -11,7 +11,7 @@ class UserRepository implements Repository {
 	}
 
 	public async create(entity: UserEntity): Promise<UserEntity> {
-		const { email, firstName, lastName, passwordHash, passwordSalt } =
+		const { email, firstName, groupId, lastName, passwordHash, passwordSalt } =
 			entity.toNewObject();
 
 		const user = await this.userModel
@@ -19,6 +19,7 @@ class UserRepository implements Repository {
 			.insert({
 				email,
 				firstName,
+				groupId,
 				lastName,
 				passwordHash,
 				passwordSalt,
@@ -52,7 +53,7 @@ class UserRepository implements Repository {
 	): Promise<null | UserPasswordDetails> {
 		const user = await this.userModel
 			.query()
-			.select("id", "passwordHash", "passwordSalt")
+			.select("id", "passwordHash", "passwordSalt", "groupId")
 			.where("email", email)
 			.first();
 

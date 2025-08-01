@@ -27,6 +27,11 @@ export {
 } from "./libs/types/types.js";
 export { AuthApiPath, AuthExceptionMessage } from "./modules/auth/auth.js";
 export {
+	type GroupAuthResponseDto,
+	GroupExceptionMessage,
+	GroupKeys,
+} from "./modules/groups/groups.js";
+export {
 	pointOfInterestCreateValidationSchema,
 	pointOfInterestUpdateValidationSchema,
 	type PointsOfInterestRequestDto,

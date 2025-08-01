@@ -13,6 +13,8 @@ import {
 	type UserSignUpResponseDto,
 } from "~/modules/users/users.js";
 
+import { type GroupRepository } from "../groups/group.repository.js";
+
 describe("AuthService", () => {
 	const signUpRequestDto: UserSignUpRequestDto = {
 		confirmPassword: "Password123!",
@@ -64,8 +66,13 @@ describe("AuthService", () => {
 			hash: mock.fn(() => Promise.resolve("hashedPassword")),
 		} as unknown as BaseEncryption;
 
+		const mockGroupRepository = {
+			findByKey: mock.fn(() => Promise.resolve("users")),
+		} as unknown as GroupRepository;
+
 		const authService = new AuthService({
 			encryptionService: mockEncryptionService,
+			groupRepository: mockGroupRepository,
 			tokenService: mockTokenService,
 			userService: mockUserService,
 		});
@@ -82,18 +89,27 @@ describe("AuthService", () => {
 	it("signIn should return token and user data when credentials are valid", async () => {
 		const mockToken = "mock token";
 
+		const group_mock = {
+			toObject: (): { id: number; key: string } => ({
+				id: 2,
+				key: "users",
+			}),
+		};
+
 		const signInRequestDto: UserSignInRequestDto = {
 			email: "test@example.com",
 			password: "Password123!",
 		};
 
 		const mockPasswordDetails = {
+			groupId: group_mock.toObject().id,
 			id: 1,
 			passwordHash: "hashedPassword",
 			passwordSalt: "someSalt",
 		};
 
 		const expectedSignInResponse: UserSignInResponseDto = {
+			group: { id: 2, key: "users" },
 			token: mockToken,
 			user: {
 				email: signInRequestDto.email,
@@ -136,14 +152,19 @@ describe("AuthService", () => {
 				return Promise.resolve(false);
 			}),
 		} as unknown as BaseEncryption;
+
+		const mockGroupRepository = {
+			findById: mock.fn(() => Promise.resolve(group_mock)),
+		} as unknown as GroupRepository;
+
 		const authService = new AuthService({
 			encryptionService: mockEncryptionService,
+			groupRepository: mockGroupRepository,
 			tokenService: mockTokenService,
 			userService: mockUserService,
 		});
 
 		const result = await authService.signIn(signInRequestDto);
-
 		assert.deepStrictEqual(result, expectedSignInResponse);
 	});
 });

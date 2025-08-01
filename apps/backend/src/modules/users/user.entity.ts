@@ -5,6 +5,8 @@ class UserEntity implements Entity {
 
 	private firstName: string;
 
+	private groupId: number;
+
 	private id: null | number;
 
 	private lastName: string;
@@ -16,6 +18,7 @@ class UserEntity implements Entity {
 	private constructor({
 		email,
 		firstName,
+		groupId,
 		id,
 		lastName,
 		passwordHash,
@@ -23,6 +26,7 @@ class UserEntity implements Entity {
 	}: {
 		email: string;
 		firstName: string;
+		groupId: number;
 		id: null | number;
 		lastName: string;
 		passwordHash: string;
@@ -34,11 +38,13 @@ class UserEntity implements Entity {
 		this.lastName = lastName;
 		this.passwordHash = passwordHash;
 		this.passwordSalt = passwordSalt;
+		this.groupId = groupId;
 	}
 
 	public static initialize({
 		email,
 		firstName,
+		groupId,
 		id,
 		lastName,
 		passwordHash,
@@ -46,6 +52,7 @@ class UserEntity implements Entity {
 	}: {
 		email: string;
 		firstName: string;
+		groupId: number;
 		id: number;
 		lastName: string;
 		passwordHash: string;
@@ -54,6 +61,7 @@ class UserEntity implements Entity {
 		return new UserEntity({
 			email,
 			firstName,
+			groupId,
 			id,
 			lastName,
 			passwordHash,
@@ -64,12 +72,14 @@ class UserEntity implements Entity {
 	public static initializeNew({
 		email,
 		firstName,
+		groupId,
 		lastName,
 		passwordHash,
 		passwordSalt,
 	}: {
 		email: string;
 		firstName: string;
+		groupId: number;
 		lastName: string;
 		passwordHash: string;
 		passwordSalt: string;
@@ -77,6 +87,7 @@ class UserEntity implements Entity {
 		return new UserEntity({
 			email,
 			firstName,
+			groupId,
 			id: null,
 			lastName,
 			passwordHash,
@@ -87,6 +98,7 @@ class UserEntity implements Entity {
 	public toNewObject(): {
 		email: string;
 		firstName: string;
+		groupId: number;
 		lastName: string;
 		passwordHash: string;
 		passwordSalt: string;
@@ -94,6 +106,7 @@ class UserEntity implements Entity {
 		return {
 			email: this.email,
 			firstName: this.firstName,
+			groupId: this.groupId,
 			lastName: this.lastName,
 			passwordHash: this.passwordHash,
 			passwordSalt: this.passwordSalt,
@@ -103,12 +116,14 @@ class UserEntity implements Entity {
 	public toObject(): {
 		email: string;
 		firstName: string;
+		groupId: number;
 		id: number;
 		lastName: string;
 	} {
 		return {
 			email: this.email,
 			firstName: this.firstName,
+			groupId: this.groupId,
 			id: this.id as number,
 			lastName: this.lastName,
 		};
