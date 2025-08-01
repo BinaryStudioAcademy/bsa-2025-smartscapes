@@ -77,6 +77,73 @@ class UserService implements Service {
 	): Promise<null | UserPasswordDetails> {
 		return await this.userRepository.findPasswordDetails(email);
 	}
+
+	public async follow(followerId: number, followingId: number): Promise<void> {
+		if (followerId === followingId) {
+			throw new UserError({
+				message: "Cannot follow yourself",
+				status: HTTPCode.BAD_REQUEST,
+			});
+		}
+
+		const followingUser = await this.userRepository.findById(followingId);
+
+		if (!followingUser) {
+			throw new UserError({
+				message: "User to follow not found",
+				status: HTTPCode.BAD_REQUEST,
+			});
+		}
+
+		const isAlreadyFollowing = await this.userRepository.isFollowing(
+			followerId,
+			followingId,
+		);
+
+		if (isAlreadyFollowing) {
+			throw new UserError({
+				message: "Already following this user",
+				status: HTTPCode.CONFLICT,
+			});
+		}
+
+		await this.userRepository.followUser(followerId, followingId);
+	}
+
+	public async unfollow(
+		followerId: number,
+		followingId: number,
+	): Promise<void> {
+		if (followerId === followingId) {
+			throw new UserError({
+				message: "Cannot unfollow yourself",
+				status: HTTPCode.BAD_REQUEST,
+			});
+		}
+
+		const followingUser = await this.userRepository.findById(followingId);
+
+		if (!followingUser) {
+			throw new UserError({
+				message: "The user you are trying to unfollow does not exist",
+				status: HTTPCode.BAD_REQUEST,
+			});
+		}
+
+		const isAlreadyFollowing = await this.userRepository.isFollowing(
+			followerId,
+			followingId,
+		);
+
+		if (!isAlreadyFollowing) {
+			throw new UserError({
+				message: "You are not following this user",
+				status: HTTPCode.BAD_REQUEST,
+			});
+		}
+
+		await this.userRepository.unfollowUser(followerId, followingId);
+	}
 }
 
 export { UserService };

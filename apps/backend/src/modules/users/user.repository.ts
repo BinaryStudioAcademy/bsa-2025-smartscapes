@@ -58,6 +58,39 @@ class UserRepository implements Repository {
 
 		return user ?? null;
 	}
+
+	public async followUser(
+		followerId: number,
+		followingId: number,
+	): Promise<void> {
+		await this.userModel
+			.relatedQuery("following")
+			.for(followerId)
+			.relate(followingId);
+	}
+
+	public async isFollowing(
+		followerId: number,
+		followingId: number,
+	): Promise<boolean> {
+		const result = await this.userModel
+			.relatedQuery("following")
+			.for(followerId)
+			.findById(followingId);
+
+		return Boolean(result);
+	}
+
+	public async unfollowUser(
+		followerId: number,
+		followingId: number,
+	): Promise<void> {
+		await this.userModel
+			.relatedQuery("following")
+			.for(followerId)
+			.unrelate()
+			.where("users.id", followingId);
+	}
 }
 
 export { UserRepository };
