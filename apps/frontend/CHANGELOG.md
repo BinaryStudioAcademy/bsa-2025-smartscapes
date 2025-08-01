@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.9.2...frontend-v1.9.3) (2025-08-01)
+
+
+### Bug Fixes
+
+* **frontend:** fix inline paddings in header ss-168 ([#177](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/177)) ([57567ca](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/57567caa20c8d92bf6e3a9f6a93bc52832236de9))
+
 ## [1.9.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.9.1...frontend-v1.9.2) (2025-08-01)
 
 
