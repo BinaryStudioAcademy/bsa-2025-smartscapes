@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.6.2...backend-v1.6.3) (2025-08-01)
+
+
+### Bug Fixes
+
+* **frontend:** fix auth swagger ss-169 ([#175](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/175)) ([2c68ef4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2c68ef4b9c1de8da5697b10f0d2b996ed052b996))
+* **frontend:** fix poi swagger ss-173 ([#176](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/176)) ([da2f5c5](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/da2f5c5b0413d98973c7670fa6fd5f4275c10bb4))
+
 ## [1.6.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.6.1...backend-v1.6.2) (2025-07-31)
 
 

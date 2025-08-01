@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.9.1...frontend-v1.9.2) (2025-08-01)
+
+
+### Bug Fixes
+
+* **frontend:** enable auth header for getAll request ss-163 ([#170](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/170)) ([2d4fe58](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2d4fe5871e7cf697877f070056ff644c49e65a2f))
+* **frontend:** fix app page layout and fix image loading ss-161 ([#166](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/166)) ([166ed24](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/166ed24bd86de4f35de55dd013fb1fb37cc6ee06))
+
 ## [1.9.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.9.0...frontend-v1.9.1) (2025-07-31)
 
 
