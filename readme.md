@@ -73,6 +73,16 @@ erDiagram
     varchar name
   }
 
+  reviews {
+    int id PK
+    dateTime created_at
+    dateTime updated_at
+    int user_id FK
+    text content
+    int likes_count
+    int route_id FK
+    int poi_id FK
+
   route_categories {
       int id PK
       dateTime created_at
@@ -83,6 +93,9 @@ erDiagram
   users }|--|| groups : group_id
   groups ||--|{ groups_to_permissions : group_id
   permissions ||--|{ groups_to_permissions : permission_id
+  users ||--|{ reviews : user_id
+  routes ||--|{ reviews : route_id
+  points_of_interest ||--|{ reviews : poi_id
 ```
 
 ## 5. Architecture
