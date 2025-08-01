@@ -1,0 +1,8 @@
+import { TIME_UNIT } from "~/libs/constants/constants.js";
+
+const UPDATE_INTERVAL =
+	TIME_UNIT.MINUTES_IN_HOUR *
+	TIME_UNIT.SECONDS_IN_MINUTE *
+	TIME_UNIT.MILLISECONDS_IN_SECOND;
+
+export { UPDATE_INTERVAL };

@@ -7,7 +7,7 @@ import globals from "globals";
 import baseConfig from "../../eslint.config.js";
 
 const ignoresConfig = {
-	ignores: ["build"],
+	ignores: ["build", "dev-dist"],
 } satisfies Linter.Config;
 
 const mainConfig = {
@@ -78,6 +78,17 @@ const overridesConfigs = [
 		files: ["src/vite-env.d.ts"],
 		rules: {
 			"unicorn/prevent-abbreviations": ["off"],
+		},
+	},
+	{
+		files: ["**/*.ts", "**/*.tsx"],
+		rules: {
+			"import/no-unresolved": [
+				"error",
+				{
+					ignore: ["^virtual:"],
+				},
+			],
 		},
 	},
 ] satisfies Linter.Config[];

@@ -3,6 +3,7 @@ import browserslist from "browserslist";
 import { browserslistToTargets, Features } from "lightningcss";
 import { fileURLToPath } from "node:url";
 import { type ConfigEnv, defineConfig, loadEnv } from "vite";
+import { VitePWA } from "vite-plugin-pwa";
 import svgr from "vite-plugin-svgr";
 
 const config = ({ mode }: ConfigEnv): ReturnType<typeof defineConfig> => {
@@ -29,7 +30,56 @@ const config = ({ mode }: ConfigEnv): ReturnType<typeof defineConfig> => {
 			},
 			transformer: "lightningcss",
 		},
-		plugins: [reactPlugin(), svgr()],
+		plugins: [
+			reactPlugin(),
+			svgr(),
+			VitePWA({
+				devOptions: {
+					enabled: true,
+					type: "module",
+				},
+				includeAssets: ["favicon.svg", "apple-touch-icon.png"],
+				manifest: {
+					background_color: "#ffffff",
+					description:
+						"Interactive mapping platform for exploring large, complex areas",
+					icons: [
+						{
+							sizes: "192x192",
+							src: "/assets/images/pwa-192x192.png",
+							type: "image/png",
+						},
+						{
+							sizes: "512x512",
+							src: "/assets/images/pwa-512x512.png",
+							type: "image/png",
+						},
+						{
+							purpose: "any",
+							sizes: "512x512",
+							src: "/assets/images/pwa-512x512.png",
+							type: "image/png",
+						},
+						{
+							purpose: "maskable",
+							sizes: "512x512",
+							src: "/assets/images/pwa-512x512.png",
+							type: "image/png",
+						},
+					],
+					name: "SmartScapes",
+					scope: "/",
+					short_name: "SmartScapes",
+					start_url: "/",
+					theme_color: "#ffffff",
+				},
+				registerType: "autoUpdate",
+				workbox: {
+					globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
+					globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+				},
+			}),
+		],
 		resolve: {
 			alias: [
 				{
