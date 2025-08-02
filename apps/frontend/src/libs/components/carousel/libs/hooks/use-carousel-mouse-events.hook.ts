@@ -1,57 +1,39 @@
-import { useCallback } from "react";
+import { useCallback } from "~/libs/hooks/hooks.js";
 
-import { CAROUSEL_ANIMATION } from "../constants/carausel-animation.constant.js";
 import { CAROUSEL_CONFIG } from "../constants/constants.js";
 import { getCarouselParameters } from "../helpers/helpers.js";
-import {
-	type CarouselCallbacks,
-	type CarouselReference,
-	type CarouselState,
-} from "../types/types.js";
+import { type CarouselReference } from "../types/types.js";
 
-type CarouselMouseEventsProperties = {
-	callbacks: CarouselCallbacks;
-	carouselReference: CarouselReference;
-	state: CarouselStateSetters;
-};
-
-type CarouselStateSetters = Pick<
-	CarouselState,
-	| "overdragOffset"
-	| "setAnimationClassName"
-	| "setDragging"
-	| "setOverdragOffset"
-	| "setSpringBounce"
->;
-
-const useCarouselMouseEvents = ({
-	callbacks,
-	carouselReference,
-	state,
-}: CarouselMouseEventsProperties): {
+type CarouselMouseEvents = {
 	handleMouseDown: (event: React.MouseEvent) => void;
 	handleMouseMove: (event: React.MouseEvent) => void;
 	handleMouseUpOrLeave: () => void;
-} => {
-	const { startMomentum } = callbacks;
-	const {
-		overdragOffset,
-		setAnimationClassName,
-		setDragging,
-		setOverdragOffset,
-		setSpringBounce,
-	} = state;
+};
+
+type CarouselMouseEventsProperties = {
+	carouselReference: CarouselReference;
+	setDragging: (dragging: boolean) => void;
+	startMomentum: () => void;
+};
+
+const useCarouselMouseEvents = ({
+	carouselReference,
+	setDragging,
+	startMomentum,
+}: CarouselMouseEventsProperties): CarouselMouseEvents => {
+	const removeFocus = useCallback((): void => {
+		const element = carouselReference.element.current;
+
+		if (element) {
+			element.blur();
+		}
+	}, [carouselReference.element]);
 
 	const handleMouseDown = useCallback(
 		(event: React.MouseEvent): void => {
 			const { offsetLeft, scrollLeft } = getCarouselParameters(
 				carouselReference.element,
 			);
-
-			carouselReference.isAnimating.current = false;
-			setSpringBounce(false);
-			setAnimationClassName(null);
-			setOverdragOffset(0);
 
 			carouselReference.isDragging.current = true;
 			carouselReference.startX.current = event.pageX - offsetLeft;
@@ -63,56 +45,25 @@ const useCarouselMouseEvents = ({
 				carouselReference.momentumID.current = null;
 			}
 		},
-		[
-			carouselReference,
-			setAnimationClassName,
-			setDragging,
-			setOverdragOffset,
-			setSpringBounce,
-		],
+		[carouselReference, setDragging],
 	);
 
 	const handleMouseUpOrLeave = useCallback((): void => {
-		const { direction } = getCarouselParameters(carouselReference.element);
-
 		carouselReference.isDragging.current = false;
 		setDragging(false);
 
-		if (overdragOffset !== 0) {
-			const { CSS_ANIMATION_DELAY, SLINGSHOT_ANIMATION_DURATION } =
-				CAROUSEL_CONFIG;
-			setSpringBounce(false);
-			setAnimationClassName(null);
-			setOverdragOffset(0);
+		removeFocus();
 
-			setTimeout(() => {
-				const slingshotClass =
-					direction === "left"
-						? CAROUSEL_ANIMATION.SLINGSHOT_LEFT
-						: CAROUSEL_ANIMATION.SLINGSHOT_RIGHT;
-				setAnimationClassName(slingshotClass);
-			}, CSS_ANIMATION_DELAY);
-
-			setTimeout(() => {
-				setAnimationClassName(null);
-			}, SLINGSHOT_ANIMATION_DURATION + CSS_ANIMATION_DELAY);
-		} else if (Math.abs(carouselReference.velocity.current) > 0) {
+		if (Math.abs(carouselReference.velocity.current) > 0) {
 			startMomentum();
 		}
-	}, [
-		overdragOffset,
-		startMomentum,
-		setAnimationClassName,
-		setOverdragOffset,
-		setSpringBounce,
-		setDragging,
-		carouselReference,
-	]);
+	}, [startMomentum, setDragging, carouselReference, removeFocus]);
 
 	const handleMouseMove = useCallback(
 		(event: React.MouseEvent): void => {
-			const { clientWidth, element, maxScroll, offsetLeft } =
-				getCarouselParameters(carouselReference.element);
+			const { element, offsetLeft } = getCarouselParameters(
+				carouselReference.element,
+			);
 
 			if (!carouselReference.isDragging.current || !element) {
 				return;
@@ -123,26 +74,12 @@ const useCarouselMouseEvents = ({
 			const x = event.pageX - offsetLeft;
 			const walk = x - carouselReference.startX.current;
 			const newScrollLeft = carouselReference.scrollStart.current - walk;
-			const maxOverdrag = clientWidth * CAROUSEL_CONFIG.OVERDRAG_PERCENTAGE;
 
-			if (newScrollLeft < 0) {
-				setOverdragOffset(maxOverdrag);
-
-				return;
-			}
-
-			if (newScrollLeft > maxScroll) {
-				setOverdragOffset(-maxOverdrag);
-
-				return;
-			}
-
-			setOverdragOffset(0);
 			element.scrollLeft = newScrollLeft;
 			carouselReference.velocity.current =
 				walk * CAROUSEL_CONFIG.DRAG_MULTIPLIER;
 		},
-		[carouselReference, setOverdragOffset],
+		[carouselReference],
 	);
 
 	return {

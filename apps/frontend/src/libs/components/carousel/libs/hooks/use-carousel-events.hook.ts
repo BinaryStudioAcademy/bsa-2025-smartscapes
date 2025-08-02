@@ -1,56 +1,36 @@
-import { useEffect } from "react";
+import { useEffect } from "~/libs/hooks/hooks.js";
 
-import { type CarouselReference, type CarouselState } from "../types/types.js";
+import { type CarouselReference } from "../types/types.js";
 import {
-	useCarouselBoundaries,
 	useCarouselMomentum,
 	useCarouselMouseEvents,
 	useCarouselWheelEvent,
 } from "./hooks.js";
 
-type CarouselEventsProperties = {
-	carouselReference: CarouselReference;
-	state: CarouselStateSetters;
-};
-
-type CarouselStateSetters = Pick<
-	CarouselState,
-	| "overdragOffset"
-	| "setAnimationClassName"
-	| "setDragging"
-	| "setOverdragOffset"
-	| "setSpringBounce"
->;
-
-const useCarouselEvents = ({
-	carouselReference,
-	state,
-}: CarouselEventsProperties): {
+type CarouselEvents = {
 	handleMouseDown: (event: React.MouseEvent) => void;
 	handleMouseMove: (event: React.MouseEvent) => void;
 	handleMouseUpOrLeave: () => void;
 	handleWheelEvent: (event: WheelEvent) => void;
-} => {
-	const { setAnimationClassName, setSpringBounce } = state;
+};
 
-	const { handleBoundaryCollision } = useCarouselBoundaries({
-		carouselReference,
-		setAnimationClassName,
-		setSpringBounce,
-	});
+type CarouselEventsProperties = {
+	carouselReference: CarouselReference;
+	setDragging: (dragging: boolean) => void;
+};
 
+const useCarouselEvents = ({
+	carouselReference,
+	setDragging,
+}: CarouselEventsProperties): CarouselEvents => {
 	const { startMomentum } = useCarouselMomentum({
 		carouselReference,
-		handleBoundaryCollision,
 	});
 
 	const mouseHandlers = useCarouselMouseEvents({
-		callbacks: {
-			handleBoundaryCollision,
-			startMomentum,
-		},
 		carouselReference,
-		state,
+		setDragging,
+		startMomentum,
 	});
 
 	const handleWheelEvent = useCarouselWheelEvent({

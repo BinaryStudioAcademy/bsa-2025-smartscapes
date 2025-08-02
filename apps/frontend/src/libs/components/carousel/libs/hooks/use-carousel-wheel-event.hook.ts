@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback } from "~/libs/hooks/hooks.js";
 
 import { CAROUSEL_CONFIG } from "../constants/constants.js";
 import { type CarouselReference } from "../types/types.js";
