@@ -1,0 +1,9 @@
+const RoutesValidationRule = {
+	DESCRIPTION_MAXIMUM_LENGTH: 255,
+	DESCRIPTION_MINIMUM_LENGTH: 10,
+	NAME_MAXIMUM_LENGTH: 32,
+	NAME_MINIMUM_LENGTH: 4,
+	ROUTES_MINIMUM_COUNT: 2,
+} as const;
+
+export { RoutesValidationRule };
