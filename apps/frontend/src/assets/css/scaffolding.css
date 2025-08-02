@@ -32,3 +32,14 @@ body {
 	clip: rect(0 0 0 0);
 	clip-path: inset(100%);
 }
+
+::-webkit-scrollbar {
+	height: 16px;
+}
+
+@supports (scrollbar-width: auto) {
+	html {
+		scrollbar-color: var(--color-fill-brand-strong) var(--color-background-base);
+		scrollbar-width: auto;
+	}
+}
