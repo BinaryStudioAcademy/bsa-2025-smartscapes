@@ -21,21 +21,45 @@ import {
  * @swagger
  * components:
  *   schemas:
+ *     PointsOfInterestLocation:
+ *       type: object
+ *       required:
+ *         - coordinates
+ *         - type
+ *       properties:
+ *         coordinates:
+ *           type: array
+ *           items:
+ *             type: number
+ *           example: [30.5234, 50.4501]
+ *         type:
+ *           type: string
+ *           example: "Point"
+ *
  *     PointsOfInterestRequestDto:
  *       type: object
  *       required:
+ *         - location
  *         - name
  *       properties:
+ *         location:
+ *           $ref: '#/components/schemas/PointsOfInterestLocation'
  *         name:
  *           type: string
  *           example: "Central Park"
  *
  *     PointsOfInterestResponseDto:
  *       type: object
+ *       required:
+ *         - id
+ *         - location
+ *         - name
  *       properties:
  *         id:
  *           type: number
  *           example: 1
+ *         location:
+ *           $ref: '#/components/schemas/PointsOfInterestLocation'
  *         name:
  *           type: string
  *           example: "Central Park"
@@ -105,7 +129,7 @@ class PointsOfInterestController extends BaseController {
 	 *           schema:
 	 *             $ref: '#/components/schemas/PointsOfInterestRequestDto'
 	 *     responses:
-	 *       201:
+	 *       200:
 	 *         description: Point of interest created successfully
 	 *         content:
 	 *           application/json:

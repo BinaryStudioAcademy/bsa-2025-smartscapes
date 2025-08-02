@@ -29,6 +29,7 @@ export { AuthApiPath, AuthExceptionMessage } from "./modules/auth/auth.js";
 export {
 	pointOfInterestCreateValidationSchema,
 	pointOfInterestUpdateValidationSchema,
+	type PointsOfInterestLocation,
 	type PointsOfInterestRequestDto,
 	type PointsOfInterestResponseDto,
 } from "./modules/points-of-interest/points-of-interest.js";

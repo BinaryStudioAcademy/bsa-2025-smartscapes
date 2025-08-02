@@ -14,6 +14,10 @@ const NON_EXISTENT_ID = 999;
 const DELETED_COUNT = 1;
 const NOT_DELETED_COUNT = 0;
 
+const TEST_LONGITUDE = 30.5234;
+const TEST_LATITUDE = 50.4501;
+const TEST_COORDINATES: [number, number] = [TEST_LONGITUDE, TEST_LATITUDE];
+
 describe("PointsOfInterestRepository", () => {
 	let pointsOfInterestRepository: PointsOfInterestRepository;
 	let databaseTracker: Tracker;
@@ -23,6 +27,10 @@ describe("PointsOfInterestRepository", () => {
 	>[0] = {
 		createdAt: "2024-01-01T00:00:00Z",
 		id: 1,
+		location: {
+			coordinates: TEST_COORDINATES,
+			type: "Point" as const,
+		},
 		name: "Point Of Interest Test Name",
 		updatedAt: "2024-01-01T00:00:00Z",
 	};
