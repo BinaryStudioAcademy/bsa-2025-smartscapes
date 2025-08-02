@@ -17,6 +17,7 @@ type ServerApplicationRouteParameters = {
 	) => void)[];
 	validation?: {
 		body?: ValidationSchema;
+		query?: ValidationSchema;
 	};
 };
 

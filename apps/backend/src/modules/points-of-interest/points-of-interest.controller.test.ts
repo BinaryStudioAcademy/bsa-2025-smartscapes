@@ -11,6 +11,10 @@ const mockDelete: PointsOfInterestService["delete"] = () => {
 	return Promise.resolve(true);
 };
 
+const TEST_LONGITUDE = 30.5234;
+const TEST_LATITUDE = 50.4501;
+const TEST_COORDINATES: [number, number] = [TEST_LONGITUDE, TEST_LATITUDE];
+
 describe("PointsOfInterestController", () => {
 	const mockLogger: Logger = {
 		debug: () => {},
@@ -21,6 +25,10 @@ describe("PointsOfInterestController", () => {
 
 	const mockPointOfInterest = {
 		id: 1,
+		location: {
+			coordinates: TEST_COORDINATES,
+			type: "Point" as const,
+		},
 		name: "Point Of Interest Test Name",
 	};
 
@@ -66,6 +74,7 @@ describe("PointsOfInterestController", () => {
 
 		const result = await pointsOfInterestController.create({
 			body: {
+				location: mockPointOfInterest.location,
 				name: mockPointOfInterest.name,
 			},
 			params: {},
@@ -78,6 +87,47 @@ describe("PointsOfInterestController", () => {
 				data: mockPointOfInterest,
 			},
 			status: HTTPCode.CREATED,
+		});
+	});
+
+	it("findAll should return nearby points of interest when location provided", async () => {
+		const pointsOfInterest = [mockPointOfInterest];
+		const RADIUS = 5;
+
+		const mockFindAll: PointsOfInterestService["findAll"] = (options) => {
+			assert.ok(options, "Options should be defined");
+			assert.strictEqual(Number(options.latitude), TEST_LATITUDE);
+			assert.strictEqual(Number(options.longitude), TEST_LONGITUDE);
+			assert.strictEqual(Number(options.radius), RADIUS);
+
+			return Promise.resolve({ items: pointsOfInterest });
+		};
+
+		const pointsOfInterestService = {
+			findAll: mockFindAll,
+		} as PointsOfInterestService;
+
+		const pointsOfInterestController = new PointsOfInterestController(
+			mockLogger,
+			pointsOfInterestService,
+		);
+
+		const result = await pointsOfInterestController.findAll({
+			body: {},
+			params: {},
+			query: {
+				latitude: String(TEST_LATITUDE),
+				longitude: String(TEST_LONGITUDE),
+				radius: "5",
+			},
+			user: null,
+		});
+
+		assert.deepStrictEqual(result, {
+			payload: {
+				data: pointsOfInterest,
+			},
+			status: HTTPCode.OK,
 		});
 	});
 
@@ -131,6 +181,7 @@ describe("PointsOfInterestController", () => {
 
 		const result = await pointsOfInterestController.patch({
 			body: {
+				location: updatedPointOfInterest.location,
 				name: updatedPointOfInterest.name,
 			},
 			params: { id: "1" },

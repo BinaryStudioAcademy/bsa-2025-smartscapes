@@ -8,6 +8,7 @@ import { PointOfInterestError } from "./libs/exceptions/exceptions.js";
 import {
 	type PointsOfInterestRequestDto,
 	type PointsOfInterestResponseDto,
+	type PointsOfInterestSearchQuery,
 } from "./libs/types/type.js";
 
 class PointsOfInterestService implements Service {
@@ -22,10 +23,11 @@ class PointsOfInterestService implements Service {
 	): Promise<PointsOfInterestResponseDto> {
 		await this.ensureNameIsUnique(payload.name);
 
-		const { name } = payload;
+		const { location, name } = payload;
 
 		const item = await this.pointsOfInterestRepository.create(
 			PointsOfInterestEntity.initializeNew({
+				location,
 				name,
 			}),
 		);
@@ -46,15 +48,25 @@ class PointsOfInterestService implements Service {
 		return true;
 	}
 
-	public async findAll(): Promise<
-		CollectionResult<PointsOfInterestResponseDto>
-	> {
-		const items = await this.pointsOfInterestRepository.findAll();
+	public async findAll(
+		query: null | PointsOfInterestSearchQuery = null,
+	): Promise<CollectionResult<PointsOfInterestResponseDto>> {
+		const DEFAULT_RADIUS_KM = 5;
+		const THOUSAND = 1000;
+		const radiusKm = query?.radius || DEFAULT_RADIUS_KM;
+		const radiusMeters = radiusKm * THOUSAND;
+		const normalizedQuery = {
+			...query,
+			radius: radiusMeters,
+		} as PointsOfInterestSearchQuery;
+		const hasQuery = Boolean(query?.latitude) && Boolean(query?.longitude);
+
+		const items = hasQuery
+			? await this.pointsOfInterestRepository.findNearby(normalizedQuery)
+			: await this.pointsOfInterestRepository.findAll();
 
 		return {
-			items: items.map((item) => {
-				return item.toObject();
-			}),
+			items: items.map((item) => item.toObject()),
 		};
 	}
 
@@ -75,13 +87,14 @@ class PointsOfInterestService implements Service {
 		id: number,
 		payload: PointsOfInterestRequestDto,
 	): Promise<PointsOfInterestResponseDto> {
-		const { name } = payload;
+		const { location, name } = payload;
 
 		await this.ensureNameIsUnique(name);
 
 		const item = await this.pointsOfInterestRepository.patch(
 			id,
 			PointsOfInterestEntity.initializeNew({
+				location,
 				name,
 			}),
 		);

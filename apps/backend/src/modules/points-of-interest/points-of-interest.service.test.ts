@@ -7,12 +7,20 @@ import { PointsOfInterestService } from "./points-of-interest.service.js";
 
 const EXISTING_ID = 1;
 
+const TEST_LONGITUDE = 30.5234;
+const TEST_LATITUDE = 50.4501;
+const TEST_COORDINATES: [number, number] = [TEST_LONGITUDE, TEST_LATITUDE];
+
 describe("PointsOfInterestService", () => {
 	const mockPointOfInterest: Parameters<
 		typeof PointsOfInterestEntity.initialize
 	>[0] = {
 		createdAt: "2024-01-01T00:00:00Z",
 		id: 1,
+		location: {
+			coordinates: TEST_COORDINATES,
+			type: "Point" as const,
+		},
 		name: "Point Of Interest Test Name",
 		updatedAt: "2024-01-01T00:00:00Z",
 	};
@@ -38,11 +46,13 @@ describe("PointsOfInterestService", () => {
 		);
 
 		const result = await pointsOfInterestService.create({
+			location: mockPointOfInterest.location,
 			name: mockPointOfInterest.name,
 		});
 
 		assert.deepStrictEqual(result, {
 			id: mockPointOfInterest.id,
+			location: mockPointOfInterest.location,
 			name: mockPointOfInterest.name,
 		});
 	});
@@ -59,6 +69,55 @@ describe("PointsOfInterestService", () => {
 		);
 
 		const result = await pointsOfInterestService.findAll();
+
+		assert.deepStrictEqual(result, {
+			items: [pointOfInterestEntity.toObject()],
+		});
+	});
+
+	it("findAll should return nearby points of interest when location provided", async () => {
+		const pointOfInterestEntity = createMockEntity();
+
+		const pointsOfInterestRepository = {
+			findNearby: (() =>
+				Promise.resolve([
+					pointOfInterestEntity,
+				])) as PointsOfInterestRepository["findNearby"],
+		} as PointsOfInterestRepository;
+
+		const pointsOfInterestService = new PointsOfInterestService(
+			pointsOfInterestRepository,
+		);
+
+		const result = await pointsOfInterestService.findAll({
+			latitude: TEST_LATITUDE,
+			longitude: TEST_LONGITUDE,
+			radius: 5,
+		});
+
+		assert.deepStrictEqual(result, {
+			items: [pointOfInterestEntity.toObject()],
+		});
+	});
+
+	it("findAll should use default radius when radius not provided", async () => {
+		const pointOfInterestEntity = createMockEntity();
+
+		const pointsOfInterestRepository = {
+			findNearby: (() =>
+				Promise.resolve([
+					pointOfInterestEntity,
+				])) as PointsOfInterestRepository["findNearby"],
+		} as PointsOfInterestRepository;
+
+		const pointsOfInterestService = new PointsOfInterestService(
+			pointsOfInterestRepository,
+		);
+
+		const result = await pointsOfInterestService.findAll({
+			latitude: TEST_LATITUDE,
+			longitude: TEST_LONGITUDE,
+		});
 
 		assert.deepStrictEqual(result, {
 			items: [pointOfInterestEntity.toObject()],
@@ -111,6 +170,7 @@ describe("PointsOfInterestService", () => {
 		);
 
 		const result = await pointsOfInterestService.patch(EXISTING_ID, {
+			location: updatedPointOfInterest.location,
 			name: updatedPointOfInterest.name,
 		});
 

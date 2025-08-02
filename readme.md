@@ -66,11 +66,12 @@ erDiagram
       varchar key
   }
 
-  points_of_interest {
+   points_of_interest {
     int id PK
     dateTime created_at
     dateTime updated_at
     varchar name
+    geometry location
   }
 
   route_categories {

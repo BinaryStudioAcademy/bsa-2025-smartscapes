@@ -95,6 +95,7 @@ class BaseServerApplication implements ServerApplication {
 		if (validation) {
 			routeOptions.schema = {
 				body: validation.body,
+				querystring: validation.query,
 			};
 		}
 

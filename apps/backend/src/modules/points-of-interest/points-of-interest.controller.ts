@@ -11,31 +11,65 @@ import { type PointsOfInterestService } from "~/modules/points-of-interest/point
 import {
 	type PointsOfInterestRequestDto,
 	type PointsOfInterestResponseDto,
+	type PointsOfInterestSearchQuery,
 } from "./libs/types/type.js";
 import {
 	pointOfInterestCreateValidationSchema,
 	pointOfInterestUpdateValidationSchema,
+	pointsOfInterestSearchQueryValidationSchema,
 } from "./libs/validation-schemas/validation-schemas.js";
+
+type PointsOfInterestFindAllOptions =
+	| APIHandlerOptions
+	| PointsOfInterestFindAllOptionsQuery;
+
+type PointsOfInterestFindAllOptionsQuery = APIHandlerOptions<{
+	query?: PointsOfInterestSearchQuery;
+}>;
 
 /**
  * @swagger
  * components:
  *   schemas:
+ *     PointsOfInterestLocation:
+ *       type: object
+ *       required:
+ *         - coordinates
+ *         - type
+ *       properties:
+ *         coordinates:
+ *           type: array
+ *           items:
+ *             type: number
+ *           example: [30.5234, 50.4501]
+ *         type:
+ *           type: string
+ *           example: "Point"
+ *
  *     PointsOfInterestRequestDto:
  *       type: object
  *       required:
+ *         - location
  *         - name
  *       properties:
+ *         location:
+ *           $ref: '#/components/schemas/PointsOfInterestLocation'
  *         name:
  *           type: string
  *           example: "Central Park"
  *
  *     PointsOfInterestResponseDto:
  *       type: object
+ *       required:
+ *         - id
+ *         - location
+ *         - name
  *       properties:
  *         id:
  *           type: number
  *           example: 1
+ *         location:
+ *           $ref: '#/components/schemas/PointsOfInterestLocation'
  *         name:
  *           type: string
  *           example: "Central Park"
@@ -77,6 +111,9 @@ class PointsOfInterestController extends BaseController {
 			handler: this.findAll.bind(this),
 			method: "GET",
 			path: "/",
+			validation: {
+				query: pointsOfInterestSearchQueryValidationSchema,
+			},
 		});
 
 		this.addRoute({
@@ -105,7 +142,7 @@ class PointsOfInterestController extends BaseController {
 	 *           schema:
 	 *             $ref: '#/components/schemas/PointsOfInterestRequestDto'
 	 *     responses:
-	 *       201:
+	 *       200:
 	 *         description: Point of interest created successfully
 	 *         content:
 	 *           application/json:
@@ -177,10 +214,48 @@ class PointsOfInterestController extends BaseController {
 	 *       - bearerAuth: []
 	 *     tags:
 	 *       - Points of Interest
-	 *     summary: Retrieve all points of interest
+	 *     summary: Retrieve points of interest with optional location-based filtering
+	 *     description: |
+	 *       Get all points of interest or filter them by location.
+	 *
+	 *       **Without query parameters**: Returns all points of interest
+	 *
+	 *       **With location parameters**: Returns points of interest within specified radius
+	 *       from the given coordinates (latitude/longitude)
+	 *     parameters:
+	 *       - in: query
+	 *         name: latitude
+	 *         schema:
+	 *           type: string
+	 *           pattern: '^-?([1-8]?[0-9](\.[0-9]+)?|90(\.0+)?)$'
+	 *           example: "50.4501"
+	 *         description: |
+	 *           User's latitude for location-based search.
+	 *           Must be between -90 and 90 degrees.
+	 *           Required if longitude is provided.
+	 *       - in: query
+	 *         name: longitude
+	 *         schema:
+	 *           type: string
+	 *           pattern: '^-?((1[0-7][0-9]|[1-9]?[0-9])(\.[0-9]+)?|180(\.0+)?)$'
+	 *           example: "30.5234"
+	 *         description: |
+	 *           User's longitude for location-based search.
+	 *           Must be between -180 and 180 degrees.
+	 *           Required if latitude is provided.
+	 *       - in: query
+	 *         name: radius
+	 *         schema:
+	 *           type: string
+	 *           pattern: '^[0-9]+(\.[0-9]+)?$'
+	 *           example: "5"
+	 *         description: |
+	 *           Search radius in kilometers.
+	 *           Default value is 5 km if not specified.
+	 *           Must be between 0.1 and 50 km.
 	 *     responses:
 	 *       200:
-	 *         description: A list of points of interest
+	 *         description: Successfully retrieved points of interest
 	 *         content:
 	 *           application/json:
 	 *             schema:
@@ -190,11 +265,43 @@ class PointsOfInterestController extends BaseController {
 	 *                   type: array
 	 *                   items:
 	 *                     $ref: '#/components/schemas/PointsOfInterestResponseDto'
+	 *                   description: Array of points of interest
+	 *             examples:
+	 *               all_pois:
+	 *                 summary: All points of interest
+	 *                 description: Response when no location filters are provided
+	 *                 value:
+	 *                   data:
+	 *                     - id: 1
+	 *                       name: "Central Park"
+	 *                       location:
+	 *                         type: "Point"
+	 *                         coordinates: [30.5234, 50.4501]
+	 *                     - id: 2
+	 *                       name: "Glass Bridge"
+	 *                       location:
+	 *                         type: "Point"
+	 *                         coordinates: [30.5289, 50.4553]
+	 *               nearby_pois:
+	 *                 summary: Nearby points of interest
+	 *                 description: Response when location filters are provided
+	 *                 value:
+	 *                   data:
+	 *                     - id: 1
+	 *                       name: "Central Park"
+	 *                       location:
+	 *                         type: "Point"
+	 *                         coordinates: [30.5234, 50.4501]
 	 */
-	public async findAll(): Promise<
-		APIHandlerResponse<PointsOfInterestResponseDto[]>
-	> {
-		const { items } = await this.pointsOfInterestService.findAll();
+	public async findAll(
+		options?: PointsOfInterestFindAllOptions,
+	): Promise<APIHandlerResponse<PointsOfInterestResponseDto[]>> {
+		const query =
+			options && "query" in options
+				? (options.query as PointsOfInterestSearchQuery)
+				: null;
+
+		const { items } = await this.pointsOfInterestService.findAll(query);
 
 		return {
 			payload: { data: items },
