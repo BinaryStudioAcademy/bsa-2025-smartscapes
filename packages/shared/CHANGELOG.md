@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.7.1...shared-v1.8.0) (2025-08-04)
+
+
+### Features
+
+* **backend/shared:** add postgis ss-112 ([#121](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/121)) ([d6b4932](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d6b49329a426a1ca1bb48a22757d547edf86dbe6))
+
 ## [1.7.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.7.0...shared-v1.7.1) (2025-08-01)
 
 
