@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.7.0...backend-v1.8.0) (2025-08-05)
+
+
+### Features
+
+* **shared/backend:** add notifications module ss-73 ([#131](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/131)) ([e2b4a15](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e2b4a1514dd0a10f89a36d8bc3894c61444f168f))
+
 ## [1.7.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.6.3...backend-v1.7.0) (2025-08-04)
 
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.11.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.10.0...v1.11.0) (2025-08-05)
+
+
+### Features
+
+* **frontend:** add custom scrollbar styling ss-180 ([#190](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/190)) ([c5558dc](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c5558dcb27c3fe0752035b8839c5addc94a9421e))
+* **frontend:** carousel improvement ss-183 ([#194](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/194)) ([da750df](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/da750df01137a81ef0298728535ca9c92ad5c202))
+* **frontend:** enable PWA for frontend ss-68 ([#89](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/89)) ([979f3f4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/979f3f4d8eaad080b64ff2532ee0f18a099e5953))
+* **shared/backend:** add notifications module ss-73 ([#131](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/131)) ([e2b4a15](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e2b4a1514dd0a10f89a36d8bc3894c61444f168f))
+
 ## [1.10.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.9.3...v1.10.0) (2025-08-04)
 
 
