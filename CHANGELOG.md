@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.11.0...v1.11.1) (2025-08-05)
+
+
+### Bug Fixes
+
+* **backend:** update swagger sign-in response example ss-221 ([#222](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/222)) ([7fc47cc](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/7fc47ccaeef644774be314cb7b2fa5be3b04d1d2))
+
 ## [1.11.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.10.0...v1.11.0) (2025-08-05)
 
 
