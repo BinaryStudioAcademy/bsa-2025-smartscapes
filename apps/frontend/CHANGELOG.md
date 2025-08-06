@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.11.0...frontend-v1.12.0) (2025-08-06)
+
+
+### Features
+
+* **frontend:** frontend protected routes ss-24 ([#199](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/199)) ([ad96806](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/ad96806486f6168a4f49d9807544107c99e5f37e))
+
 ## [1.11.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.10.0...frontend-v1.11.0) (2025-08-06)
 
 

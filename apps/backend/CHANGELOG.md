@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.10.0...backend-v1.11.0) (2025-08-06)
+
+
+### Features
+
+* **backend:** add security to swagger documentation of notifications ss-233 ([#234](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/234)) ([923e93e](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/923e93e1b2194455590794f45fe1ce9ff87bf598))
+
 ## [1.10.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.9.0...backend-v1.10.0) (2025-08-06)
 
 
