@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.8.1...backend-v1.8.2) (2025-08-06)
+
+
+### Bug Fixes
+
+* **backend:** correct value of type ss-226 ([#227](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/227)) ([085b1b9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/085b1b908a9575d4b0394c7fb6f8b3cfc414e926))
+
 ## [1.8.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.8.0...backend-v1.8.1) (2025-08-05)
 
 
