@@ -1,6 +1,7 @@
 import { type KnipConfig } from "knip";
 
 const config: KnipConfig = {
+	ignore: ["tests/**"],
 	workspaces: {
 		".": {
 			entry: ["./dangerfile.ts"],
