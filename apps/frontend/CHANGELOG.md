@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.12.0...frontend-v1.13.0) (2025-08-06)
+
+
+### Features
+
+* **frontend:** add custom select component ss-192 ([#217](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/217)) ([8e1e395](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8e1e3950088ad6ea842ed26ff91e5a01731b06ac))
+
 ## [1.12.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.11.0...frontend-v1.12.0) (2025-08-06)
 
 
