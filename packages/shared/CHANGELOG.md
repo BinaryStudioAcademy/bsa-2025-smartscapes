@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.9.0...shared-v1.10.0) (2025-08-06)
+
+
+### Features
+
+* **backend:** search closest points to authenticated user ss-188 ([#198](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/198)) ([144e41c](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/144e41c87e7f4fbf313cac3fc2ac6c53464949e9))
+
 ## [1.9.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.8.0...shared-v1.9.0) (2025-08-05)
 
 

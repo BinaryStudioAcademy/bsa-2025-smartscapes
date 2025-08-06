@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.10.0...frontend-v1.11.0) (2025-08-06)
+
+
+### Features
+
+* **frontend:** toast notification smoother show ss-181 ([#191](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/191)) ([3328e0c](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3328e0c29f1ef63efb20c08dfd04982439c0c924))
+
 ## [1.10.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.9.3...frontend-v1.10.0) (2025-08-05)
 
 

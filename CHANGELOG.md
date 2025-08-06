@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.12.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.11.2...v1.12.0) (2025-08-06)
+
+
+### Features
+
+* **backend:** search closest points to authenticated user ss-188 ([#198](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/198)) ([144e41c](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/144e41c87e7f4fbf313cac3fc2ac6c53464949e9))
+* **frontend:** toast notification smoother show ss-181 ([#191](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/191)) ([3328e0c](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3328e0c29f1ef63efb20c08dfd04982439c0c924))
+
+
+### Bug Fixes
+
+* **backend:** introduce swagger doc for dto in notifications ss-229 ([#230](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/230)) ([20f10d8](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/20f10d8877c683e15920ca354b5accfe114c9f9f))
+
 ## [1.11.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.11.1...v1.11.2) (2025-08-06)
 
 
