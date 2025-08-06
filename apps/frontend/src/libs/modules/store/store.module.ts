@@ -37,11 +37,19 @@ class Store {
 		this.instance = configureStore({
 			devTools: config.ENV.APP.ENVIRONMENT !== AppEnvironment.PRODUCTION,
 			middleware: (getDefaultMiddleware) => {
-				return getDefaultMiddleware({
+				const middlewares = getDefaultMiddleware({
 					thunk: {
 						extraArgument: this.extraArguments,
 					},
-				}).prepend(handleErrorMiddleware(this.extraArguments));
+				});
+
+				if (config.ENV.APP.ENVIRONMENT !== AppEnvironment.DEVELOPMENT) {
+					return middlewares.prepend(
+						handleErrorMiddleware(this.extraArguments),
+					);
+				}
+
+				return middlewares;
 			},
 			reducer: {
 				auth: authReducer,
