@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.12.0...v1.13.0) (2025-08-06)
+
+
+### Features
+
+* **backend:** add super admin seed ss-187 ([#212](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/212)) ([15457e0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/15457e0521ea078d179bd0471402713f92b9b751))
+
 ## [1.12.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.11.2...v1.12.0) (2025-08-06)
 
 
