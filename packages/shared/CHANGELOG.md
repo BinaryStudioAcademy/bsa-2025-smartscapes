@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.11.0...shared-v1.12.0) (2025-08-07)
+
+
+### Features
+
+* **backend/shared:** add reviews module ss-75 ([#147](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/147)) ([435363e](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/435363e7ee382997fab923744e484ecc0efde238))
+
 ## [1.11.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.10.0...shared-v1.11.0) (2025-08-07)
 
 
