@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.10.0...shared-v1.11.0) (2025-08-07)
+
+
+### Features
+
+* **backend/shared:** add routes module ss-69 ([#104](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/104)) ([b419013](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b419013fd741b365045a9e6f3d49c30a1885a6b7))
+* **frontend:** update buttons in header ss-186 ([#210](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/210)) ([e4f8d7f](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e4f8d7ffe91ea72f18bc8932a086e4c7e1194f42))
+
 ## [1.10.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.9.0...shared-v1.10.0) (2025-08-06)
 
 
