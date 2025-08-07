@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.13.1...backend-v1.13.2) (2025-08-07)
+
+
+### Bug Fixes
+
+* **backend:** fix poi location schema in swagger documentation ss-258 ([#259](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/259)) ([323d2cf](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/323d2cfb51ba8c817bff46f00b9d079efffacca7))
+
 ## [1.13.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.13.0...backend-v1.13.1) (2025-08-07)
 
 
