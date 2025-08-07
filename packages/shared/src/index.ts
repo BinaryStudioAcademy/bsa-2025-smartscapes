@@ -46,11 +46,24 @@ export {
 	pointsOfInterestSearchQueryValidationSchema,
 } from "./modules/points-of-interest/points-of-interest.js";
 export {
+	type ReviewCreatePayload,
+	reviewCreateValidationSchema,
+	type ReviewGetByIdResponseDto,
+	type ReviewRequestDto,
+} from "./modules/reviews/reviews.js";
+export {
 	RouteCategoriesApiPath,
 	RouteCategoryExceptionMessage,
 	type RouteCategoryGetAllItemResponseDto,
 	type RouteCategoryRequestDto,
 } from "./modules/route-categories/route-categories.js";
+export {
+	routesCreateValidationSchema,
+	type RoutesRequestCreateDto,
+	type RoutesRequestPatchDto,
+	type RoutesResponseDto,
+	routesUpdateValidationSchema,
+} from "./modules/routes/routes.js";
 export {
 	type UserAuthResponseDto,
 	UserExceptionMessage,

@@ -1,6 +1,6 @@
 type PointsOfInterestSearchQuery = {
-	latitude: number;
-	longitude: number;
+	latitude?: number;
+	longitude?: number;
 	radius?: number;
 };
 

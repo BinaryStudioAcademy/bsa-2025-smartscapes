@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.13.0...frontend-v1.14.0) (2025-08-07)
+
+
+### Features
+
+* **frontend:** update buttons in header ss-186 ([#210](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/210)) ([e4f8d7f](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e4f8d7ffe91ea72f18bc8932a086e4c7e1194f42))
+
 ## [1.13.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.12.0...frontend-v1.13.0) (2025-08-06)
 
 

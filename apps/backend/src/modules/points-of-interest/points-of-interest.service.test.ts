@@ -62,7 +62,7 @@ describe("PointsOfInterestService", () => {
 
 		const pointsOfInterestRepository = {
 			findAll: () => Promise.resolve([pointOfInterestEntity]),
-		} as PointsOfInterestRepository;
+		} as unknown as PointsOfInterestRepository;
 
 		const pointsOfInterestService = new PointsOfInterestService(
 			pointsOfInterestRepository,

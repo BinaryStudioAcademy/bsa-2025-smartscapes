@@ -75,7 +75,7 @@ describe("PointsOfInterestRepository", () => {
 			.select(DatabaseTableName.POINTS_OF_INTEREST)
 			.response(pointOfInterestEntities);
 
-		const result = await pointsOfInterestRepository.findAll();
+		const result = await pointsOfInterestRepository.findAll(null);
 
 		assert.deepStrictEqual(result, pointOfInterestEntities);
 	});

@@ -74,11 +74,38 @@ erDiagram
     geometry location
   }
 
+  reviews {
+    int id PK
+    dateTime created_at
+    dateTime updated_at
+    int user_id FK
+    text content
+    int likes_count
+    int route_id FK
+    int poi_id FK
+
   route_categories {
       int id PK
       dateTime created_at
       dateTime updated_at
       varchar name
+  }
+
+  routes {
+        int id PK
+        dateTime created_at
+        dateTime updated_at
+        varchar name
+        varchar description
+    }
+
+  routes_to_pois {
+      int id PK
+      dateTime created_at
+      dateTime updated_at
+      int route_id FK
+      int poi_id FK
+      int visit_order
   }
 
   notifications {
@@ -96,6 +123,11 @@ erDiagram
   users }|--|| groups : group_id
   groups ||--|{ groups_to_permissions : group_id
   permissions ||--|{ groups_to_permissions : permission_id
+  points_of_interest }|--|{routes_to_pois:"poi_id"
+  routes }|--|{routes_to_pois:"route_id"
+  users ||--|{ reviews : user_id
+  routes ||--|{ reviews : route_id
+  points_of_interest ||--|{ reviews : poi_id
   users ||--o{ notifications : user_id
 ```
 

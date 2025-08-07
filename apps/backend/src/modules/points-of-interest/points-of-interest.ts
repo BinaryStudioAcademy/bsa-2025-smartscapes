@@ -16,4 +16,4 @@ const pointsOfInterestController = new PointsOfInterestController(
 	pointsOfInterestService,
 );
 
-export { pointsOfInterestController };
+export { pointsOfInterestController, pointsOfInterestService };
