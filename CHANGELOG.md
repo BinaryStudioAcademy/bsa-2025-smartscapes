@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.18.0...v1.18.1) (2025-08-07)
+
+
+### Bug Fixes
+
+* **frontend:** app component waits for get-authicated-user dispatch ss-247 ([#252](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/252)) ([30cc3dc](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/30cc3dc068a407ca02389ed1724f0b853732ec71))
+
 ## [1.18.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.17.2...v1.18.0) (2025-08-07)
 
 
