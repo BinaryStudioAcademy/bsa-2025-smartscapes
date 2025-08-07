@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.17.2...v1.18.0) (2025-08-07)
+
+
+### Features
+
+* **frontend:** add styles to select ss-255 ([#257](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/257)) ([3a8be15](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3a8be15b012417608f56dcc3024ddbc01fc92547))
+
 ## [1.17.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.17.1...v1.17.2) (2025-08-07)
 
 
