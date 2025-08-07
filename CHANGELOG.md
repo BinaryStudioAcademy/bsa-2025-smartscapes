@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.17.0...v1.17.1) (2025-08-07)
+
+
+### Bug Fixes
+
+* **backend:** update reviews module swagger docs ss-251 ([#253](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/253)) ([4753c0e](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/4753c0e243a7d4d8b39ae271c911b0bfe5995d51))
+
 ## [1.17.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.16.0...v1.17.0) (2025-08-07)
 
 
