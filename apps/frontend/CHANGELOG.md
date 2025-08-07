@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.15.1...frontend-v1.16.0) (2025-08-07)
+
+
+### Features
+
+* **frontend:** add floating sidebar ss-106 ([#214](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/214)) ([d576265](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d57626569c8a05eb1b35fe56b90760304b4bef12))
+
 ## [1.15.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.15.0...frontend-v1.15.1) (2025-08-07)
 
 
