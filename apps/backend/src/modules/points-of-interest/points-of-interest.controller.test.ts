@@ -165,6 +165,47 @@ describe("PointsOfInterestController", () => {
 		});
 	});
 
+	it("should return points of interest searched by name", async () => {
+		const pointsOfInterest = [mockPointOfInterest];
+		const TEST_NAME = "Point Of Interest Test Name";
+
+		const mockFindAll: PointsOfInterestService["findAll"] = (options) => {
+			assert.ok(options, "Options should be defined");
+			assert.strictEqual(options.name, TEST_NAME);
+
+			const filtered = pointsOfInterest.filter((poi) =>
+				poi.name.toLowerCase().includes(options.name?.toLowerCase() ?? ""),
+			);
+
+			return Promise.resolve({ items: filtered });
+		};
+
+		const pointsOfInterestService = {
+			findAll: mockFindAll,
+		} as PointsOfInterestService;
+
+		const pointsOfInterestController = new PointsOfInterestController(
+			mockLogger,
+			pointsOfInterestService,
+		);
+
+		const result = await pointsOfInterestController.findAll({
+			body: {},
+			params: {},
+			query: {
+				name: TEST_NAME,
+			},
+			user: null,
+		});
+
+		assert.deepStrictEqual(result, {
+			payload: {
+				data: pointsOfInterest,
+			},
+			status: HTTPCode.OK,
+		});
+	});
+
 	it("update should return updated point of interest", async () => {
 		const updatedPointOfInterest = {
 			...mockPointOfInterest,

@@ -66,6 +66,10 @@ class PointsOfInterestRepository implements Repository {
 				if (options?.ids) {
 					builder.whereIn("id", options.ids);
 				}
+
+				if (options?.name) {
+					builder.whereILike("name", `%${options.name}%`);
+				}
 			})
 			.execute();
 
@@ -123,7 +127,7 @@ class PointsOfInterestRepository implements Repository {
 	public async findNearby(
 		normalizedQuery: PointsOfInterestSearchQuery,
 	): Promise<PointsOfInterestEntity[]> {
-		const { latitude, longitude, radius } = normalizedQuery;
+		const { latitude, longitude, name, radius } = normalizedQuery;
 
 		const pointsOfInterest = await this.pointsOfInterestModel
 			.query()
@@ -145,6 +149,11 @@ class PointsOfInterestRepository implements Repository {
 				[longitude, latitude, radius],
 			)
 			.orderBy("distance", SortingOrder.ASC)
+			.modify((builder) => {
+				if (name) {
+					builder.whereILike("name", `%${name}%`);
+				}
+			})
 			.execute();
 
 		return pointsOfInterest
