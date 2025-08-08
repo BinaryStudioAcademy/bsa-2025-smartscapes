@@ -37,14 +37,21 @@ const auth = (app: FastifyInstance, { whiteRoutes }: PluginOptions): void => {
 		}
 
 		const [, token] = headers.authorization.split(" ");
-		const { userId } = await tokenService.verify<TokenPayload>(token as string);
-		const user = await userService.findById(userId);
 
-		if (!user) {
+		try {
+			const { userId } = await tokenService.verify<TokenPayload>(
+				token as string,
+			);
+			const user = await userService.findById(userId);
+
+			if (!user) {
+				throw new AuthError();
+			}
+
+			request.user = user;
+		} catch {
 			throw new AuthError();
 		}
-
-		request.user = user;
 	};
 
 	app.decorateRequest("user", null);

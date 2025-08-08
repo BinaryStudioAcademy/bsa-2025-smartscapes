@@ -1,8 +1,9 @@
 import { APIErrorType } from "~/libs/enums/enums.js";
 import { configureString } from "~/libs/helpers/helpers.js";
 import {
+	AuthError,
 	type HTTP,
-	type HTTPCode,
+	HTTPCode,
 	HTTPError,
 	HTTPHeader,
 	type HTTPResponse,
@@ -128,13 +129,18 @@ class BaseHTTPApi implements HTTPApi {
 		}
 
 		const details = "details" in errorPayload ? errorPayload.details : [];
-
-		throw new HTTPError({
+		const errorData = {
 			details,
 			message: errorPayload.message,
 			status: response.status as ValueOf<typeof HTTPCode>,
 			type: errorPayload.type,
-		});
+		};
+		const error =
+			response.status === HTTPCode.UNAUTHORIZED
+				? new AuthError(errorData)
+				: new HTTPError(errorData);
+
+		throw error;
 	}
 }
 
