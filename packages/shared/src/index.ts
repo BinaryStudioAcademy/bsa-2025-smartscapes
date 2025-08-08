@@ -29,6 +29,12 @@ export {
 } from "./libs/types/types.js";
 export { AuthApiPath, AuthExceptionMessage } from "./modules/auth/auth.js";
 export {
+	GroupExceptionMessage,
+	type GroupItemWithPermissionsDto,
+	GroupKey,
+	type GroupResponseDto,
+} from "./modules/groups/groups.js";
+export {
 	NotificationApiPath,
 	type NotificationCreateRequestDto,
 	notificationCreateValidationSchema,

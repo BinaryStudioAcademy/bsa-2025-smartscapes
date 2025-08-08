@@ -4,6 +4,8 @@ import { describe, it } from "node:test";
 import { HTTPCode } from "~/libs/modules/http/http.js";
 import { type Logger } from "~/libs/modules/logger/logger.js";
 
+import { GroupEntity } from "../groups/group.entity.js";
+import { PermissionEntity } from "../permission/permission.entity.js";
 import { RoutesController } from "./routes.controller.js";
 import { type RoutesService } from "./routes.service.js";
 
@@ -29,9 +31,24 @@ const mockRoute = {
 	],
 };
 
+const mockPermission = PermissionEntity.initialize({
+	id: 1,
+	key: "read",
+	name: "Read",
+});
+
+const mockGroup = GroupEntity.initializeWithPermissions({
+	id: 2,
+	key: "users",
+	name: "Users",
+	permissions: [mockPermission.toObject()],
+});
+
 const mockUser = {
 	email: "test@example.com",
 	firstName: "John",
+	group: mockGroup.toObject(),
+	groupId: mockGroup.toObject().id,
 	id: 1,
 	lastName: "Doe",
 };

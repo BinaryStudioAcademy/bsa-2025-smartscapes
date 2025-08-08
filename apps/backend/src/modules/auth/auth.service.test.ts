@@ -5,13 +5,17 @@ import { type BaseEncryption } from "~/libs/modules/encryption/libs/base-encrypt
 import { type BaseToken } from "~/libs/modules/token/token.js";
 import { AuthService } from "~/modules/auth/auth.service.js";
 import {
-	type UserGetByIdItemResponseDto,
+	type UserAuthResponseDto,
 	type UserService,
 	type UserSignInRequestDto,
 	type UserSignInResponseDto,
 	type UserSignUpRequestDto,
 	type UserSignUpResponseDto,
 } from "~/modules/users/users.js";
+
+import { GroupEntity } from "../groups/group.entity.js";
+import { GroupKey } from "../groups/libs/enums/enums.js";
+import { PermissionEntity } from "../permission/permission.entity.js";
 
 describe("AuthService", () => {
 	const signUpRequestDto: UserSignUpRequestDto = {
@@ -22,12 +26,27 @@ describe("AuthService", () => {
 		password: "Password123!",
 	};
 
+	const mockPermission = PermissionEntity.initialize({
+		id: 1,
+		key: "read",
+		name: "Read",
+	});
+
+	const mockGroup = GroupEntity.initializeWithPermissions({
+		id: 2,
+		key: GroupKey.USERS,
+		name: "Users",
+		permissions: [mockPermission.toObject()],
+	});
+
 	it("signUp should create new user", async () => {
 		const mockToken = "mock token";
 
-		const mockUserServiceResponse: UserGetByIdItemResponseDto = {
+		const mockUserServiceResponse: UserAuthResponseDto = {
 			email: signUpRequestDto.email,
 			firstName: signUpRequestDto.firstName,
+			group: mockGroup.toObject(),
+			groupId: 2,
 			id: 1,
 			lastName: signUpRequestDto.lastName,
 		};
@@ -89,7 +108,10 @@ describe("AuthService", () => {
 
 		const mockPasswordDetails = {
 			firstName: "John",
+			group: mockGroup.toObject(),
+			groupId: mockGroup.toObject().id,
 			id: 1,
+			key: GroupKey.USERS,
 			lastName: "Doe",
 			passwordHash: "hashedPassword",
 			passwordSalt: "someSalt",
@@ -100,6 +122,8 @@ describe("AuthService", () => {
 			user: {
 				email: signInRequestDto.email,
 				firstName: mockPasswordDetails.firstName,
+				group: mockGroup.toObject(),
+				groupId: 2,
 				id: mockPasswordDetails.id,
 				lastName: mockPasswordDetails.lastName,
 			},
@@ -140,6 +164,7 @@ describe("AuthService", () => {
 				return Promise.resolve(false);
 			}),
 		} as unknown as BaseEncryption;
+
 		const authService = new AuthService({
 			encryptionService: mockEncryptionService,
 			tokenService: mockTokenService,
@@ -147,7 +172,6 @@ describe("AuthService", () => {
 		});
 
 		const result = await authService.signIn(signInRequestDto);
-
 		assert.deepStrictEqual(result, expectedSignInResponse);
 	});
 });

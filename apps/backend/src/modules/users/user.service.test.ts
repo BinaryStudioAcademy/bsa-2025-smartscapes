@@ -1,60 +1,111 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
+import { GroupEntity } from "../groups/group.entity.js";
+import { type GroupService } from "../groups/group.service.js";
+import { PermissionEntity } from "../permission/permission.entity.js";
 import { UserEntity } from "./user.entity.js";
 import { type UserRepository } from "./user.repository.js";
 import { UserService } from "./user.service.js";
 
 describe("UserService", () => {
-	const mockUser: Parameters<typeof UserEntity.initialize>[0] = {
+	const mockPermission = PermissionEntity.initialize({
+		id: 1,
+		key: "read",
+		name: "Read",
+	});
+
+	const mockGroup = GroupEntity.initializeWithPermissions({
+		id: 2,
+		key: "users",
+		name: "Users",
+		permissions: [mockPermission.toObject()],
+	});
+
+	const mockUser = UserEntity.initialize({
 		email: "test@example.com",
 		firstName: "John",
+		group: mockGroup.toObject(),
+		groupId: 2,
 		id: 1,
 		lastName: "Doe",
 		passwordHash: "hash",
 		passwordSalt: "salt",
-	};
+	});
+
+	const mockGroupService = {
+		findByKey: () => mockGroup.toObject(),
+	} as unknown as GroupService;
 
 	it("create should return new user", async () => {
-		const userEntity = UserEntity.initialize(mockUser);
+		const userEntity = UserEntity.initialize({
+			email: "test@example.com",
+			firstName: "John",
+			group: mockGroup.toObject(),
+			groupId: 2,
+			id: 1,
+			lastName: "Doe",
+			passwordHash: "hash",
+			passwordSalt: "salt",
+		});
 
-		const userRepository = {
-			create: (() => Promise.resolve(userEntity)) as UserRepository["create"],
-			findByEmail: (() =>
-				Promise.resolve(null)) as UserRepository["findByEmail"],
-		} as UserRepository;
+		const userRepository: UserRepository = {
+			create: () => userEntity,
+			findAll: () => [],
+			findByEmail: () => null,
+			findById: () => userEntity,
+			findPasswordDetails: () => null,
+		} as unknown as UserRepository;
 
-		const userService = new UserService(userRepository);
+		const userService = new UserService(userRepository, mockGroupService);
 
 		const result = await userService.create({
 			confirmPassword: "Password",
-			email: mockUser.email,
-			firstName: mockUser.firstName,
-			lastName: mockUser.lastName,
+			email: mockUser.toObject().email,
+			firstName: mockUser.toObject().firstName,
+			lastName: mockUser.toObject().lastName,
 			password: "Password",
 		});
 
 		assert.deepStrictEqual(result, {
-			email: mockUser.email,
-			firstName: mockUser.firstName,
-			id: mockUser.id,
-			lastName: mockUser.lastName,
+			email: mockUser.toObject().email,
+			firstName: mockUser.toObject().firstName,
+			group: {
+				id: 2,
+				key: "users",
+				name: "Users",
+				permissions: [{ id: 1, key: "read", name: "Read" }],
+			},
+			groupId: mockUser.toObject().groupId,
+			id: mockUser.toObject().id,
+			lastName: mockUser.toObject().lastName,
 		});
 	});
 
 	it("findAll should return all users", async () => {
-		const userEntity = UserEntity.initialize(mockUser);
+		const userEntity = UserEntity.initialize({
+			email: "test@example.com",
+			firstName: "John",
+			group: mockGroup.toObject(),
+			groupId: 2,
+			id: 1,
+			lastName: "Doe",
+			passwordHash: "hash",
+			passwordSalt: "salt",
+		});
 
 		const userRepository = {
-			findAll: () => Promise.resolve([userEntity]),
-		} as UserRepository;
+			findAll: () => {
+				return [userEntity];
+			},
+		} as unknown as UserRepository;
 
-		const userService = new UserService(userRepository);
+		const userService = new UserService(userRepository, mockGroupService);
 
 		const result = await userService.findAll();
 
 		assert.deepStrictEqual(result, {
-			items: [userEntity.toObject()],
+			items: [mockUser.toObject()],
 		});
 	});
 });

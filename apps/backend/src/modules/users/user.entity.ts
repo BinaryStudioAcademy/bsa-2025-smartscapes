@@ -1,9 +1,15 @@
 import { type Entity } from "~/libs/types/types.js";
 
+import { type GroupEntity } from "../groups/group.entity.js";
+
 class UserEntity implements Entity {
 	private email: string;
 
 	private firstName: string;
+
+	private group: null | ReturnType<GroupEntity["toObject"]>;
+
+	private groupId: number;
 
 	private id: null | number;
 
@@ -16,6 +22,8 @@ class UserEntity implements Entity {
 	private constructor({
 		email,
 		firstName,
+		group,
+		groupId,
 		id,
 		lastName,
 		passwordHash,
@@ -23,6 +31,8 @@ class UserEntity implements Entity {
 	}: {
 		email: string;
 		firstName: string;
+		group: null | ReturnType<GroupEntity["toObject"]>;
+		groupId: number;
 		id: null | number;
 		lastName: string;
 		passwordHash: string;
@@ -34,11 +44,15 @@ class UserEntity implements Entity {
 		this.lastName = lastName;
 		this.passwordHash = passwordHash;
 		this.passwordSalt = passwordSalt;
+		this.group = group;
+		this.groupId = groupId;
 	}
 
 	public static initialize({
 		email,
 		firstName,
+		group,
+		groupId,
 		id,
 		lastName,
 		passwordHash,
@@ -46,6 +60,8 @@ class UserEntity implements Entity {
 	}: {
 		email: string;
 		firstName: string;
+		group: null | ReturnType<GroupEntity["toObject"]>;
+		groupId: number;
 		id: number;
 		lastName: string;
 		passwordHash: string;
@@ -54,6 +70,8 @@ class UserEntity implements Entity {
 		return new UserEntity({
 			email,
 			firstName,
+			group,
+			groupId,
 			id,
 			lastName,
 			passwordHash,
@@ -64,12 +82,14 @@ class UserEntity implements Entity {
 	public static initializeNew({
 		email,
 		firstName,
+		groupId,
 		lastName,
 		passwordHash,
 		passwordSalt,
 	}: {
 		email: string;
 		firstName: string;
+		groupId: number;
 		lastName: string;
 		passwordHash: string;
 		passwordSalt: string;
@@ -77,6 +97,8 @@ class UserEntity implements Entity {
 		return new UserEntity({
 			email,
 			firstName,
+			group: null,
+			groupId,
 			id: null,
 			lastName,
 			passwordHash,
@@ -87,6 +109,7 @@ class UserEntity implements Entity {
 	public toNewObject(): {
 		email: string;
 		firstName: string;
+		groupId: number;
 		lastName: string;
 		passwordHash: string;
 		passwordSalt: string;
@@ -94,6 +117,7 @@ class UserEntity implements Entity {
 		return {
 			email: this.email,
 			firstName: this.firstName,
+			groupId: this.groupId,
 			lastName: this.lastName,
 			passwordHash: this.passwordHash,
 			passwordSalt: this.passwordSalt,
@@ -103,12 +127,16 @@ class UserEntity implements Entity {
 	public toObject(): {
 		email: string;
 		firstName: string;
+		group: ReturnType<GroupEntity["toObject"]>;
+		groupId: number;
 		id: number;
 		lastName: string;
 	} {
 		return {
 			email: this.email,
 			firstName: this.firstName,
+			group: this.group as ReturnType<GroupEntity["toObject"]>,
+			groupId: this.groupId,
 			id: this.id as number,
 			lastName: this.lastName,
 		};

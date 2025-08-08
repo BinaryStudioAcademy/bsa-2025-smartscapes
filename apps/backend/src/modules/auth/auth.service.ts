@@ -63,6 +63,8 @@ class AuthService {
 			user: {
 				email,
 				firstName: user.firstName,
+				group: user.group,
+				groupId: user.groupId,
 				id: user.id,
 				lastName: user.lastName,
 			},
@@ -73,9 +75,15 @@ class AuthService {
 		userRequestDto: UserSignUpRequestDto,
 	): Promise<UserSignUpResponseDto> {
 		const user = await this.userService.create(userRequestDto);
-		const token = await this.tokenService.create({ userId: user.id });
 
-		return { token, user };
+		const token = await this.tokenService.create({
+			userId: user.id,
+		});
+
+		return {
+			token,
+			user,
+		};
 	}
 }
 

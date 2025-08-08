@@ -25,8 +25,26 @@ describe("NotificationController", () => {
 	};
 
 	const mockUser: UserAuthResponseDto = {
-		email: "example@example.com",
+		email: "test@example.com",
 		firstName: "John",
+		group: {
+			id: 2,
+			key: "users",
+			name: "Users",
+			permissions: [
+				{
+					id: 1,
+					key: "read",
+					name: "Read Permission",
+				},
+				{
+					id: 2,
+					key: "write",
+					name: "Write Permission",
+				},
+			],
+		},
+		groupId: 2,
 		id: 42,
 		lastName: "Doe",
 	};

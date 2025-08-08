@@ -1,5 +1,21 @@
-import { HTTPError } from "~/libs/modules/http/http.js";
+import { UserExceptionMessage, type ValueOf } from "@smartscapes/shared";
 
-class UserError extends HTTPError {}
+import { HTTPCode, HTTPError } from "~/libs/modules/http/http.js";
+
+type Constructor = {
+	cause?: unknown;
+	message?: string;
+	status?: ValueOf<typeof HTTPCode>;
+};
+
+class UserError extends HTTPError {
+	public constructor({
+		cause,
+		message = UserExceptionMessage.INVALID_CREDENTIALS,
+		status = HTTPCode.UNAUTHORIZED,
+	}: Constructor = {}) {
+		super({ cause, message, status });
+	}
+}
 
 export { UserError };

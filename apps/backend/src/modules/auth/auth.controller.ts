@@ -6,8 +6,8 @@ import {
 } from "~/libs/modules/controller/controller.js";
 import { HTTPCode } from "~/libs/modules/http/http.js";
 import { type Logger } from "~/libs/modules/logger/logger.js";
-import { type UserAuthResponseDto } from "~/libs/types/types.js";
 import {
+	type UserAuthResponseDto,
 	type UserSignInRequestDto,
 	type UserSignInResponseDto,
 	userSignInValidationSchema,
@@ -87,10 +87,14 @@ import { AuthError } from "./libs/exceptions/unauthorized.exception.js";
  *         - email
  *         - firstName
  *         - lastName
+ *         - groupId
+ *         - group
+ *         - passwordHash
+ *         - passwordSalt
  *       properties:
  *         id:
  *           type: integer
- *           example: 1
+ *           example: 2
  *         email:
  *           type: string
  *           format: email
@@ -101,6 +105,46 @@ import { AuthError } from "./libs/exceptions/unauthorized.exception.js";
  *         lastName:
  *           type: string
  *           example: Doe
+ *         groupId:
+ *           type: integer
+ *           example: 2
+ *         passwordHash:
+ *           type: string
+ *           example: "$2b$10$fMtQDVp3qhp1cCcsT2g6pu3NQRJvBxXbokwTCiGGXn1eABtE9Vtxy"
+ *         passwordSalt:
+ *           type: string
+ *           example: "$2b$10$fMtQDVp3qhp1cCcsT2g6pu"
+ *         group:
+ *           type: object
+ *           required:
+ *             - id
+ *             - key
+ *             - name
+ *             - permissions
+ *           properties:
+ *             id:
+ *               type: integer
+ *               example: 2
+ *             key:
+ *               type: string
+ *               example: users
+ *             name:
+ *               type: string
+ *               example: Users
+ *             permissions:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                     example: 1
+ *                   key:
+ *                     type: string
+ *                     example: read
+ *                   name:
+ *                     type: string
+ *                     example: Read
  *
  *     UserSignInResponseDto:
  *       type: object
@@ -110,20 +154,64 @@ import { AuthError } from "./libs/exceptions/unauthorized.exception.js";
  *       properties:
  *         token:
  *           type: string
- *           example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+ *           example: "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjIsImlhdCI6MTc1NDU3MDMwNiwiZXhwIjoxNzU0NjU2NzA2fQ.rNhA-qyuCbJYF-1G4RjI_LE3O_XosoCsJcDi6oQdPgg"
  *         user:
  *           type: object
  *           required:
  *             - id
  *             - email
+ *             - firstName
+ *             - lastName
+ *             - groupId
+ *             - group
  *           properties:
+ *             id:
+ *               type: integer
+ *               example: 2
  *             email:
  *               type: string
  *               format: email
- *               example: user@example.com
- *             id:
+ *               example: "user@example.com"
+ *             firstName:
+ *               type: string
+ *               example: "John"
+ *             lastName:
+ *               type: string
+ *               example: "Doe"
+ *             groupId:
  *               type: integer
- *               example: 1
+ *               example: 2
+ *             group:
+ *               type: object
+ *               required:
+ *                 - id
+ *                 - key
+ *                 - name
+ *                 - permissions
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                   example: 2
+ *                 key:
+ *                   type: string
+ *                   example: "users"
+ *                 name:
+ *                   type: string
+ *                   example: "Users"
+ *                 permissions:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         example: 1
+ *                       key:
+ *                         type: string
+ *                         example: "read"
+ *                       name:
+ *                         type: string
+ *                         example: "Read"
  *
  *     UserSignUpResponseDto:
  *       type: object
