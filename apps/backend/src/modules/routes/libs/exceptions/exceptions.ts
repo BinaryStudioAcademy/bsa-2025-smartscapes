@@ -1,1 +1,1 @@
-export { RoutesError } from "./routes-error.exception.js";
+export { RoutesError } from "./routes.exception.js";

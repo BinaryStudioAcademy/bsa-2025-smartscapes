@@ -1,0 +1,5 @@
+const DEBOUNCER_CONFIG = {
+	RESET_TIME: 60_000,
+};
+
+export { DEBOUNCER_CONFIG };

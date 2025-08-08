@@ -1,1 +1,6 @@
-export { type HTTPMethod } from "@smartscapes/shared";
+export {
+	type HTTP,
+	type HTTPMethod,
+	type HTTPOptions,
+	type HTTPResponse,
+} from "@smartscapes/shared";

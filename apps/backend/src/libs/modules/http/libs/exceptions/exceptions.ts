@@ -1,1 +1,1 @@
-export { HTTPError } from "@smartscapes/shared";
+export { HTTPClientError } from "./http-error.exception.js";

@@ -1,1 +1,1 @@
-export { HTTPCode } from "@smartscapes/shared";
+export { HTTPCode, HTTPHeader } from "@smartscapes/shared";

@@ -1,4 +1,5 @@
 import { type HTTPMethod } from "~/libs/modules/http/http.js";
+import { type ServerApplicationRouteParameters } from "~/libs/modules/server-application/server-application.js";
 import { type ValidationSchema } from "~/libs/types/types.js";
 
 import { type APIHandlerOptions } from "./api-handler-options.type.js";
@@ -10,6 +11,7 @@ type ControllerRouteParameters<
 	handler: APIHandler<HandlerOptions>;
 	method: HTTPMethod;
 	path: string;
+	preHandlers?: ServerApplicationRouteParameters["preHandlers"];
 	validation?: {
 		body?: ValidationSchema;
 		query?: ValidationSchema;
