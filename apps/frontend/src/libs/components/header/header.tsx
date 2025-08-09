@@ -2,7 +2,8 @@ import { type JSX } from "react";
 
 import appLogo from "~/assets/images/logo.svg";
 import { AppRoute } from "~/libs/enums/enums.js";
-import { type UserAuthResponseDto, type ValueOf } from "~/libs/types/types.js";
+import { type ValueOf } from "~/libs/types/types.js";
+import { type UserAuthResponseDto } from "~/modules/users/users.js";
 
 import { Avatar, Button, Link } from "../components.js";
 import styles from "./styles.module.css";
@@ -12,7 +13,8 @@ type Properties = {
 		label: string;
 		to: ValueOf<typeof AppRoute>;
 	}[];
-	user: null | UserAuthResponseDto;
+
+	user: null | (UserAuthResponseDto & { avatarUrl?: null | string });
 };
 
 const Header = ({ actions, user }: Properties): JSX.Element => {
@@ -20,7 +22,9 @@ const Header = ({ actions, user }: Properties): JSX.Element => {
 		if (user) {
 			return (
 				<div className={styles["user-info"]}>
-					<Avatar user={user} />
+					<Avatar
+						user={user as UserAuthResponseDto & { avatarUrl?: null | string }}
+					/>
 					<div className={styles["name"]}>
 						{user.firstName} {user.lastName}
 					</div>

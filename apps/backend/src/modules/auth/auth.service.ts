@@ -1,6 +1,8 @@
 import { type encryption } from "~/libs/modules/encryption/libs/encryption.js";
 import { type BaseToken } from "~/libs/modules/token/token.js";
 import {
+	type UserAuthPatchRequestDto,
+	type UserAuthPatchResponseDto,
 	type UserService,
 	type UserSignInRequestDto,
 	type UserSignInResponseDto,
@@ -30,6 +32,15 @@ class AuthService {
 		this.encryptionService = encryptionService;
 		this.tokenService = tokenService;
 		this.userService = userService;
+	}
+
+	public async patch(
+		id: number,
+		userRequestDto: UserAuthPatchRequestDto,
+	): Promise<UserAuthPatchResponseDto> {
+		const user = await this.userService.patch(id, userRequestDto);
+
+		return user;
 	}
 
 	public async signIn(

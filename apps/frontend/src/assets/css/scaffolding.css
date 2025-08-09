@@ -12,6 +12,7 @@ body {
 	font-size: var(--font-size-small);
 	line-height: 1.5;
 	color: var(--color-text-strong);
+	background-color: var(--color-background-base);
 }
 
 #root {

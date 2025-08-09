@@ -17,17 +17,19 @@ const initialState: State = {
 };
 
 const { actions, name, reducer } = createSlice({
-	extraReducers(builder) {
-		builder.addCase(loadAll.pending, (state) => {
-			state.dataStatus = DataStatus.PENDING;
-		});
-		builder.addCase(loadAll.fulfilled, (state, action) => {
-			state.data = action.payload.data;
-			state.dataStatus = DataStatus.FULFILLED;
-		});
-		builder.addCase(loadAll.rejected, (state) => {
-			state.dataStatus = DataStatus.REJECTED;
-		});
+	extraReducers: (builder) => {
+		builder
+			.addCase(loadAll.fulfilled, (state, action) => {
+				state.data = action.payload.data;
+				state.dataStatus = DataStatus.FULFILLED;
+			})
+			.addCase(loadAll.pending, (state) => {
+				state.dataStatus = DataStatus.PENDING;
+			})
+			.addCase(loadAll.rejected, (state) => {
+				state.dataStatus = DataStatus.REJECTED;
+				state.data = [];
+			});
 	},
 	initialState,
 	name: "users",

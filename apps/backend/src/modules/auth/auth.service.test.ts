@@ -13,6 +13,8 @@ import {
 	type UserSignUpResponseDto,
 } from "~/modules/users/users.js";
 
+import { type UserPasswordDetails } from "../users/libs/types/user-password-details.type.js";
+
 describe("AuthService", () => {
 	const signUpRequestDto: UserSignUpRequestDto = {
 		confirmPassword: "Password123!",
@@ -87,7 +89,8 @@ describe("AuthService", () => {
 			password: "Password123!",
 		};
 
-		const mockPasswordDetails = {
+		const mockPasswordDetails: UserPasswordDetails = {
+			email: signInRequestDto.email,
 			firstName: "John",
 			id: 1,
 			lastName: "Doe",
