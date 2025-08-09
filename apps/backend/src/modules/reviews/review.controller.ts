@@ -30,10 +30,11 @@ import { reviewCreateValidationSchema } from "./libs/validation-schemas/validati
  *         routeId:
  *           type: integer
  *           nullable: true
+ *           example: null
  *         poiId:
  *           type: integer
  *           nullable: true
- *
+ *           example: 1
  *     Review:
  *       type: object
  *       properties:
@@ -105,6 +106,16 @@ class ReviewController extends BaseController {
 	 *               properties:
 	 *                 data:
 	 *                  $ref: '#/components/schemas/ReviewGetByIdResponseDto'
+	 *       404:
+	 *        description: Route or POI not found
+	 *        content:
+	 *          application/json:
+	 *            schema:
+	 *              type: object
+	 *              properties:
+	 *                message:
+	 *                  type: string
+	 *                  example: "A point of interest with the specified ID was not found."
 	 */
 
 	public async create(

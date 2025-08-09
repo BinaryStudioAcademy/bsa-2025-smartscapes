@@ -13,4 +13,4 @@ const routesService = new RoutesService(
 );
 const routesController = new RoutesController(logger, routesService);
 
-export { routesController };
+export { routesController, routesService };
