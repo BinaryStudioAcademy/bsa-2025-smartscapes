@@ -1,0 +1,32 @@
+.custom-marker-controls {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+}
+
+.map-explorer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 300px;
+	padding: 1rem;
+	margin: 10px;
+	background-color: var(--color-base);
+	border-radius: 8px;
+}
+
+.map-controls {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 100%;
+}
+
+.controls-section {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+}

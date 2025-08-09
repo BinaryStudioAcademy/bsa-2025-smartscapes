@@ -17,6 +17,13 @@ const config = ({ mode }: ConfigEnv): ReturnType<typeof defineConfig> => {
 		build: {
 			cssMinify: "lightningcss",
 			outDir: "build",
+			rollupOptions: {
+				output: {
+					manualChunks: {
+						mapbox: ["mapbox-gl"],
+					},
+				},
+			},
 		},
 		css: {
 			lightningcss: {
