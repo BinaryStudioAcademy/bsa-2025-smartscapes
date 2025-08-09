@@ -12,11 +12,28 @@
 	margin: 0 auto;
 }
 
+.user-profile-wrapper {
+	position: relative;
+}
+
 .user-info {
 	display: flex;
 	gap: 8px;
 	align-items: center;
 	padding: 8px 16px;
+	cursor: pointer;
+	background: none;
+	border: none;
+}
+
+.dropdown-arrow {
+	display: flex;
+	color: var(--color-fill-press);
+	transition: transform 0.2s ease-in-out;
+}
+
+.dropdown-arrow.open {
+	transform: rotate(180deg);
 }
 
 .buttons {

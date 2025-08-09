@@ -4,7 +4,7 @@ import { type UserAuthResponseDto } from "@smartscapes/shared";
 import { DataStatus } from "~/libs/enums/enums.js";
 import { type ValueOf } from "~/libs/types/types.js";
 
-import { getAuthenticatedUser, signIn, signUp } from "./actions.js";
+import { getAuthenticatedUser, logout, signIn, signUp } from "./actions.js";
 
 type State = {
 	authenticatedUser: null | UserAuthResponseDto;
@@ -32,6 +32,11 @@ const { actions, name, reducer } = createSlice({
 			state.authenticatedUser = null;
 			state.dataStatus = DataStatus.REJECTED;
 			state.isInitialized = true;
+		});
+
+		builder.addCase(logout.fulfilled, (state) => {
+			state.authenticatedUser = null;
+			state.dataStatus = DataStatus.FULFILLED;
 		});
 
 		builder.addCase(signUp.fulfilled, (state, action) => {

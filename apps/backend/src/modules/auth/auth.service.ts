@@ -8,8 +8,8 @@ import {
 	type UserSignUpResponseDto,
 } from "~/modules/users/users.js";
 
-import { AuthorizationExceptionMessage } from "./libs/enums/enums.js";
-import { AuthorizationError } from "./libs/exceptions/auth.exception.js";
+import { AuthExceptionMessage } from "./libs/enums/enums.js";
+import { AuthError } from "./libs/exceptions/auth.exception.js";
 
 type Constructor = {
 	encryptionService: typeof encryption;
@@ -40,8 +40,8 @@ class AuthService {
 		const user = await this.userService.findPasswordDetails(email);
 
 		if (!user) {
-			throw new AuthorizationError({
-				message: AuthorizationExceptionMessage.INVALID_CREDENTIALS,
+			throw new AuthError({
+				message: AuthExceptionMessage.UNAUTHORIZED_REQUEST,
 			});
 		}
 
@@ -51,8 +51,8 @@ class AuthService {
 		);
 
 		if (!arePasswordsMatch) {
-			throw new AuthorizationError({
-				message: AuthorizationExceptionMessage.INVALID_CREDENTIALS,
+			throw new AuthError({
+				message: AuthExceptionMessage.INVALID_CREDENTIALS,
 			});
 		}
 

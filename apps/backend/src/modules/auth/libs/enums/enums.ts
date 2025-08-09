@@ -1,2 +1,1 @@
-export { AuthorizationExceptionMessage } from "./authorization-exception-message.enum.js";
-export { AuthApiPath } from "@smartscapes/shared";
+export { AuthApiPath, AuthExceptionMessage } from "@smartscapes/shared";

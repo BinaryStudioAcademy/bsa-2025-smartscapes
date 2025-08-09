@@ -18,7 +18,7 @@ import {
 
 import { type AuthService } from "./auth.service.js";
 import { AuthApiPath } from "./libs/enums/enums.js";
-import { AuthError } from "./libs/exceptions/unauthorized.exception.js";
+import { AuthError } from "./libs/exceptions/auth.exception.js";
 
 /**
  * @swagger
@@ -203,6 +203,7 @@ class AuthController extends BaseController {
 			status: HTTPCode.OK,
 		};
 	}
+
 	/**
 	 * @swagger
 	 * /auth/sign-in:

@@ -1,0 +1,9 @@
+.user-dropdown {
+	position: absolute;
+	top: 70px;
+	width: 100%;
+	padding: 10px;
+	background-color: var(--color-base);
+	border: 1px solid var(--color-stroke-weak);
+	border-radius: 8px;
+}

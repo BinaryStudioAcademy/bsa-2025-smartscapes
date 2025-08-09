@@ -1,5 +1,6 @@
 const AuthExceptionMessage = {
-	UNAUTHORIZED_REQUEST: "Unauthorized",
+	INVALID_CREDENTIALS: "Invalid credentials.",
+	UNAUTHORIZED_REQUEST: "Unauthorized.",
 } as const;
 
 export { AuthExceptionMessage };
