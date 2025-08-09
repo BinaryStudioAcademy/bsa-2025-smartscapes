@@ -9,6 +9,7 @@ const DatabaseTableName = {
 	ROUTE_CATEGORIES: "route_categories",
 	ROUTES: "routes",
 	ROUTES_TO_POIS: "routes_to_pois",
+	USER_FOLLOWS: "user_follows",
 	USERS: "users",
 } as const;
 

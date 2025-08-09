@@ -7,6 +7,7 @@ class UserModel extends AbstractModel {
 	public static override get tableName(): string {
 		return DatabaseTableName.USERS;
 	}
+
 	public email!: string;
 
 	public firstName!: string;
