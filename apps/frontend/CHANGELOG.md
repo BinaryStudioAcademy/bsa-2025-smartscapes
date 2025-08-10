@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.16.0...frontend-v1.17.0) (2025-08-10)
+
+
+### Features
+
+* **backend/frontend:** add logout functionality ss-182 ([#249](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/249)) ([e3a03fb](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e3a03fbdc47c9d509d5aef7eb6a77866e122338f))
+
 ## [1.16.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.15.1...frontend-v1.16.0) (2025-08-07)
 
 
