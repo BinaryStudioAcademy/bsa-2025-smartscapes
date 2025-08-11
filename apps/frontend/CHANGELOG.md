@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.19.0...frontend-v1.19.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **frontend:** remove unused type definitions ss-295 ([#311](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/311)) ([6344220](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/634422078c9ba49ac024ae30c1da10b118c3e07f))
+
 ## [1.19.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.18.2...frontend-v1.19.0) (2025-08-11)
 
 
