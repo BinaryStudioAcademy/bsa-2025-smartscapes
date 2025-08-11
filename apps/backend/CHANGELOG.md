@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.17.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.16.0...backend-v1.17.0) (2025-08-11)
+
+
+### Features
+
+* **backend:** added group id for newly created users ss-113 ([#160](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/160)) ([0edf1e9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/0edf1e98400fbeb995c9347fa436401c1e7c5dda))
+
+
+### Bug Fixes
+
+* **backend:** update routes patch endpoint documentation ss-276 ([#308](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/308)) ([a867101](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a867101033bb6b6d3dac3f317cad7bb639483da1))
+* **backend:** update swagger documentation for routes get by id and post endpoints ss-277 ([#320](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/320)) ([46aa32f](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/46aa32ffc2863dea7039dd25679907833f5641d4))
+
 ## [1.16.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.15.0...backend-v1.16.0) (2025-08-11)
 
 

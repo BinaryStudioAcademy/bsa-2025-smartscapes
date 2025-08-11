@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.15.0...shared-v1.16.0) (2025-08-11)
+
+
+### Features
+
+* **backend:** added group id for newly created users ss-113 ([#160](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/160)) ([0edf1e9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/0edf1e98400fbeb995c9347fa436401c1e7c5dda))
+
 ## [1.15.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/shared-v1.14.0...shared-v1.15.0) (2025-08-11)
 
 

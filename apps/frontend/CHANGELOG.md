@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.20.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.19.3...frontend-v1.20.0) (2025-08-11)
+
+
+### Features
+
+* **backend:** added group id for newly created users ss-113 ([#160](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/160)) ([0edf1e9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/0edf1e98400fbeb995c9347fa436401c1e7c5dda))
+
+
+### Bug Fixes
+
+* **frontend:** use mapbox csp version ss-295 ([#321](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/321)) ([ea80103](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/ea80103fd510152826907430be923fc6d80104ff))
+
 ## [1.19.3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.19.2...frontend-v1.19.3) (2025-08-11)
 
 
