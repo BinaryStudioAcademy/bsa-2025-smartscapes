@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.25.1...v1.25.2) (2025-08-11)
+
+
+### Bug Fixes
+
+* **frontend:** remove files from tsconfig on frontend ss-295 ([#313](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/313)) ([14ab113](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/14ab113120aeae9d558dd6b9f6ecc208a2b9f129))
+
 ## [1.25.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.25.0...v1.25.1) (2025-08-11)
 
 
