@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.17.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.17.0...backend-v1.17.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **backend:** update follow route path in swagger to match code (ss-300) ([#301](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/301)) ([b120845](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b12084513e543929ef76991094617f93083542be))
+* **backend:** update route validation schema handling ss-280 ([#317](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/317)) ([5d99172](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/5d991720aebb38a1a9bddfd5f67963a9331f2c3a))
+
 ## [1.17.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.16.0...backend-v1.17.0) (2025-08-11)
 
 
