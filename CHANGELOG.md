@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.21.0...v1.21.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **root:** use direct environment url instead of secrets in cd workflow ss-291 ([#294](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/294)) ([f2e1384](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/f2e1384e67708f4fdf3ae31bf80c5a53f5b4a038))
+
 ## [1.21.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.20.0...v1.21.0) (2025-08-11)
 
 
