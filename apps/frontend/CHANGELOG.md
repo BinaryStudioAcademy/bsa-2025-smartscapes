@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.19.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.18.2...frontend-v1.19.0) (2025-08-11)
+
+
+### Features
+
+* **backend/shared:** mapbox api integration ss-193 ([#223](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/223)) ([e7511ca](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e7511cabbee2440584cb1b1d6efaa672293f33fb))
+
+
+### Bug Fixes
+
+* **frontend:** set headers for mapbox api ss-295 ([#309](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/309)) ([3e433b0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3e433b01e74d8dbc1bccc7392b5ec874e5f9622e))
+
 ## [1.18.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.18.1...frontend-v1.18.2) (2025-08-11)
 
 

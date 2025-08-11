@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.15.0...backend-v1.16.0) (2025-08-11)
+
+
+### Features
+
+* **backend/shared:** mapbox api integration ss-193 ([#223](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/223)) ([e7511ca](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e7511cabbee2440584cb1b1d6efaa672293f33fb))
+
 ## [1.15.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.14.0...backend-v1.15.0) (2025-08-11)
 
 
