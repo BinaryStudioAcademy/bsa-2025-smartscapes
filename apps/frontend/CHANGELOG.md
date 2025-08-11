@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.19.2...frontend-v1.19.3) (2025-08-11)
+
+
+### Bug Fixes
+
+* **frontend:** increase cache file size ss-295 ([#315](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/315)) ([3049b21](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3049b21c3ec55eacbdcea0f85017a6f15a859755))
+
 ## [1.19.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.19.1...frontend-v1.19.2) (2025-08-11)
 
 
