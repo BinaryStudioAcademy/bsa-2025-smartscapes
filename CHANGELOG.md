@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.21.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.20.0...v1.21.0) (2025-08-11)
+
+
+### Features
+
+* **frontend/backend/shared:** profile page ss-185 ([#218](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/218)) ([a63adc4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a63adc4fd0165cd92fc9bb4d96a5fc623686c7d4))
+* **frontend:** implement basic maps integration ss-116 ([#215](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/215)) ([ff60cc5](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/ff60cc510a380b999b857d27b609f91d70afc16c))
+
 ## [1.20.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.19.1...v1.20.0) (2025-08-10)
 
 
