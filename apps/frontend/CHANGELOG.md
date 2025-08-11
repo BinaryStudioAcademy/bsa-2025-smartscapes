@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.18.0...frontend-v1.18.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **frontend:** use mapbox csp version to avoid worker csp errors ss-295 ([#302](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/302)) ([bc11616](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/bc1161672c089646a803f2c362f5a9d54e0680f8))
+
 ## [1.18.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.17.0...frontend-v1.18.0) (2025-08-11)
 
 
