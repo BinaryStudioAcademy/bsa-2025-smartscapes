@@ -1,4 +1,5 @@
 import Analytics from "~/assets/images/icons/analytics.svg?react";
+import ArrowDown from "~/assets/images/icons/arrow-down.svg?react";
 import Close from "~/assets/images/icons/close.svg?react";
 import Dashboard from "~/assets/images/icons/dashboard.svg?react";
 import Map from "~/assets/images/icons/map.svg?react";
@@ -13,6 +14,7 @@ const iconNameToSvg: Record<
 	React.ComponentType<React.SVGProps<SVGSVGElement>>
 > = {
 	analytics: Analytics,
+	arrowDown: ArrowDown,
 	close: Close,
 	dashboard: Dashboard,
 	map: Map,

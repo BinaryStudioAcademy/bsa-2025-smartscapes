@@ -1,0 +1,33 @@
+.user-profile-wrapper {
+	position: relative;
+}
+
+.user-info {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	padding: 8px 16px;
+	cursor: pointer;
+	background: none;
+	border: none;
+}
+
+.arrow-down {
+	display: flex;
+	color: var(--color-fill-press);
+	transition: transform 0.2s ease-in-out;
+}
+
+.arrow-down.open {
+	transform: rotate(180deg);
+}
+
+.dropdown-container {
+	position: absolute;
+	top: 70px;
+	width: 100%;
+}
+
+.hidden {
+	display: none;
+}

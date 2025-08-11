@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.15.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.14.0...backend-v1.15.0) (2025-08-11)
+
+
+### Features
+
+* **frontend/backend/shared:** profile page ss-185 ([#218](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/218)) ([a63adc4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a63adc4fd0165cd92fc9bb4d96a5fc623686c7d4))
+
+## [1.14.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.13.2...backend-v1.14.0) (2025-08-10)
+
+
+### Features
+
+* **backend/frontend:** add logout functionality ss-182 ([#249](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/249)) ([e3a03fb](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e3a03fbdc47c9d509d5aef7eb6a77866e122338f))
+* **backend/shared:** add followers module ss-72 ([#136](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/136)) ([3b63b29](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3b63b2952a6b4e62d7e46b91fe2825f2c307c509))
+
+
+### Bug Fixes
+
+* **backend:** format swagger docs ss-285 ([#286](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/286)) ([00f42c0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/00f42c021b091dc18f181ee246f4531d99fff69b))
+* **backend:** update notification swagger response dto ss-279 ([#289](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/289)) ([c111a97](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c111a97f3b1294de175f9160a75b10b07685c52f))
+
 ## [1.13.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/backend-v1.13.1...backend-v1.13.2) (2025-08-07)
 
 

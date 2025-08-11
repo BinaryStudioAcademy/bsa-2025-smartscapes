@@ -1,6 +1,8 @@
-import { HTTPCode, HTTPError, type ValueOf } from "@smartscapes/shared";
+import { HTTPCode } from "~/libs/enums/enums.js";
+import { HTTPError } from "~/libs/modules/http/http.js";
+import { type ValueOf } from "~/libs/types/types.js";
 
-import { AuthorizationExceptionMessage } from "~/modules/auth/libs/enums/enums.js";
+import { AuthExceptionMessage } from "../enums/enums.js";
 
 type Constructor = {
 	cause?: unknown;
@@ -8,14 +10,14 @@ type Constructor = {
 	status?: ValueOf<typeof HTTPCode>;
 };
 
-class AuthorizationError extends HTTPError {
+class AuthError extends HTTPError {
 	public constructor({
 		cause,
-		message = AuthorizationExceptionMessage.INVALID_CREDENTIALS,
+		message = AuthExceptionMessage.UNAUTHORIZED_REQUEST,
 		status = HTTPCode.UNAUTHORIZED,
 	}: Constructor = {}) {
 		super({ cause, message, status });
 	}
 }
 
-export { AuthorizationError };
+export { AuthError };

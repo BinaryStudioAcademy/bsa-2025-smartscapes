@@ -2,9 +2,11 @@ import { type JSX } from "react";
 
 import appLogo from "~/assets/images/logo.svg";
 import { AppRoute } from "~/libs/enums/enums.js";
-import { type UserAuthResponseDto, type ValueOf } from "~/libs/types/types.js";
+import { type ValueOf } from "~/libs/types/types.js";
+import { type UserAuthResponseDto } from "~/modules/users/libs/types/types.js";
 
-import { Avatar, Button, Link } from "../components.js";
+import { Button, Link } from "../components.js";
+import { AuthenticatedHeader } from "./libs/components/authenticated-header/authenticated-header.js";
 import styles from "./styles.module.css";
 
 type Properties = {
@@ -18,14 +20,7 @@ type Properties = {
 const Header = ({ actions, user }: Properties): JSX.Element => {
 	const renderHeaderContent = (): JSX.Element => {
 		if (user) {
-			return (
-				<div className={styles["user-info"]}>
-					<Avatar user={user} />
-					<div className={styles["name"]}>
-						{user.firstName} {user.lastName}
-					</div>
-				</div>
-			);
+			return <AuthenticatedHeader user={user} />;
 		}
 
 		return (

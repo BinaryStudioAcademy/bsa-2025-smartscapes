@@ -16,6 +16,10 @@ concurrency:
 
 jobs:
   release:
+    environment:
+      name: development
+      url: https://smart-scapes.com/
+
     permissions:
       contents: write
       pull-requests: write
@@ -37,11 +41,13 @@ jobs:
           manifest-file: .release-please-manifest.json
           config-file: release-please-config.json
 
-      - name: Prepare deployment pkg
+      - name: Prepare Deployment Package
+        if: steps.release.outputs.release_created == 'true'
         run: |
           zip -r build.zip . -x .github
 
       - name: Deploy to EBS
+        if: steps.release.outputs.release_created == 'true'
         uses: einaregilsson/beanstalk-deploy@v22
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}

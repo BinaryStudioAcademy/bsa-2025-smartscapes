@@ -1,3 +1,5 @@
+export { type AuthenticatedUserPatchRequestDto } from "./authenticated-user-patch-request-dto.type.js";
+export { type AuthenticatedUserPatchResponseDto } from "./authenticated-user-patch-response-dto.type.js";
 export { type UserAuthResponseDto } from "./user-auth-response-dto.type.js";
 export { type UserGetByIdItemResponseDto } from "./user-get-all-item-response-dto.type.js";
 export { type UserSignInRequestDto } from "./user-sign-in-request-dto.type.js";

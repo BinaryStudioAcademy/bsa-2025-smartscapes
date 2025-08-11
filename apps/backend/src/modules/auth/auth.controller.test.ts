@@ -5,6 +5,8 @@ import { type APIHandlerOptions } from "~/libs/modules/controller/controller.js"
 import { HTTPCode } from "~/libs/modules/http/http.js";
 import { type Logger } from "~/libs/modules/logger/logger.js";
 import {
+	type AuthenticatedUserPatchRequestDto,
+	type AuthenticatedUserPatchResponseDto,
 	type UserGetByIdItemResponseDto,
 	type UserSignUpRequestDto,
 	type UserSignUpResponseDto,
@@ -23,12 +25,55 @@ describe("AuthController", () => {
 		lastName: "Doe",
 	};
 
+	const mockPatchUser: AuthenticatedUserPatchResponseDto = {
+		email: "test@example.com",
+		firstName: "Jane",
+		id: 1,
+		lastName: "Smith",
+	};
+
 	const mockLogger: Logger = {
 		debug: () => {},
 		error: () => {},
 		info: () => {},
 		warn: () => {},
 	};
+
+	it("patch should return updated user information", async () => {
+		const updatedUser = {
+			...mockPatchUser,
+			firstName: "Jane",
+			lastName: "Smith",
+		};
+
+		const mockPatch: AuthService["patch"] = () => {
+			return Promise.resolve(updatedUser);
+		};
+
+		const authService = {
+			patch: mockPatch,
+		} as AuthService;
+
+		const authController = new AuthController(mockLogger, authService);
+
+		const patchOptions = {
+			body: {
+				firstName: "Jane",
+				lastName: "Smith",
+			} as AuthenticatedUserPatchRequestDto,
+			params: { id: "1" },
+		} as APIHandlerOptions<{
+			body: AuthenticatedUserPatchRequestDto;
+			params: { id: string };
+		}>;
+
+		const result = await authController.patch(patchOptions);
+
+		assert.deepStrictEqual(result, {
+			payload: { data: updatedUser },
+			status: HTTPCode.OK,
+		});
+	});
 
 	it("signUp should create and return token and new user", async () => {
 		const mockResponseData: UserSignUpResponseDto = {
@@ -50,6 +95,7 @@ describe("AuthController", () => {
 
 		const signUpOptions = {
 			body: {
+				confirmPassword: "Password123!",
 				email: mockUser.email,
 				firstName: mockUser.firstName,
 				lastName: mockUser.lastName,

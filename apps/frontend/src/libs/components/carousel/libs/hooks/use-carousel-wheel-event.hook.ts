@@ -1,3 +1,4 @@
+import { EventListenerType } from "~/libs/enums/enums.js";
 import { useCallback, useEffect } from "~/libs/hooks/hooks.js";
 
 import { CAROUSEL_CONFIG } from "../constants/constants.js";
@@ -27,10 +28,12 @@ const useCarouselWheelEvent = (
 		const element = carouselReference.element.current;
 
 		if (element) {
-			element.addEventListener("wheel", handleWheelEvent, { passive: false });
+			element.addEventListener(EventListenerType.WHEEL, handleWheelEvent, {
+				passive: false,
+			});
 
 			return (): void => {
-				element.removeEventListener("wheel", handleWheelEvent);
+				element.removeEventListener(EventListenerType.WHEEL, handleWheelEvent);
 			};
 		}
 	}, [handleWheelEvent, carouselReference.element]);

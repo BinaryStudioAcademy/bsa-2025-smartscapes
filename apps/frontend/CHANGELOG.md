@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.18.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.17.0...frontend-v1.18.0) (2025-08-11)
+
+
+### Features
+
+* **frontend/backend/shared:** profile page ss-185 ([#218](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/218)) ([a63adc4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a63adc4fd0165cd92fc9bb4d96a5fc623686c7d4))
+* **frontend:** implement basic maps integration ss-116 ([#215](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/215)) ([ff60cc5](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/ff60cc510a380b999b857d27b609f91d70afc16c))
+
+## [1.17.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.16.0...frontend-v1.17.0) (2025-08-10)
+
+
+### Features
+
+* **backend/frontend:** add logout functionality ss-182 ([#249](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/249)) ([e3a03fb](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e3a03fbdc47c9d509d5aef7eb6a77866e122338f))
+
 ## [1.16.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/frontend-v1.15.1...frontend-v1.16.0) (2025-08-07)
 
 

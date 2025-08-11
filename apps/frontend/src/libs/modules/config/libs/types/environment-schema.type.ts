@@ -8,6 +8,9 @@ type EnvironmentSchema = {
 	APP: {
 		ENVIRONMENT: ValueOf<typeof AppEnvironment>;
 	};
+	MAPBOX: {
+		ACCESS_TOKEN: string;
+	};
 };
 
 export { type EnvironmentSchema };

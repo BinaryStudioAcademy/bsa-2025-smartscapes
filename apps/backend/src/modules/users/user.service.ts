@@ -7,6 +7,8 @@ import { type UserRepository } from "~/modules/users/user.repository.js";
 
 import { UserError } from "./libs/exceptions/exceptions.js";
 import {
+	type AuthenticatedUserPatchRequestDto,
+	type AuthenticatedUserPatchResponseDto,
 	type UserGetByIdItemResponseDto,
 	type UserPasswordDetails,
 	type UserSignUpRequestDto,
@@ -76,6 +78,22 @@ class UserService implements Service {
 		email: string,
 	): Promise<null | UserPasswordDetails> {
 		return await this.userRepository.findPasswordDetails(email);
+	}
+
+	public async patch(
+		id: number,
+		payload: AuthenticatedUserPatchRequestDto,
+	): Promise<AuthenticatedUserPatchResponseDto> {
+		const item = await this.userRepository.patch(id, payload);
+
+		if (!item) {
+			throw new UserError({
+				message: UserExceptionMessage.USER_NOT_FOUND,
+				status: HTTPCode.NOT_FOUND,
+			});
+		}
+
+		return item.toObject();
 	}
 }
 

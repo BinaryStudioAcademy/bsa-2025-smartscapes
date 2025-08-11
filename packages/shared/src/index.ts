@@ -66,6 +66,16 @@ export {
 	routesUpdateValidationSchema,
 } from "./modules/routes/routes.js";
 export {
+	UserFollowsApiPath,
+	UserFollowsExceptionMessage,
+	type UserFollowsParametersDto,
+	type UserFollowsRequestDto,
+	type UserUnfollowsParametersDto,
+} from "./modules/user-follows/user-follows.js";
+export {
+	type AuthenticatedUserPatchRequestDto,
+	type AuthenticatedUserPatchResponseDto,
+	authenticatedUserPatchValidationSchema,
 	type UserAuthResponseDto,
 	UserExceptionMessage,
 	type UserGetByIdItemResponseDto,

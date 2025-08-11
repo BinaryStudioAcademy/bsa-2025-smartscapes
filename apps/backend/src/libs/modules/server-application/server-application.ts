@@ -8,6 +8,7 @@ import { pointsOfInterestController } from "~/modules/points-of-interest/points-
 import { reviewController } from "~/modules/reviews/reviews.js";
 import { routeCategoryController } from "~/modules/route-categories/route-categories.js";
 import { routesController } from "~/modules/routes/routes.js";
+import { userFollowsController } from "~/modules/user-follows/user-follows.js";
 import { userController } from "~/modules/users/users.js";
 
 import { BaseServerApplicationApi } from "./base-server-application-api.js";
@@ -35,7 +36,9 @@ const apiV1 = new BaseServerApplicationApi(
 	...routeCategoryController.routes,
 	...routesController.routes,
 	...userController.routes,
+	...userFollowsController.routes,
 );
+
 const serverApplication = new BaseServerApplication({
 	apis: [apiV1],
 	config,

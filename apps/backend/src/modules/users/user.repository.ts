@@ -1,5 +1,8 @@
 import { type Repository } from "~/libs/types/types.js";
-import { type UserPasswordDetails } from "~/modules/users/libs/types/types.js";
+import {
+	type AuthenticatedUserPatchRequestDto,
+	type UserPasswordDetails,
+} from "~/modules/users/libs/types/types.js";
 import { UserEntity } from "~/modules/users/user.entity.js";
 import { type UserModel } from "~/modules/users/user.model.js";
 
@@ -52,11 +55,34 @@ class UserRepository implements Repository {
 	): Promise<null | UserPasswordDetails> {
 		const user = await this.userModel
 			.query()
-			.select("id", "firstName", "lastName", "passwordHash", "passwordSalt")
+			.select(
+				"id",
+				"passwordHash",
+				"passwordSalt",
+				"email",
+				"firstName",
+				"lastName",
+			)
 			.where("email", email)
 			.first();
 
 		return user ?? null;
+	}
+
+	public async patch(
+		id: number,
+		payload: AuthenticatedUserPatchRequestDto,
+	): Promise<null | UserEntity> {
+		const { firstName, lastName } = payload;
+
+		const [updatedRow] = await this.userModel
+			.query()
+			.patch({ firstName, lastName })
+			.where("id", "=", id)
+			.returning("*")
+			.execute();
+
+		return updatedRow ? UserEntity.initialize(updatedRow) : null;
 	}
 }
 

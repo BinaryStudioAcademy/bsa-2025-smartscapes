@@ -1,7 +1,7 @@
 {
 	"name": "@smartscapes/frontend",
 	"private": true,
-	"version": "1.16.0",
+	"version": "1.18.0",
 	"type": "module",
 	"engines": {
 		"node": ">=22.10.0 <23.0.0",
@@ -21,6 +21,7 @@
 		"@reduxjs/toolkit": "2.8.2",
 		"@smartscapes/shared": "*",
 		"clsx": "2.1.1",
+		"mapbox-gl": "3.14.0",
 		"react": "19.1.0",
 		"react-dom": "19.1.0",
 		"react-hook-form": "7.60.0",

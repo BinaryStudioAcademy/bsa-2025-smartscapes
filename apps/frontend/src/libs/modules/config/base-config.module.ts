@@ -16,6 +16,9 @@ class BaseConfig implements Config {
 					typeof AppEnvironment
 				>,
 			},
+			MAPBOX: {
+				ACCESS_TOKEN: import.meta.env["VITE_APP_MAPBOX_ACCESS_TOKEN"] as string,
+			},
 		};
 	}
 

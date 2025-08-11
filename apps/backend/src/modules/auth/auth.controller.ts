@@ -8,6 +8,8 @@ import { HTTPCode } from "~/libs/modules/http/http.js";
 import { type Logger } from "~/libs/modules/logger/logger.js";
 import { type UserAuthResponseDto } from "~/libs/types/types.js";
 import {
+	type AuthenticatedUserPatchRequestDto,
+	authenticatedUserPatchValidationSchema,
 	type UserSignInRequestDto,
 	type UserSignInResponseDto,
 	userSignInValidationSchema,
@@ -18,7 +20,7 @@ import {
 
 import { type AuthService } from "./auth.service.js";
 import { AuthApiPath } from "./libs/enums/enums.js";
-import { AuthError } from "./libs/exceptions/unauthorized.exception.js";
+import { AuthError } from "./libs/exceptions/auth.exception.js";
 
 /**
  * @swagger
@@ -79,6 +81,39 @@ import { AuthError } from "./libs/exceptions/unauthorized.exception.js";
  *           minLength: 6
  *           maxLength: 64
  *           example: strongP@ssw0rd
+ *
+ *     AuthenticatedUserPatchRequestDto:
+ *       type: object
+ *       properties:
+ *         firstName:
+ *           type: string
+ *           minLength: 2
+ *           maxLength: 64
+ *           pattern: '^[a-zA-Z\\s]+$'
+ *           example: John
+ *         lastName:
+ *           type: string
+ *           minLength: 2
+ *           maxLength: 64
+ *           pattern: '^[a-zA-Z\\s]+$'
+ *           example: Doe
+ *
+ *     AuthenticatedUserPatchResponseDto:
+ *        type: object
+ *        required:
+ *          - id
+ *          - firstName
+ *          - lastName
+ *        properties:
+ *          id:
+ *            type: integer
+ *            example: 1
+ *          firstName:
+ *            type: string
+ *            example: John
+ *          lastName:
+ *            type: string
+ *            example: Doe
  *
  *     UserAuthResponseDto:
  *       type: object
@@ -158,7 +193,7 @@ class AuthController extends BaseController {
 		this.addRoute({
 			handler: this.getAuthenticatedUser.bind(this),
 			method: "GET",
-			path: AuthApiPath.AUTH_USER,
+			path: AuthApiPath.AUTHENTICATED_USER,
 		});
 
 		this.addRoute({
@@ -167,6 +202,15 @@ class AuthController extends BaseController {
 			path: AuthApiPath.SIGN_IN,
 			validation: {
 				body: userSignInValidationSchema,
+			},
+		});
+
+		this.addRoute({
+			handler: this.patch.bind(this),
+			method: "PATCH",
+			path: AuthApiPath.AUTHENTICATED_USER_$ID,
+			validation: {
+				body: authenticatedUserPatchValidationSchema,
 			},
 		});
 	}
@@ -203,6 +247,63 @@ class AuthController extends BaseController {
 			status: HTTPCode.OK,
 		};
 	}
+
+	/**
+	 * @swagger
+	 * /auth/authenticated-user/{id}:
+	 *   patch:
+	 *     security:
+	 *       - bearerAuth: []
+	 *     tags:
+	 *       - Auth
+	 *     summary: Update user information
+	 *     description: |
+	 *       Update the authenticated user's information.
+	 *       Requires a valid JWT token in the Authorization header.
+	 *       Only the user can update their own information.
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         required: true
+	 *         schema:
+	 *           type: string
+	 *         description: User ID to update
+	 *     requestBody:
+	 *       required: true
+	 *       content:
+	 *         application/json:
+	 *           schema:
+	 *             $ref: '#/components/schemas/AuthenticatedUserPatchRequestDto'
+	 *     responses:
+	 *       200:
+	 *         description: User updated successfully
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 data:
+	 *                   $ref: '#/components/schemas/AuthenticatedUserPatchResponseDto'
+	 */
+	public async patch(
+		options: APIHandlerOptions<{
+			body: AuthenticatedUserPatchRequestDto;
+			params: {
+				id: string;
+			};
+		}>,
+	): Promise<APIHandlerResponse<UserAuthResponseDto>> {
+		const { body, params } = options;
+		const id = Number(params.id);
+
+		const result = await this.authService.patch(id, body);
+
+		return {
+			payload: { data: result },
+			status: HTTPCode.OK,
+		};
+	}
+
 	/**
 	 * @swagger
 	 * /auth/sign-in:

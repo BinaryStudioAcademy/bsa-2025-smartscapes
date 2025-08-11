@@ -3,15 +3,17 @@ import { BaseHTTPApi } from "~/libs/modules/api/api.js";
 import { type HTTP } from "~/libs/modules/http/http.js";
 import { type Storage } from "~/libs/modules/storage/storage.js";
 import { type APIResponse } from "~/libs/types/types.js";
-
-import { AuthApiPath } from "./libs/enums/enums.js";
 import {
+	type AuthenticatedUserPatchRequestDto,
+	type AuthenticatedUserPatchResponseDto,
 	type UserAuthResponseDto,
 	type UserSignInRequestDto,
 	type UserSignInResponseDto,
 	type UserSignUpRequestDto,
 	type UserSignUpResponseDto,
-} from "./libs/types/types.js";
+} from "~/modules/users/users.js";
+
+import { AuthApiPath } from "./libs/enums/enums.js";
 
 type Constructor = {
 	baseUrl: string;
@@ -27,11 +29,32 @@ class AuthApi extends BaseHTTPApi {
 		APIResponse<UserAuthResponseDto>
 	> {
 		const response = await this.load<APIResponse<UserAuthResponseDto>>(
-			this.getFullEndpoint(AuthApiPath.AUTH_USER, {}),
+			this.getFullEndpoint(AuthApiPath.AUTHENTICATED_USER, {}),
 			{
 				contentType: ContentType.JSON,
 				hasAuth: true,
 				method: "GET",
+			},
+		);
+
+		return await response.json();
+	}
+
+	public async patch(
+		id: number,
+		payload: AuthenticatedUserPatchRequestDto,
+	): Promise<APIResponse<AuthenticatedUserPatchResponseDto>> {
+		const response = await this.load<
+			APIResponse<AuthenticatedUserPatchResponseDto>
+		>(
+			this.getFullEndpoint(AuthApiPath.AUTHENTICATED_USER_$ID, {
+				id: id.toString(),
+			}),
+			{
+				contentType: ContentType.JSON,
+				hasAuth: true,
+				method: "PATCH",
+				payload: JSON.stringify(payload),
 			},
 		);
 

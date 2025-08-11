@@ -50,34 +50,35 @@ import { type NotificationService } from "~/modules/notifications/notification.s
  *     NotificationGetAllItemResponseDto:
  *       type: object
  *       properties:
- *         id:
- *           type: integer
- *           example: 1
+ *         content:
+ *           type: string
+ *           example: "Someone liked your review."
+ *         createdAt:
+ *           type: string
+ *           format: date-time
  *         entityId:
  *           type: integer
  *           example: 123
  *         entityType:
  *           type: string
  *           example: "users"
+ *         id:
+ *           type: integer
+ *           example: 1
  *         notificationType:
  *           type: string
  *           example: "user_followed"
- *         content:
- *           type: string
- *           example: "Someone liked your review."
  *         readAt:
  *           type: string
  *           format: date-time
  *           nullable: true
- *         userId:
- *           type: integer
- *           example: 1
- *         createdAt:
- *           type: string
- *           format: date-time
  *         updatedAt:
  *           type: string
  *           format: date-time
+ *         userId:
+ *           type: integer
+ *           example: 1
+ *
  */
 class NotificationController extends BaseController {
 	private notificationService: NotificationService;
@@ -124,7 +125,10 @@ class NotificationController extends BaseController {
 	 *         content:
 	 *           application/json:
 	 *             schema:
-	 *               $ref: '#/components/schemas/NotificationGetAllItemResponseDto'
+	 *               type: object
+	 *               properties:
+	 *                 data:
+	 *                  $ref: '#/components/schemas/NotificationGetAllItemResponseDto'
 	 */
 	public async create(
 		options: APIHandlerOptions<{
