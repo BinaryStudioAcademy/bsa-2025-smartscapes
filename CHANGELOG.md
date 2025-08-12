@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.27.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.26.2...v1.27.0) (2025-08-12)
+
+
+### Features
+
+* **backend:** add an ability to search POIs by name ss-246 ([#266](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/266)) ([d2f5128](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d2f512835240b95307f52342bbf3a7c58f9dbada))
+
+
+### Bug Fixes
+
+* **root:** add node-workspace plugin to release please to update dependencies automatically ss-291 ([#350](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/350)) ([588d5f9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/588d5f993412b48b5c07c565fe996327801ed806))
+
 ## [1.26.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.26.1...v1.26.2) (2025-08-12)
 
 
