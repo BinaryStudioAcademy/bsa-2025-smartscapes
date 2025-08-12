@@ -1,0 +1,28 @@
+.container {
+	width: 100%;
+}
+
+.components-container {
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sidebar-container {
+	align-self: flex-start;
+}
+
+.carousel-container {
+	width: 50%;
+	margin-bottom: 1rem;
+}
+
+.select-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 50%;
+	margin-bottom: 10rem;
+}

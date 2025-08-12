@@ -1,0 +1,33 @@
+:global(.Toastify__toast) {
+	font-family: inherit;
+	font-size: var(--font-size-tiny);
+	color: var(--color-text-strong);
+	background-color: var(--color-background-base);
+	border: 1px solid var(--color-fill-grey);
+	border-radius: 8px;
+	box-shadow: 0 4px 12px var(--color-shadow-weak);
+}
+
+:global(.Toastify__toast--error) {
+	color: var(--color-text-error);
+}
+
+:global(.Toastify__toast--error svg) {
+	fill: var(--color-text-error);
+}
+
+:global(.Toastify__progress-bar--error) {
+	background-color: var(--color-stroke-error-strong);
+}
+
+:global(.Toastify__toast--success) {
+	color: var(--color-text-brand);
+}
+
+:global(.Toastify__toast--success svg) {
+	fill: var(--color-text-brand);
+}
+
+:global(.Toastify__progress-bar--success) {
+	background-color: var(--color-stroke-selected);
+}

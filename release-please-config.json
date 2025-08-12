@@ -1,0 +1,39 @@
+{
+	"group-pull-request-title-pattern": "chore(release): release-${version}",
+	"packages": {
+		".": {
+			"release-type": "node",
+			"include-component-in-tag": false
+		},
+		"apps/backend": {
+			"release-type": "node",
+			"extra-files": [
+				{
+					"type": "json",
+					"path": "package-lock.json",
+					"jsonpath": "$.packages['apps/backend'].version"
+				}
+			]
+		},
+		"apps/frontend": {
+			"release-type": "node",
+			"extra-files": [
+				{
+					"type": "json",
+					"path": "package-lock.json",
+					"jsonpath": "$.packages['apps/frontend'].version"
+				}
+			]
+		},
+		"packages/shared": {
+			"release-type": "node",
+			"extra-files": [
+				{
+					"type": "json",
+					"path": "package-lock.json",
+					"jsonpath": "$.packages['packages/shared'].version"
+				}
+			]
+		}
+	}
+}

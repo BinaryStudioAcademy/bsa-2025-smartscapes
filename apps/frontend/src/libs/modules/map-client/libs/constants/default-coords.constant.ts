@@ -1,0 +1,6 @@
+const DEFAULT_COORDS = {
+	LATITUDE: 50.4501,
+	LONGITUDE: 30.5234,
+};
+
+export { DEFAULT_COORDS };

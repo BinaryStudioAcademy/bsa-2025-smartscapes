@@ -1,0 +1,101 @@
+.label {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	width: 100%;
+}
+
+.label-caption {
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-regular);
+	line-height: 1.5;
+	color: var(--color-text-strong);
+}
+
+.control {
+	padding: 12px 16px;
+	font-size: var(--font-size-small);
+	line-height: 1.5;
+	background-color: var(--color-background-base);
+	border: 1px solid var(--color-stroke-strong);
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+}
+
+.control:hover {
+	background-color: var(--color-fill-hover);
+}
+
+.control:focus-within {
+	border: 1px solid var(--color-stroke-focus);
+}
+
+.menu {
+	z-index: 3;
+	background-color: var(--color-base);
+	border-radius: 8px;
+	box-shadow: 0 2px 8px var(--color-shadow-strong);
+}
+
+.option {
+	padding: 8px 12px;
+	cursor: pointer;
+}
+
+.option-selected {
+	font-weight: var(--font-weight-semibold);
+	background-color: var(--color-fill-selected);
+}
+
+.option-focused {
+	background-color: var(--color-fill-hover);
+}
+
+.placeholder {
+	color: var(--color-text-muted);
+}
+
+.single-value {
+	color: var(--color-text-strong);
+}
+
+.multi-value {
+	padding: 2px 6px;
+	font-size: var(--font-size-small);
+	background-color: var(--color-fill-hover);
+	border-radius: 4px;
+}
+
+.multi-value-label {
+	color: var(--color-text-strong);
+}
+
+.multi-value-remove {
+	color: var(--color-text-strong);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.multi-value-remove:hover {
+	background-color: var(--color-fill-hover);
+}
+
+.clear-indicator {
+	color: var(--color-text-strong);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.clear-indicator:hover {
+	background-color: var(--color-fill-hover);
+}
+
+@media (width <=768px) {
+	.control {
+		padding: 8px 10px;
+	}
+
+	.label-caption {
+		font-size: var(--font-size-tiny);
+	}
+}

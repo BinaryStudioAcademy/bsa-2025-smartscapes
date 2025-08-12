@@ -1,0 +1,23 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	width: 100%;
+	padding: 24px 0;
+}
+
+.form-button {
+	margin-top: 16px;
+}
+
+@media screen and (width <= 768px) {
+	.form {
+		gap: 16px;
+	}
+}
+
+@media screen and (width <= 480px) {
+	.form {
+		padding: 8px 0;
+	}
+}

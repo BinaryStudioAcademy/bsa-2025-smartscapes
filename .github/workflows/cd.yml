@@ -1,0 +1,59 @@
+name: Continuous Delivery
+
+env:
+  EBS_ENVIRONMENT_NAME: development
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    environment:
+      name: development
+      url: https://smart-scapes.com/
+
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    name: Release
+    runs-on: ubuntu-24.04
+
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Release
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          manifest-file: .release-please-manifest.json
+          config-file: release-please-config.json
+
+      - name: Prepare Deployment Package
+        if: steps.release.outputs.release_created == 'true'
+        run: |
+          zip -r build.zip . -x .github
+
+      - name: Deploy to EBS
+        if: steps.release.outputs.release_created == 'true'
+        uses: einaregilsson/beanstalk-deploy@v22
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: ${{ secrets.AWS_REGION }}
+          application_name: ${{ secrets.EBS_APPLICATION_NAME }}
+          environment_name: ${{ env.EBS_ENVIRONMENT_NAME }}
+          version_label: ${{ github.sha }}
+          deployment_package: ./build.zip

@@ -1,0 +1,30 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 12px 120px;
+	border-bottom: 1px solid var(--color-stroke-weak);
+}
+
+.header-logo {
+	display: block;
+	margin: 0 auto;
+}
+
+.buttons {
+	display: flex;
+	gap: 8px;
+}
+
+@media (width <= 991px) {
+	.header {
+		padding-inline: 32px;
+	}
+}
+
+@media (width <= 768px) {
+	.header {
+		padding-inline: 16px;
+	}
+}

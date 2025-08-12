@@ -1,0 +1,32 @@
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: 96px;
+	width: 100%;
+	padding-top: 96px;
+}
+
+.section-title {
+	margin: 0;
+	font-size: var(--font-size-display);
+	font-weight: var(--font-weight-bold);
+	color: var(--color-text-strong);
+	text-align: center;
+}
+
+.section-description {
+	margin: 0;
+	font-size: var(--font-size-h4);
+	font-weight: var(--font-weight-regular);
+	color: var(--color-text-weak);
+	text-align: center;
+}
+
+.section-cover {
+	width: 100%;
+	aspect-ratio: 320 / 119;
+	background-image: url("../../../../../assets/images/landing-cover.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}

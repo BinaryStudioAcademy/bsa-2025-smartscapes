@@ -1,0 +1,151 @@
+.container {
+	position: fixed;
+	inset: 0;
+	z-index: 2;
+	display: flex;
+	width: max-content;
+	height: 100dvh;
+}
+
+.container:has([data-open="true"]) {
+	width: 100%;
+}
+
+.drawer {
+	z-index: 1;
+	width: max-content;
+	height: 100%;
+	background-color: var(--color-background-base);
+	border-right: 1px solid var(--color-brand-50);
+}
+
+.drawer[data-open="true"] {
+	width: 100%;
+	max-width: 320px;
+}
+
+.header {
+	display: flex;
+	gap: 68px;
+	align-items: center;
+	width: 100%;
+	padding: 22px 24px;
+}
+
+.close-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+}
+
+.burger-icon {
+	position: relative;
+	display: block;
+	width: 16px;
+	height: 2px;
+	background-color: var(--color-text-strong);
+	border-radius: 2px;
+	transition: all 300ms ease;
+}
+
+.burger-icon::before {
+	position: absolute;
+	top: -6px;
+	left: 0;
+	width: 16px;
+	height: 2px;
+	content: "";
+	background-color: var(--color-text-strong);
+	border-radius: 2px;
+	transition: all 300ms ease;
+}
+
+.burger-icon::after {
+	position: absolute;
+	bottom: -6px;
+	left: 0;
+	width: 16px;
+	height: 2px;
+	content: "";
+	background-color: var(--color-text-strong);
+	border-radius: 2px;
+	transition: all 300ms ease;
+}
+
+.close-button[data-open="true"] .burger-icon {
+	background-color: transparent;
+}
+
+.close-button[data-open="true"] .burger-icon::before {
+	width: 12px;
+	transform: translate(-2px, -2px) rotate(-45deg);
+	transform-origin: top right;
+}
+
+.close-button[data-open="true"] .burger-icon::after {
+	width: 12px;
+	transform: translate(-2px, 2px) rotate(45deg);
+	transform-origin: bottom right;
+}
+
+.logo-image {
+	display: block;
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	max-width: 320px;
+	height: 100%;
+	padding-top: 56px;
+}
+
+.group {
+	position: relative;
+}
+
+.shifted {
+	padding-top: 48px;
+}
+
+.drawer[data-open="true"] .group {
+	padding-top: 0;
+}
+
+.title {
+	padding: 12px 24px;
+}
+
+.title-text {
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-weak);
+}
+
+.group:not(:last-child)::after {
+	position: absolute;
+	bottom: -24px;
+	left: 50%;
+	width: calc(100% - 48px);
+	height: 1px;
+	content: "";
+	background-color: var(--color-stroke-weak);
+	transform: translateX(-50%);
+}
+
+.navigation-list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.backdrop {
+	flex: 1;
+	background-color: var(--color-stroke-strong);
+}

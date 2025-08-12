@@ -1,0 +1,46 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	font-family: var(--font-family);
+	font-size: var(--font-size-small);
+	line-height: 1.5;
+	color: var(--color-text-strong);
+	background-color: var(--color-background-base);
+}
+
+#root {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	white-space: nowrap;
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+}
+
+::-webkit-scrollbar {
+	height: 16px;
+}
+
+@supports (scrollbar-width: auto) {
+	html {
+		scrollbar-color: var(--color-fill-brand-strong) var(--color-background-base);
+		scrollbar-width: auto;
+	}
+}
