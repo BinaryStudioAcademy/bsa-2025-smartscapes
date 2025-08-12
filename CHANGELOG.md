@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.27.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.27.0...v1.27.1) (2025-08-12)
+
+
+### Bug Fixes
+
+* **root:** fix integration tests workflow ss-291 ([#351](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/351)) ([a42e7b8](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a42e7b86ecf20b8afbe05aad48da320530bce5ca))
+
 ## [1.27.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.26.2...v1.27.0) (2025-08-12)
 
 
