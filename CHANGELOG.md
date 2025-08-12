@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.26.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.26.1...v1.26.2) (2025-08-12)
+
+
+### Bug Fixes
+
+* **backend/frontend:** pass csp headers to helmet config ss-295 ([#332](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/332)) ([6f6bc10](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/6f6bc1065f6aae1a30cd7418377b015402f5a190))
+
 ## [1.26.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.26.0...v1.26.1) (2025-08-11)
 
 
