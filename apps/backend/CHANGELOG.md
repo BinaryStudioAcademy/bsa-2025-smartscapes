@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.19.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.18.0...@smartscapes/backend-v1.19.0) (2025-08-13)
+
+
+### Features
+
+* **backend:** search routes by name ss-267 ([#284](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/284)) ([97ff8da](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/97ff8da5c10d6c0ffdda2ef6dc838c31d4413a16))
+
+
+### Bug Fixes
+
+* **frontend/backend:** handle jwt/auth errors appearance ss-248 ([#262](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/262)) ([ed0e40d](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/ed0e40da4fdb16ad84b0242a03a65e4884ab4a74))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.17.0 to 1.18.0
+
 ## [1.18.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.17.2...@smartscapes/backend-v1.18.0) (2025-08-12)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.17.0...@smartscapes/shared-v1.18.0) (2025-08-13)
+
+
+### Features
+
+* **backend:** search routes by name ss-267 ([#284](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/284)) ([97ff8da](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/97ff8da5c10d6c0ffdda2ef6dc838c31d4413a16))
+
 ## [1.17.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.16.0...@smartscapes/shared-v1.17.0) (2025-08-12)
 
 

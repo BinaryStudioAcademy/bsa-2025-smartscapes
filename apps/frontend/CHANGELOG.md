@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.22.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.21.0...@smartscapes/frontend-v1.22.0) (2025-08-13)
+
+
+### Features
+
+* **frontend:** add mobile responsiveness to the landing page ss-238 ([#287](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/287)) ([cab6c9b](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/cab6c9b763d7f324f9c7c923f0ea7f5358167f46))
+
+
+### Bug Fixes
+
+* **frontend/backend:** handle jwt/auth errors appearance ss-248 ([#262](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/262)) ([ed0e40d](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/ed0e40da4fdb16ad84b0242a03a65e4884ab4a74))
+* **frontend:** add styles for username in header ss-304 ([#307](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/307)) ([495a878](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/495a87840f843f0222e8c89fd7f92e69ec3ff389))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.17.0 to 1.18.0
+
 ## [1.21.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.20.2...@smartscapes/frontend-v1.21.0) (2025-08-12)
 
 
