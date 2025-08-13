@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.28.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.28.0...v1.28.1) (2025-08-13)
+
+
+### Bug Fixes
+
+* **frontend:** add slide transition animation ss-281 ([#343](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/343)) ([85d8470](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/85d8470b7e956e1637fdcb203c431db2cbb1d680))
+
 ## [1.28.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.27.1...v1.28.0) (2025-08-13)
 
 
