@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.23.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.22.1...@smartscapes/frontend-v1.23.0) (2025-08-14)
+
+
+### Features
+
+* **frontend:** create poi frontend flow ss-244 ([#299](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/299)) ([160c469](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/160c469471538772b6d8c847bfb1e87554d182cf))
+
+
+### Bug Fixes
+
+* **frontend/backend:** fix expired token removal ss-367 ([#372](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/372)) ([892e77b](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/892e77b7a636710d99fe6b909ddc1000747951e7))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.18.0 to 1.19.0
+
 ## [1.22.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.22.0...@smartscapes/frontend-v1.22.1) (2025-08-13)
 
 

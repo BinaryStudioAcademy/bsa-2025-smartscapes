@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.29.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.28.1...v1.29.0) (2025-08-14)
+
+
+### Features
+
+* **backend:** cover routes managment operations with permission ss-237 ([#358](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/358)) ([4dbeaa1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/4dbeaa1333caa6018a26dab72758da136eeb922f))
+* **frontend:** create poi frontend flow ss-244 ([#299](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/299)) ([160c469](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/160c469471538772b6d8c847bfb1e87554d182cf))
+
+
+### Bug Fixes
+
+* **frontend/backend:** fix expired token removal ss-367 ([#372](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/372)) ([892e77b](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/892e77b7a636710d99fe6b909ddc1000747951e7))
+
 ## [1.28.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.28.0...v1.28.1) (2025-08-13)
 
 
