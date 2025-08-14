@@ -77,6 +77,7 @@ class AuthService {
 				group: user.group,
 				groupId: user.groupId,
 				id: user.id,
+				isVisibleProfile: user.isVisibleProfile,
 				lastName: user.lastName,
 			},
 		};

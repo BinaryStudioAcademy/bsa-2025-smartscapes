@@ -53,6 +53,7 @@ class UserService implements Service {
 				email: payload.email,
 				firstName: payload.firstName,
 				groupId: group.id,
+				isVisibleProfile: true,
 				lastName: payload.lastName,
 				passwordHash: encryptedData,
 				passwordSalt: salt,

@@ -1,0 +1,6 @@
+.container {
+	display: flex;
+	column-gap: 20px;
+	width: fit-content;
+	cursor: pointer;
+}

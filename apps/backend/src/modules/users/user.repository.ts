@@ -19,14 +19,22 @@ class UserRepository implements Repository {
 	}
 
 	public async create(entity: UserEntity): Promise<UserEntity> {
-		const { email, firstName, groupId, lastName, passwordHash, passwordSalt } =
-			entity.toNewObject();
+		const {
+			email,
+			firstName,
+			groupId,
+			isVisibleProfile,
+			lastName,
+			passwordHash,
+			passwordSalt,
+		} = entity.toNewObject();
 
 		return await transaction(this.userModel, async (UserModel) => {
 			const { id: userId } = await UserModel.query().insert({
 				email,
 				firstName,
 				groupId,
+				isVisibleProfile,
 				lastName,
 				passwordHash,
 				passwordSalt,
@@ -55,6 +63,7 @@ class UserRepository implements Repository {
 				}).toObject(),
 				groupId: user.groupId,
 				id: user.id,
+				isVisibleProfile: user.isVisibleProfile,
 				lastName: user.lastName,
 				passwordHash: user.passwordHash,
 				passwordSalt: user.passwordSalt,
@@ -87,6 +96,7 @@ class UserRepository implements Repository {
 				}).toObject(),
 				groupId: user.groupId,
 				id: user.id,
+				isVisibleProfile: user.isVisibleProfile,
 				lastName: user.lastName,
 				passwordHash: user.passwordHash,
 				passwordSalt: user.passwordSalt,
@@ -123,6 +133,7 @@ class UserRepository implements Repository {
 			}).toObject(),
 			groupId: user.groupId,
 			id: user.id,
+			isVisibleProfile: user.isVisibleProfile,
 			lastName: user.lastName,
 			passwordHash: user.passwordHash,
 			passwordSalt: user.passwordSalt,
@@ -158,6 +169,7 @@ class UserRepository implements Repository {
 			}).toObject(),
 			groupId: user.groupId,
 			id: user.id,
+			isVisibleProfile: user.isVisibleProfile,
 			lastName: user.lastName,
 			passwordHash: user.passwordHash,
 			passwordSalt: user.passwordSalt,
@@ -205,6 +217,7 @@ class UserRepository implements Repository {
 			}).toObject(),
 			groupId: user.groupId,
 			id: user.id,
+			isVisibleProfile: user.isVisibleProfile,
 			lastName: user.lastName,
 			passwordHash: user.passwordHash,
 			passwordSalt: user.passwordSalt,
@@ -215,11 +228,11 @@ class UserRepository implements Repository {
 		id: number,
 		payload: AuthenticatedUserPatchRequestDto,
 	): Promise<null | UserEntity> {
-		const { firstName, lastName } = payload;
+		const { firstName, isVisibleProfile, lastName } = payload;
 
 		return await transaction(this.userModel, async (UserModel) => {
 			const [updatedRow] = await UserModel.query()
-				.patch({ firstName, lastName })
+				.patch({ firstName, isVisibleProfile, lastName })
 				.where("id", "=", id)
 				.returning("*")
 				.execute();
@@ -251,6 +264,7 @@ class UserRepository implements Repository {
 				}).toObject(),
 				groupId: user.groupId,
 				id: user.id,
+				isVisibleProfile: user.isVisibleProfile,
 				lastName: user.lastName,
 				passwordHash: user.passwordHash,
 				passwordSalt: user.passwordSalt,

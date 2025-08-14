@@ -39,6 +39,7 @@ describe("UserController", () => {
 				group: mockGroup.toObject(),
 				groupId: 2,
 				id: 1,
+				isVisibleProfile: true,
 				lastName: "Doe",
 			},
 		];

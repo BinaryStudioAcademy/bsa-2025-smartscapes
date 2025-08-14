@@ -46,6 +46,7 @@ describe("NotificationController", () => {
 		},
 		groupId: 2,
 		id: 42,
+		isVisibleProfile: true,
 		lastName: "Doe",
 	};
 

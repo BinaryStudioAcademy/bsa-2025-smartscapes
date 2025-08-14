@@ -53,6 +53,7 @@ describe("UserFollowsController", () => {
 		group: mockGroup,
 		groupId: mockGroup.id,
 		id: TEST_FOLLOWER_ID,
+		isVisibleProfile: true,
 		lastName: "Doe",
 	};
 
@@ -62,6 +63,7 @@ describe("UserFollowsController", () => {
 		group: mockGroup,
 		groupId: mockGroup.id,
 		id: TEST_FOLLOWING_ID,
+		isVisibleProfile: true,
 		lastName: "Smith",
 	};
 

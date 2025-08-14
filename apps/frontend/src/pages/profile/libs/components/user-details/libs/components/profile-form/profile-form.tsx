@@ -1,4 +1,4 @@
-import { Button, Input } from "~/libs/components/components.js";
+import { Button, Checkbox, Input } from "~/libs/components/components.js";
 import { useAppForm } from "~/libs/hooks/hooks.js";
 import {
 	type AuthenticatedUserPatchRequestDto,
@@ -14,12 +14,13 @@ type Properties = {
 };
 
 const ProfileForm = ({ onSubmit, user }: Properties): React.JSX.Element => {
-	const { firstName, lastName } = user;
+	const { firstName, isVisibleProfile, lastName } = user;
 
 	const { control, errors, handleSubmit } =
 		useAppForm<AuthenticatedUserPatchRequestDto>({
 			defaultValues: {
 				firstName,
+				isVisibleProfile,
 				lastName,
 			},
 			mode: "onChange",
@@ -41,6 +42,12 @@ const ProfileForm = ({ onSubmit, user }: Properties): React.JSX.Element => {
 				label="Last Name"
 				name="lastName"
 				type="text"
+			/>
+			<Checkbox
+				control={control}
+				errors={errors}
+				label="Profile visible"
+				name="isVisibleProfile"
 			/>
 			<Button label="Update profile" />
 		</form>

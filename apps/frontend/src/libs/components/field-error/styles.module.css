@@ -1,0 +1,9 @@
+.error {
+	display: inline-flex;
+	gap: 8px;
+	align-items: center;
+	font-size: var(--font-size-tiny);
+	font-weight: var(--font-weight-semibold);
+	line-height: 1.4;
+	color: var(--color-text-error);
+}

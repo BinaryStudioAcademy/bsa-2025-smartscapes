@@ -6,7 +6,6 @@ import {
 } from "react-hook-form";
 
 import { FieldError } from "~/libs/components/components.js";
-import { combineClassNames } from "~/libs/helpers/helpers.js";
 import { useFormController } from "~/libs/hooks/hooks.js";
 
 import styles from "./styles.module.css";
@@ -17,18 +16,14 @@ type Properties<T extends FieldValues> = {
 	errors: FieldErrors<T>;
 	label: string;
 	name: FieldPath<T>;
-	placeholder?: string;
-	type?: "email" | "password" | "text";
 };
 
-const Input = <T extends FieldValues>({
+const Checkbox = <T extends FieldValues>({
 	autocomplete = "on",
 	control,
 	errors,
 	label,
 	name,
-	placeholder = "",
-	type = "text",
 }: Properties<T>): React.JSX.Element => {
 	const { field } = useFormController({ control, name });
 
@@ -36,18 +31,14 @@ const Input = <T extends FieldValues>({
 	const hasError = Boolean(error);
 
 	return (
-		<label className={styles["label"]}>
-			<span className={styles["label-caption"]}>{label}</span>
+		<label className={styles["container"]}>
+			{label}
 			<input
 				autoComplete={autocomplete}
-				className={combineClassNames(
-					styles["input"],
-					hasError && styles["input-error"],
-				)}
-				name={field.name}
+				defaultChecked={field.value}
+				name={name}
 				onChange={field.onChange}
-				placeholder={placeholder}
-				type={type}
+				type="checkbox"
 				value={field.value}
 			/>
 			{hasError && <FieldError description={error as string} />}
@@ -55,4 +46,4 @@ const Input = <T extends FieldValues>({
 	);
 };
 
-export { Input };
+export { Checkbox };

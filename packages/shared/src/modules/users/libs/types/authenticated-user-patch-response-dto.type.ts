@@ -6,6 +6,7 @@ type AuthenticatedUserPatchResponseDto = {
 	group: GroupItemWithPermissionsDto;
 	groupId: number;
 	id: number;
+	isVisibleProfile: boolean;
 	lastName: string;
 };
 

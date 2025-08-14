@@ -20,6 +20,8 @@ class UserModel extends AbstractModel {
 
 	public groupId!: number;
 
+	public isVisibleProfile!: boolean;
+
 	public lastName!: string;
 
 	public passwordHash!: string;

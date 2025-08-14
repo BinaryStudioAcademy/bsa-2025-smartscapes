@@ -22,6 +22,7 @@ const authenticatedUserPatch = z
 				message: UserValidationMessage.FIRST_NAME_INVALID,
 			})
 			.optional(),
+		isVisibleProfile: z.boolean(),
 		lastName: z
 			.string()
 			.trim()
