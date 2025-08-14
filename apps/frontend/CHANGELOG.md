@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.24.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.23.0...@smartscapes/frontend-v1.24.0) (2025-08-14)
+
+
+### Features
+
+* **frontend:** implement password visibility toggler ss-184 ([#265](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/265)) ([9931771](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/993177149cf980735a57f888eb4b79f64a35e112))
+* **frontend:** toast notification on updating pofile ss-339 ([#363](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/363)) ([b1649cc](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b1649ccd4de593392c5921762205e2c4b2ea4939))
+
 ## [1.23.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.22.1...@smartscapes/frontend-v1.23.0) (2025-08-14)
 
 
