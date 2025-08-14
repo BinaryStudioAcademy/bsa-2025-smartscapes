@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.30.0...v1.31.0) (2025-08-14)
+
+
+### Features
+
+* **frontend/backend:** routes detail page ss-268 ([#283](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/283)) ([47176a4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/47176a4bff35af04c6e77cf9b1a14b032cd77a45))
+
 ## [1.30.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.29.0...v1.30.0) (2025-08-14)
 
 
