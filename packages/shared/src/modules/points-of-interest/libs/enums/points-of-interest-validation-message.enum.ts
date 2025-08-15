@@ -9,6 +9,7 @@ const PointsOfInterestValidationMessage = {
 	INVALID_LOCATION_TYPE: "Location type must be 'Point'.",
 	LATITUDE_MAX: `Latitude must be less than ${String(PointsOfInterestValidationRule.LATITUDE_MAX)}.`,
 	LATITUDE_MIN: `Latitude must be greater than ${String(PointsOfInterestValidationRule.LATITUDE_MIN)}.`,
+	LOCATION_REQUIRED: "Location is required",
 	LONGITUDE_MAX: `Longitude must be less than ${String(PointsOfInterestValidationRule.LONGITUDE_MAX)}.`,
 	LONGITUDE_MIN: `Longitude must be greater than ${String(PointsOfInterestValidationRule.LONGITUDE_MIN)}.`,
 	NAME_MAXIMUM_LENGTH: `Name must be less than ${String(PointsOfInterestValidationRule.NAME_MAX_LENGTH)} characters long.`,

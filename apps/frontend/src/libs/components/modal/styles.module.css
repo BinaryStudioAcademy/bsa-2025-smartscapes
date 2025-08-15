@@ -21,7 +21,7 @@
 	background: var(--color-base-overlay);
 }
 
-.closeButton {
+.close-button {
 	position: absolute;
 	top: 8px;
 	right: 10px;

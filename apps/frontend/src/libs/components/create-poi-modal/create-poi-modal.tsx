@@ -1,6 +1,9 @@
+import React from "react";
+
 import {
 	Button,
 	Input,
+	MapLocationField,
 	Modal,
 	TextArea,
 } from "~/libs/components/components.js";
@@ -10,45 +13,29 @@ import {
 	type PointsOfInterestRequestDto,
 } from "~/modules/points-of-interest/points-of-interest.js";
 
+import { DEFAULT_CREATE_POI_PAYLOAD } from "./libs/constants/constants.js";
 import styles from "./styles.module.css";
 
 type Properties = {
-	defaultLatitude: number;
-	defaultLongitude: number;
 	isOpen: boolean;
 	onClose: () => void;
-	onSubmit: (values: PointsOfInterestRequestDto) => void;
+	onSubmit: (payload: PointsOfInterestRequestDto) => void;
 };
 
 const CreatePOIModal = ({
-	defaultLatitude,
-	defaultLongitude,
 	isOpen,
 	onClose,
 	onSubmit,
 }: Properties): React.JSX.Element => {
-	const { control, errors, handleSubmit } =
+	const { control, errors, handleReset, handleSubmit } =
 		useAppForm<PointsOfInterestRequestDto>({
-			defaultValues: {
-				description: "",
-				location: {
-					coordinates: [defaultLongitude, defaultLatitude],
-					type: "Point",
-				},
-				name: "",
-			},
+			defaultValues: DEFAULT_CREATE_POI_PAYLOAD,
 			validationSchema: pointOfInterestCreateValidationSchema,
 		});
 
-	const handleFormSubmit = (values: PointsOfInterestRequestDto): void => {
-		onSubmit({
-			...values,
-			description: values.description || null,
-			location: {
-				...values.location,
-				coordinates: values.location.coordinates,
-			},
-		});
+	const handleFormSubmit = (payload: PointsOfInterestRequestDto): void => {
+		onSubmit(payload);
+		handleReset(DEFAULT_CREATE_POI_PAYLOAD);
 	};
 
 	return (
@@ -67,6 +54,11 @@ const CreatePOIModal = ({
 					label="Name"
 					name="name"
 					type="text"
+				/>
+				<MapLocationField
+					control={control}
+					errorMessage={errors.location?.message as string}
+					name="location"
 				/>
 				<TextArea
 					control={control}

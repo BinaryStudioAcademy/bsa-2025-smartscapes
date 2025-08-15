@@ -53,7 +53,7 @@ const Modal = ({
 			<div aria-modal="true" className={styles["dialog"]} role="dialog">
 				<button
 					aria-label="Close"
-					className={styles["closeButton"]}
+					className={styles["close-button"]}
 					onClick={onClose}
 					type="button"
 				>

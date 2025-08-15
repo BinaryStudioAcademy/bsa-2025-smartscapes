@@ -7,6 +7,7 @@ export { Icon } from "./icon/icon.js";
 export { Input } from "./input/input.js";
 export { Link } from "./link/link.js";
 export { Loader } from "./loader/loader.js";
+export { MapLocationField } from "./map-location-field/map-location-field.js";
 export { MapContext, MapProvider } from "./map-provider/map-provider.js";
 export { Modal } from "./modal/modal.js";
 export { PasswordInput } from "./password-input/password-input.js";
