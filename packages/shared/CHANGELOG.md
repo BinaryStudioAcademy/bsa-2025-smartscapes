@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.20.0...@smartscapes/shared-v1.21.0) (2025-08-15)
+
+
+### Features
+
+* **frontend:** image upload ss-220 ([#346](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/346)) ([81afeda](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/81afeda8da1919b71d1c0074d8f01850dc8c2a3c))
+
 ## [1.20.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.19.0...@smartscapes/shared-v1.20.0) (2025-08-14)
 
 
