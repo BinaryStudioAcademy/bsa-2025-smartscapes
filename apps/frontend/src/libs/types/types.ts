@@ -6,6 +6,7 @@ export {
 	type APIErrorResponse,
 	type APIResponse,
 	type APIValidationErrorDetail,
+	type PaginationQuery,
 	type ValidationSchema,
 	type ValueOf,
 } from "@smartscapes/shared";

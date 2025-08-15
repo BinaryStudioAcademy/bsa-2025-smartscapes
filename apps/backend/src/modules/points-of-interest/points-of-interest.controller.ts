@@ -6,9 +6,11 @@ import {
 } from "~/libs/modules/controller/controller.js";
 import { HTTPCode } from "~/libs/modules/http/http.js";
 import { type Logger } from "~/libs/modules/logger/logger.js";
+import { type PaginationQuery } from "~/libs/types/types.js";
 import { type PointsOfInterestService } from "~/modules/points-of-interest/points-of-interest.service.js";
 
 import {
+	type PointsOfInterestPaginatedResponseDto,
 	type PointsOfInterestRequestDto,
 	type PointsOfInterestResponseDto,
 	type PointsOfInterestSearchQuery,
@@ -16,6 +18,7 @@ import {
 import {
 	pointOfInterestCreateValidationSchema,
 	pointOfInterestUpdateValidationSchema,
+	pointsOfInterestPaginatedQueryValidationSchema,
 	pointsOfInterestSearchQueryValidationSchema,
 } from "./libs/validation-schemas/validation-schemas.js";
 
@@ -89,6 +92,9 @@ import {
  *           nullable: true
  */
 
+const DEFAULT_LIMIT = 10;
+const DEFAULT_PAGE = 1;
+
 class PointsOfInterestController extends BaseController {
 	private pointsOfInterestService: PointsOfInterestService;
 
@@ -135,6 +141,15 @@ class PointsOfInterestController extends BaseController {
 			path: "/:id",
 			validation: {
 				body: pointOfInterestUpdateValidationSchema,
+			},
+		});
+
+		this.addRoute({
+			handler: this.findPaginated.bind(this),
+			method: "GET",
+			path: "/paginated",
+			validation: {
+				query: pointsOfInterestPaginatedQueryValidationSchema,
 			},
 		});
 	}
@@ -371,6 +386,26 @@ class PointsOfInterestController extends BaseController {
 
 		return {
 			payload: { data: pointOfInterest },
+			status: HTTPCode.OK,
+		};
+	}
+
+	public async findPaginated(
+		options: APIHandlerOptions<{
+			query: PaginationQuery;
+		}>,
+	): Promise<APIHandlerResponse<PointsOfInterestPaginatedResponseDto>> {
+		const { query } = options;
+		const { limit, page, search } = query;
+
+		const response = await this.pointsOfInterestService.findPaginated({
+			limit: Number(limit) || DEFAULT_LIMIT,
+			page: Number(page) || DEFAULT_PAGE,
+			search: search || "",
+		});
+
+		return {
+			payload: { data: response },
 			status: HTTPCode.OK,
 		};
 	}

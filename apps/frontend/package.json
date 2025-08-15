@@ -20,6 +20,7 @@
 		"@hookform/resolvers": "5.1.1",
 		"@reduxjs/toolkit": "2.8.2",
 		"@smartscapes/shared": "1.20.0",
+		"@tanstack/react-table": "8.21.3",
 		"clsx": "2.1.1",
 		"mapbox-gl": "3.14.0",
 		"react": "19.1.0",

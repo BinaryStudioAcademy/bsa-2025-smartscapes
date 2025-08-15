@@ -1,4 +1,5 @@
 const AppRoute = {
+	ADMINISTRATIVE_DASHBOARD: "/app/administrative-dashboard",
 	APP: "/app",
 	CATEGORIES: "/app/categories",
 	CONTENT: "/app/content",

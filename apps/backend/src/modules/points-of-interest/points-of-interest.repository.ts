@@ -1,11 +1,14 @@
 import { SortingOrder } from "~/libs/enums/enums.js";
-import { type Repository } from "~/libs/types/types.js";
+import { type EntityPagination, type Repository } from "~/libs/types/types.js";
 import {
 	type PointsOfInterestFindAllOptions,
+	type PointsOfInterestPaginatedOptions,
 	type PointsOfInterestSearchQuery,
 } from "~/modules/points-of-interest/libs/types/type.js";
 import { PointsOfInterestEntity } from "~/modules/points-of-interest/points-of-interest.entity.js";
 import { type PointsOfInterestModel } from "~/modules/points-of-interest/points-of-interest.model.js";
+
+const PAGE_NUMBER_OFFSET = 1;
 
 class PointsOfInterestRepository implements Repository {
 	private pointsOfInterestModel: typeof PointsOfInterestModel;
@@ -165,6 +168,35 @@ class PointsOfInterestRepository implements Repository {
 		return pointsOfInterest
 			.filter(Boolean)
 			.map((point) => PointsOfInterestEntity.initialize(point));
+	}
+
+	public async findPaginated(
+		options: PointsOfInterestPaginatedOptions,
+	): Promise<EntityPagination<PointsOfInterestEntity>> {
+		const { limit, page, search } = options;
+
+		const query = this.pointsOfInterestModel
+			.query()
+			.select(["id", "name", "created_at"])
+			.modify((builder) => {
+				if (search) {
+					builder.where("name", "ilike", `%${search}%`);
+				}
+			});
+
+		const total = await query.resultSize();
+
+		const items = await query
+			.offset((page - PAGE_NUMBER_OFFSET) * limit)
+			.limit(limit)
+			.execute();
+
+		return {
+			items: items.map((point) =>
+				PointsOfInterestEntity.initializeSummary(point),
+			),
+			total,
+		};
 	}
 
 	public async patch(

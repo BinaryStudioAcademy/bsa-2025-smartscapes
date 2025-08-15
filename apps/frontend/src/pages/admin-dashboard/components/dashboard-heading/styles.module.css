@@ -1,0 +1,19 @@
+.heading {
+	margin: 0 0 48px;
+}
+
+.title {
+	margin: 0 0 8px;
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 120%;
+	color: #1a3f34;
+}
+
+.subtitle {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 150%;
+	color: var(--color-text-weak);
+}

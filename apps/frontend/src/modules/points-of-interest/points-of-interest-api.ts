@@ -2,10 +2,11 @@ import { APIPath, ContentType } from "~/libs/enums/enums.js";
 import { BaseHTTPApi } from "~/libs/modules/api/api.js";
 import { type HTTP } from "~/libs/modules/http/http.js";
 import { type Storage } from "~/libs/modules/storage/storage.js";
-import { type APIResponse } from "~/libs/types/types.js";
+import { type APIResponse, type PaginationQuery } from "~/libs/types/types.js";
 
 import { PointsOfInterestApiPath } from "./libs/enums/enums.js";
 import {
+	type PointsOfInterestPaginatedResponseDto,
 	type PointsOfInterestRequestDto,
 	type PointsOfInterestResponseDto,
 } from "./libs/types/types.js";
@@ -35,6 +36,25 @@ class PointOfInterestApi extends BaseHTTPApi {
 		);
 
 		return (await response.json()) as APIResponse<PointsOfInterestResponseDto>;
+	}
+
+	public async findPaginated(
+		payload: PaginationQuery,
+	): Promise<APIResponse<PointsOfInterestPaginatedResponseDto>> {
+		//Didn't find implemented helper for creating search params
+		const searchParameters = new URLSearchParams(payload);
+		const queryString = searchParameters.toString();
+
+		const response = await this.load(
+			this.getFullEndpoint("/paginated", {}) + `?${queryString}`,
+			{
+				contentType: ContentType.JSON,
+				hasAuth: true,
+				method: "GET",
+			},
+		);
+
+		return (await response.json()) as APIResponse<PointsOfInterestPaginatedResponseDto>;
 	}
 }
 

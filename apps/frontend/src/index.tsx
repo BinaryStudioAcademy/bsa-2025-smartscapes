@@ -11,6 +11,7 @@ import {
 import { AppRoute } from "~/libs/enums/enums.js";
 import { pwa } from "~/libs/modules/pwa/pwa.js";
 import { store } from "~/libs/modules/store/store.js";
+import { AdminDashboard } from "~/pages/admin-dashboard/admin-dashboard.js";
 import { Auth } from "~/pages/auth/auth.jsx";
 import { NotFound } from "~/pages/not-found/not-found.jsx";
 
@@ -48,6 +49,14 @@ createRoot(document.querySelector("#root") as HTMLElement).render(
 							{
 								element: <RouteDetails />,
 								path: AppRoute.ROUTES_$ID,
+							},
+							{
+								element: (
+									<ProtectedRoute>
+										<AdminDashboard />
+									</ProtectedRoute>
+								),
+								path: AppRoute.ADMINISTRATIVE_DASHBOARD,
 							},
 							{
 								element: <Explore />,

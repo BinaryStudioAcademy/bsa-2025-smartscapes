@@ -1,0 +1,29 @@
+.icon-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 12px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	border-radius: 4px;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.icon-button .icon {
+	color: var(--color-brand-1000);
+}
+
+.icon-button:first-child:hover .icon {
+	color: var(--color-fill-press);
+}
+
+.icon-button:last-child:hover .icon {
+	color: var(--color-fill-press);
+}
+
+.actions-cell {
+	display: flex;
+}
