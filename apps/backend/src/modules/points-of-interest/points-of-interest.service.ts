@@ -24,7 +24,7 @@ class PointsOfInterestService implements Service {
 	): Promise<PointsOfInterestResponseDto> {
 		await this.ensureNameIsUnique(payload.name);
 
-		const { description, location, name } = payload;
+		const { description = null, location, name } = payload;
 
 		const item = await this.pointsOfInterestRepository.create(
 			PointsOfInterestEntity.initializeNew({
@@ -98,7 +98,7 @@ class PointsOfInterestService implements Service {
 		id: number,
 		payload: PointsOfInterestRequestDto,
 	): Promise<PointsOfInterestResponseDto> {
-		const { description, location, name } = payload;
+		const { description = null, location, name } = payload;
 
 		await this.ensureNameIsUnique(name);
 

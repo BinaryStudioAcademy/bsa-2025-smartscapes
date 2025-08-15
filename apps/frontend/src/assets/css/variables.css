@@ -18,6 +18,7 @@
 	--color-text-weak: hsl(162deg 100% 10% / 65%);
 	--color-text-brand: hsl(162deg 91% 25% / 100%);
 	--color-text-error: hsl(0deg 56% 50% / 100%);
+	--color-text-header: hsl(162deg, 42%, 17% / 100%);
 	--color-stroke-strong: hsl(162deg 100% 15% / 45%);
 	--color-stroke-selected: hsl(162deg 91% 25% / 100%);
 	--color-stroke-weak: hsl(162deg 100% 20% / 10%);

@@ -6,13 +6,24 @@ import {
 	type PointsOfInterestResponseDto,
 } from "~/modules/points-of-interest/points-of-interest.js";
 
-import { name as sliceName } from "./points-of-interest.slice.js";
+import { name as poiDetailssliceName } from "./points-of-interest-details.slice.js";
+import { name as poiSliceName } from "./points-of-interest.slice.js";
+
+const getById = createAsyncThunk<
+	APIResponse<PointsOfInterestResponseDto>,
+	number,
+	AsyncThunkConfig
+>(`${poiDetailssliceName}/load-by-id`, (id, { extra }) => {
+	const { pointOfInterestApi } = extra;
+
+	return pointOfInterestApi.getById(id);
+});
 
 const create = createAsyncThunk<
 	APIResponse<PointsOfInterestResponseDto>,
 	PointsOfInterestRequestDto,
 	AsyncThunkConfig
->(`${sliceName}/create`, async (payload, { extra }) => {
+>(`${poiSliceName}/create`, async (payload, { extra }) => {
 	const { pointOfInterestApi, toastNotifier } = extra;
 
 	const pointOfInterest = await pointOfInterestApi.create(payload);
@@ -21,4 +32,4 @@ const create = createAsyncThunk<
 	return pointOfInterest;
 });
 
-export { create };
+export { create, getById };

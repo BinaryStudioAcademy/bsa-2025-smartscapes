@@ -29,6 +29,7 @@ class PointsOfInterestRepository implements Repository {
 			.returning([
 				"id",
 				"name",
+				"description",
 				"created_at",
 				"updated_at",
 				"description",
@@ -58,6 +59,7 @@ class PointsOfInterestRepository implements Repository {
 			.select([
 				"id",
 				"name",
+				"description",
 				"created_at",
 				"updated_at",
 				"description",
@@ -87,6 +89,7 @@ class PointsOfInterestRepository implements Repository {
 			.select([
 				"id",
 				"name",
+				"description",
 				"created_at",
 				"updated_at",
 				"description",
@@ -112,6 +115,7 @@ class PointsOfInterestRepository implements Repository {
 			.select([
 				"id",
 				"name",
+				"description",
 				"created_at",
 				"updated_at",
 				"description",
@@ -139,6 +143,7 @@ class PointsOfInterestRepository implements Repository {
 			.select([
 				"id",
 				"name",
+				"description",
 				"created_at",
 				"updated_at",
 				"description",
@@ -184,6 +189,7 @@ class PointsOfInterestRepository implements Repository {
 			.returning([
 				"id",
 				"name",
+				"description",
 				"created_at",
 				"updated_at",
 				"description",
