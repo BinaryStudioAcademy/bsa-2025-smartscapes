@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.25.0...@smartscapes/frontend-v1.25.1) (2025-08-15)
+
+
+### Bug Fixes
+
+* **frontend:** fix map not displaying and adjust layout ss-295 ([#384](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/384)) ([3ed5f30](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3ed5f30f9e75ff7160f728d914fa7e39b212b86c))
+
 ## [1.25.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.24.0...@smartscapes/frontend-v1.25.0) (2025-08-14)
 
 
