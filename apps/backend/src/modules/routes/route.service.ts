@@ -96,12 +96,16 @@ class RouteService implements Service {
 	public async findAll(
 		options: null | RouteFindAllOptions,
 	): Promise<CollectionResult<RouteGetAllItemResponseDto>> {
+		if (options?.categories) {
+			options.categories = Array.isArray(options.categories)
+				? options.categories
+				: [options.categories];
+		}
+
 		const items = await this.routesRepository.findAll(options);
 
 		return {
-			items: items.map((item) => {
-				return item.toListObject();
-			}),
+			items: items.map((item) => item.toListObject()),
 		};
 	}
 

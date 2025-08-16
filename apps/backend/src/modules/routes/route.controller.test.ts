@@ -18,10 +18,10 @@ const mockReadPermission = PermissionEntity.initialize({
 	name: "Can read",
 });
 
-const mockManageRoutesPermission = PermissionEntity.initialize({
+const mockManageRoutePermission = PermissionEntity.initialize({
 	id: 2,
 	key: PermissionKey.MANAGE_ROUTES,
-	name: "Manage Routes",
+	name: "Manage Route",
 });
 
 const mockWrongPermission = PermissionEntity.initialize({
@@ -50,7 +50,7 @@ const mockAdminGroup = GroupEntity.initializeWithPermissions({
 	name: "Admins",
 	permissions: [
 		mockReadPermission.toObject(),
-		mockManageRoutesPermission.toObject(),
+		mockManageRoutePermission.toObject(),
 	],
 }).toObject();
 
@@ -58,7 +58,7 @@ const mockDelete: RouteService["delete"] = () => {
 	return Promise.resolve(true);
 };
 
-describe("Routes controller", () => {
+describe("Route controller", () => {
 	const mockUser = {
 		email: "test@example.com",
 		firstName: "John",

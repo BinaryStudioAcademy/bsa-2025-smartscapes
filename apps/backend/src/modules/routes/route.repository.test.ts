@@ -89,6 +89,7 @@ describe("RouteRepository", () => {
 		const mockRouteObject = mockRouteEntity.toObject();
 
 		const mockOptions: RouteFindAllOptions = {
+			categories: ["entertaiment", "history"],
 			name: mockRouteObject.name.toLowerCase(),
 		};
 

@@ -1,6 +1,10 @@
 import { RoutesValidationRule } from "./route-validation-rule.enum.js";
 
 const RoutesValidationMessage = {
+	CATEGORY_INVALID_KEY:
+		"Category key must contain only Latin letters without spaces.",
+	CATEGORY_MAXIMUM_LENGTH: `Category more than ${String(RoutesValidationRule.CATEGORY_MAXIMUM_LENGTH)} characters.`,
+	CATEGORY_MINIMUM_LENGTH: `Category less than ${String(RoutesValidationRule.CATEGORY_MINIMUM_LENGTH)} characters.`,
 	DESCRIPTION_MAXIMUM_LENGTH: `Description more than ${String(RoutesValidationRule.NAME_MAXIMUM_LENGTH)} characters.`,
 	DESCRIPTION_MINIMUM_LENGTH: `Description less than ${String(RoutesValidationRule.DESCRIPTION_MINIMUM_LENGTH)} characters.`,
 	INVALID_INPUT: "Points of interest should be a number typed array",

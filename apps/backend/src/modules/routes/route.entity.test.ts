@@ -8,7 +8,7 @@ describe("RouteEntity", () => {
 		const routesData = {
 			description: "A test route description",
 			id: 1,
-			name: "Routes 1 Test Name",
+			name: "Route 1 Test Name",
 			pois: [
 				{ id: 1, visitOrder: 0 },
 				{ id: 2, visitOrder: 1 },
@@ -27,7 +27,7 @@ describe("RouteEntity", () => {
 	it("should initialize new routes without id", () => {
 		const routesData = {
 			description: "A test route description",
-			name: "Routes 2 Test Name",
+			name: "Route 2 Test Name",
 			pois: [
 				{ id: 1, visitOrder: 0 },
 				{ id: 2, visitOrder: 1 },

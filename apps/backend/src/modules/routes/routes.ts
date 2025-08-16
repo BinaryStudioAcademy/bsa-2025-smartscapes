@@ -13,6 +13,7 @@ const routesService = new RouteService(
 	pointsOfInterestService,
 	mapboxDirectionsApi,
 );
+
 const routeController = new RouteController(logger, routesService);
 
 export { routeController, routesService };

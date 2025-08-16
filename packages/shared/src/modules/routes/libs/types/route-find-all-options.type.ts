@@ -1,4 +1,5 @@
 type RouteFindAllOptions = {
+	categories?: string | string[];
 	name?: string;
 };
 
