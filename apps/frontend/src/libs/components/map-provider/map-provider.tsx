@@ -1,8 +1,6 @@
-import { type PointGeometry } from "@smartscapes/shared";
-import React from "react";
-
 import { createContext, useEffect, useRef } from "~/libs/hooks/hooks.js";
 import { MapClient } from "~/libs/modules/map-client/map-client.js";
+import { type Coordinates } from "~/libs/types/types.js";
 
 import styles from "./styles.module.css";
 
@@ -10,7 +8,7 @@ const MapContext = createContext<MapClient | null>(null);
 
 type Properties = {
 	children?: React.ReactNode;
-	markers?: { coordinates: PointGeometry["coordinates"] }[];
+	markers?: { coordinates: Coordinates }[];
 };
 
 const MapProvider = ({

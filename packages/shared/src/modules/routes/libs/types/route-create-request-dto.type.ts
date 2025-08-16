@@ -1,7 +1,9 @@
 type RouteCreateRequestDto = {
 	description: string;
 	name: string;
-	pois: number[];
+	plannedPathId: number;
+	poiIds: number[];
+	userId: number;
 };
 
 export { type RouteCreateRequestDto };

@@ -2,7 +2,7 @@ import { ContentType } from "~/libs/enums/enums.js";
 import { BaseHTTPApi } from "~/libs/modules/api/api.js";
 import { type Config } from "~/libs/modules/config/config.js";
 import { type HTTP } from "~/libs/modules/http/http.js";
-import { type PointGeometry, type ValueOf } from "~/libs/types/types.js";
+import { type Coordinates, type ValueOf } from "~/libs/types/types.js";
 
 import {
 	type MapboxAPIGeometric,
@@ -34,7 +34,7 @@ class MapboxDirectionsApi extends BaseHTTPApi {
 
 	public async getRoute(
 		profile: ValueOf<typeof MapboxAPIProfile>,
-		coordinates: PointGeometry["coordinates"][],
+		coordinates: Coordinates[],
 		geometricsType: ValueOf<typeof MapboxAPIGeometric>,
 	): Promise<MapboxConstructRouteResponseDto> {
 		const query: MapboxConstructRouteOptions = {

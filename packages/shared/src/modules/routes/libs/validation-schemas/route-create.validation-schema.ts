@@ -24,11 +24,17 @@ const routesCreate = z.strictObject({
 		.max(RoutesValidationRule.NAME_MAXIMUM_LENGTH, {
 			message: RoutesValidationMessage.NAME_MAXIMUM_LENGTH,
 		}),
-	pois: z
+	plannedPathId: z.number({
+		message: RoutesValidationMessage.PLANNED_ROUTE_INVALID_TYPE,
+	}),
+	poiIds: z
 		.array(z.number().int().positive())
 		.min(RoutesValidationRule.ROUTES_MINIMUM_COUNT, {
 			message: RoutesValidationMessage.ROUTES_MINIMUM_COUNT,
 		}),
+	userId: z.number({
+		message: RoutesValidationMessage.USER_ID_INVALID_TYPE,
+	}),
 });
 
 export { routesCreate };

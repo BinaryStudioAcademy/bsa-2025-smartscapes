@@ -7,10 +7,10 @@ import {
 } from "~/libs/modules/controller/controller.js";
 import { type Logger } from "~/libs/modules/logger/logger.js";
 
+import { type PlannedPathResponseDto } from "../planned-routes/planned-paths.js";
 import { RoutesApiPath } from "./libs/enums/enums.js";
 import {
 	type RouteConstructRequestDto,
-	type RouteConstructResponseDto,
 	type RouteCreateRequestDto,
 	type RouteFindAllOptions,
 	type RouteGetAllItemResponseDto,
@@ -37,32 +37,17 @@ import { type RouteService } from "./route.service.js";
  *       maxItems: 2
  *       example: [30.5, 50.4]
  *
- *     GetMapboxRouteResponseDto:
+ *     GeometryLineString:
  *       type: object
  *       properties:
- *         routes:
+ *         coordinates:
  *           type: array
  *           items:
- *             $ref: '#/components/schemas/MapboxRoute'
- *         internalId:
+ *             $ref: '#/components/schemas/Coordinate'
+ *         type:
  *           type: string
+ *           example: LineString
  *
- *     MapboxRoute:
- *       type: object
- *       properties:
- *         distance:
- *           type: number
- *         duration:
- *           type: number
- *         geometry:
- *           type: object
- *           properties:
- *             coordinates:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Coordinate'
- *             type:
- *               type: string
  *     Route:
  *       type: object
  *       properties:
@@ -74,21 +59,82 @@ import { type RouteService } from "./route.service.js";
  *         description:
  *           type: string
  *           example: An alley with blooming flowers
+ *         distance:
+ *           type: number
+ *           example: 36310.805
+ *         duration:
+ *           type: number
+ *           example: 25940.671
+ *         geometry:
+ *           $ref: '#/components/schemas/GeometryLineString'
  *         pois:
- *           type: object
+ *           type: array
+ *           items:
+ *             type: object
+ *             properties:
+ *               id:
+ *                 type: number
+ *               visitOrder:
+ *                 type: number
  *           example: [{id: 1, visitOrder: 0}, {id: 2, visitOrder: 1}]
+ *         userId:
+ *           type: number
  *
+ *     RouteListItem:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         name:
+ *           type: string
+ *           example: "Landscape alley"
+ *         distance:
+ *           type: number
+ *           example: 36310.805
+ *
+ *         duration:
+ *           type: number
+ *           example: 25940.671
+ *         geometry:
+ *           $ref: '#/components/schemas/GeometryLineString'
+ *         pois:
+ *           type: array
+ *           items:
+ *             type: object
+ *             properties:
+ *               id:
+ *                 type: number
+ *               visitOrder:
+ *                 type: number
+ *         userId:
+ *           type: number
+ *
+ *     PlannedPath:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: number
+ *         distance:
+ *           type: number
+ *           example: 36310.805
+ *         duration:
+ *           type: number
+ *           example: 25940.671
+ *         geometry:
+ *           $ref: '#/components/schemas/GeometryLineString'
  */
 
 class RouteController extends BaseController {
-	private routesService: RouteService;
+	private routeService: RouteService;
 
-	public constructor(logger: Logger, routesService: RouteService) {
+	public constructor(logger: Logger, routeService: RouteService) {
 		super(logger, APIPath.ROUTES);
 
-		this.routesService = routesService;
+		this.routeService = routeService;
 
 		const constructRequestsPerMinute = 5;
+
 		this.addRoute({
 			handler: this.constructRoute.bind(this),
 			method: "POST",
@@ -110,14 +156,14 @@ class RouteController extends BaseController {
 		this.addRoute({
 			handler: this.delete.bind(this),
 			method: "DELETE",
-			path: RoutesApiPath.ID,
+			path: RoutesApiPath.$ID,
 			preHandlers: [checkHasPermission(PermissionKey.MANAGE_ROUTES)],
 		});
 
 		this.addRoute({
 			handler: this.findById.bind(this),
 			method: "GET",
-			path: RoutesApiPath.ID,
+			path: RoutesApiPath.$ID,
 		});
 
 		this.addRoute({
@@ -130,7 +176,7 @@ class RouteController extends BaseController {
 		this.addRoute({
 			handler: this.patch.bind(this),
 			method: "PATCH",
-			path: RoutesApiPath.ID,
+			path: RoutesApiPath.$ID,
 			preHandlers: [checkHasPermission(PermissionKey.MANAGE_ROUTES)],
 			validation: { body: routesUpdateValidationSchema },
 		});
@@ -152,31 +198,31 @@ class RouteController extends BaseController {
 	 *           schema:
 	 *             type: object
 	 *             required:
-	 *               - pointsOfInterest
+	 *               - poiIds
 	 *             properties:
-	 *               pointsOfInterest:
+	 *               poiIds:
 	 *                 type: array
 	 *                 items:
 	 *                   type: integer
-	 *                 example: [1, 2]
+	 *                 example: [4, 1, 3]
 	 *     responses:
 	 *       200:
-	 *         description: Mapbox service response
+	 *         description: Planned path created for further publishing
 	 *         content:
 	 *           application/json:
 	 *             schema:
 	 *               type: object
 	 *               properties:
 	 *                 data:
-	 *                   $ref: '#/components/schemas/GetMapboxRouteResponseDto'
+	 *                   $ref: '#/components/schemas/PlannedPath'
 	 */
 
 	public async constructRoute({
-		body: { pointsOfInterest },
-	}: APIHandlerOptions<{ body: RouteConstructRequestDto }>): Promise<
-		APIHandlerResponse<RouteConstructResponseDto>
-	> {
-		const data = await this.routesService.construct(pointsOfInterest);
+		body: { poiIds },
+	}: APIHandlerOptions<{
+		body: RouteConstructRequestDto;
+	}>): Promise<APIHandlerResponse<PlannedPathResponseDto>> {
+		const data = await this.routeService.construct(poiIds);
 
 		return {
 			payload: { data },
@@ -203,7 +249,9 @@ class RouteController extends BaseController {
 	 *             required:
 	 *               - name
 	 *               - description
-	 *               - pois
+	 *               - poiIds
+	 *               - plannedPathId
+	 *               - userId
 	 *             properties:
 	 *               name:
 	 *                 type: string
@@ -211,11 +259,17 @@ class RouteController extends BaseController {
 	 *               description:
 	 *                 type: string
 	 *                 example: An alley with blooming flowers
-	 *               pois:
+	 *               poiIds:
 	 *                 type: array
 	 *                 items:
 	 *                   type: number
-	 *                 example: [1, 2]
+	 *                 example: [4, 1, 3]
+	 *               plannedPathId:
+	 *                 type: number
+	 *                 example: 2
+	 *               userId:
+	 *                 type: number
+	 *                 example: 1
 	 *     responses:
 	 *       201:
 	 *         description: The created route
@@ -259,9 +313,7 @@ class RouteController extends BaseController {
 			body: RouteCreateRequestDto;
 		}>,
 	): Promise<APIHandlerResponse<RouteGetByIdResponseDto>> {
-		const { description, name, pois } = options.body;
-
-		const route = await this.routesService.create({ description, name, pois });
+		const route = await this.routeService.create(options.body);
 
 		return {
 			payload: { data: route },
@@ -327,7 +379,7 @@ class RouteController extends BaseController {
 		options: APIHandlerOptions<{ params: { id: string } }>,
 	): Promise<APIHandlerResponse<boolean>> {
 		const id = Number(options.params.id);
-		const isDeleted = await this.routesService.delete(id);
+		const isDeleted = await this.routeService.delete(id);
 
 		return {
 			payload: { data: isDeleted },
@@ -367,7 +419,7 @@ class RouteController extends BaseController {
 	 *                 data:
 	 *                   type: array
 	 *                   items:
-	 *                     $ref: '#/components/schemas/Route'
+	 *                     $ref: '#/components/schemas/RouteListItem'
 	 * */
 
 	public async findAll(
@@ -377,7 +429,7 @@ class RouteController extends BaseController {
 	): Promise<APIHandlerResponse<RouteGetAllItemResponseDto[]>> {
 		const { query = null } = options;
 
-		const { items } = await this.routesService.findAll(query);
+		const { items } = await this.routeService.findAll(query);
 
 		return {
 			payload: { data: items },
@@ -432,7 +484,7 @@ class RouteController extends BaseController {
 	): Promise<APIHandlerResponse<RouteGetByIdResponseDto>> {
 		const id = Number(options.params.id);
 
-		const route = await this.routesService.findById(id);
+		const route = await this.routeService.findById(id);
 
 		return {
 			payload: { data: route },
@@ -518,7 +570,7 @@ class RouteController extends BaseController {
 		const id = Number(options.params.id);
 		const { description, name } = options.body;
 
-		const route = await this.routesService.patch(id, {
+		const route = await this.routeService.patch(id, {
 			description,
 			name,
 		});

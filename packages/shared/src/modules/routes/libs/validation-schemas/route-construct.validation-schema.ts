@@ -6,7 +6,7 @@ import {
 } from "../enums/enums.js";
 
 const routesConstruct = z.object({
-	pointsOfInterest: z
+	poiIds: z
 		.array(z.number({ message: RoutesValidationMessage.INVALID_INPUT }), {
 			message: RoutesValidationMessage.INVALID_INPUT,
 		})

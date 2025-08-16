@@ -1,7 +1,7 @@
 import { logger } from "~/libs/modules/logger/logger.js";
 
 import { pointsOfInterestService } from "../points-of-interest/points-of-interest.js";
-import { routesService } from "../routes/routes.js";
+import { routeService } from "../routes/routes.js";
 import { ReviewController } from "./review.controller.js";
 import { ReviewModel } from "./review.model.js";
 import { ReviewRepository } from "./review.repository.js";
@@ -11,7 +11,7 @@ const reviewRepository = new ReviewRepository(ReviewModel);
 const reviewService = new ReviewService(
 	reviewRepository,
 	pointsOfInterestService,
-	routesService,
+	routeService,
 );
 const reviewController = new ReviewController(logger, reviewService);
 

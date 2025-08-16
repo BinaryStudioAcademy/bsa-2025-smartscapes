@@ -1,6 +1,7 @@
 import mapboxgl from "mapbox-gl";
 
 import { config } from "~/libs/modules/config/config.js";
+import { type Coordinates } from "~/libs/types/types.js";
 
 import {
 	GEOLOCATE_AUTO_TRIGGER_DELAY,
@@ -17,7 +18,6 @@ import {
 	type ControlPosition,
 	type MapControl,
 	type MapOptions,
-	type PointGeometry,
 } from "./libs/types/types.js";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -51,9 +51,7 @@ class MapClient {
 		});
 	}
 
-	public addMarkers(
-		markers: { coordinates: PointGeometry["coordinates"] }[],
-	): void {
+	public addMarkers(markers: { coordinates: Coordinates }[]): void {
 		for (const marker of markers) {
 			this.addMarker(marker.coordinates);
 		}
@@ -154,7 +152,7 @@ class MapClient {
 		this.controls.set(id, control);
 	}
 
-	private addMarker(coordinates: PointGeometry["coordinates"]): void {
+	private addMarker(coordinates: Coordinates): void {
 		if (!this.map) {
 			return;
 		}

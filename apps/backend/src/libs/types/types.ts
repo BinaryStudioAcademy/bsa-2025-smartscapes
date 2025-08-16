@@ -6,6 +6,7 @@ export {
 	type APIErrorResponse,
 	type APIResponse,
 	type APIValidationErrorDetail,
+	type Coordinates,
 	type HTTPMethod,
 	type LineStringGeometry,
 	type PointGeometry,

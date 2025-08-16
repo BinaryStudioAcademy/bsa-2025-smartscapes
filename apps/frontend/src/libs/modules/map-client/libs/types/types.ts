@@ -1,4 +1,3 @@
-export { type PointGeometry } from "@smartscapes/shared";
 export {
 	type ControlPosition,
 	type GeolocateControlOptions,

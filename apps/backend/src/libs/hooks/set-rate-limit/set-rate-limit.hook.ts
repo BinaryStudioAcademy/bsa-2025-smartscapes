@@ -40,6 +40,7 @@ const setRateLimit = (requestsLimitPerMinute: number): APIPreHandler => {
 			id,
 			requestsNumber + REQUEST_NUMBER_INCREMENT_VALUE,
 		);
+
 		done();
 	};
 };

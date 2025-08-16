@@ -17,3 +17,5 @@ const pointsOfInterestController = new PointsOfInterestController(
 );
 
 export { pointsOfInterestController, pointsOfInterestService };
+export { type PointsOfInterestResponseDto } from "./libs/types/type.js";
+export { PointsOfInterestService } from "./points-of-interest.service.js";

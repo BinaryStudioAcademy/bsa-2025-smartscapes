@@ -1,5 +1,5 @@
 type RouteConstructRequestDto = {
-	pointsOfInterest: number[];
+	poiIds: number[];
 };
 
 export { type RouteConstructRequestDto };
