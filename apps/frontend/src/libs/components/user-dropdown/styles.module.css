@@ -5,3 +5,30 @@
 	border: 1px solid var(--color-stroke-weak);
 	border-radius: 8px;
 }
+
+.dropdown-list {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 10px 0 15px;
+	font-family: var(--font-family);
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-regular);
+	list-style: none;
+}
+
+.list-item {
+	padding: 10px;
+	text-align: center;
+	border-bottom: 1px solid var(--color-stroke-weak);
+	border-radius: 10px;
+	transition: background 0.4s ease;
+}
+
+.list-item:last-child {
+	border-bottom: none;
+}
+
+.list-item:hover {
+	background: var(--color-fill-weak);
+}

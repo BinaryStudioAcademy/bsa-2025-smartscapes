@@ -1,6 +1,7 @@
 import { type JSX } from "react";
 
 import { Avatar, Icon } from "~/libs/components/components.js";
+import { DROPDOWN_MENU_ITEMS } from "~/libs/constants/constants.js";
 import { combineClassNames } from "~/libs/helpers/helpers.js";
 import {
 	useAppDispatch,
@@ -73,7 +74,10 @@ const AuthenticatedHeader = ({ user }: Properties): JSX.Element => {
 					!isDropdownOpen && styles["hidden"],
 				)}
 			>
-				<UserDropdown onLogout={handleLogout} />
+				<UserDropdown
+					dropdownMenuItems={DROPDOWN_MENU_ITEMS}
+					onLogout={handleLogout}
+				/>
 			</div>
 		</div>
 	);

@@ -1,5 +1,6 @@
 .link {
 	color: var(--color-text-brand);
+	text-decoration: none;
 	transition: all 0.3s ease;
 }
 
