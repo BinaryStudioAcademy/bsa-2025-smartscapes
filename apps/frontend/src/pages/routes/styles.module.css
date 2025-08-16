@@ -1,0 +1,6 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	font-size: var(--font-size-display);
+}

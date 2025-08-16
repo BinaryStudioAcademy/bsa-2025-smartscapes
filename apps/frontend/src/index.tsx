@@ -8,7 +8,7 @@ import {
 	StoreProvider,
 	ToastContainer,
 } from "~/libs/components/components.js";
-import { AppRoute } from "~/libs/enums/enums.js";
+import { AppRoute, PermissionKey } from "~/libs/enums/enums.js";
 import { pwa } from "~/libs/modules/pwa/pwa.js";
 import { store } from "~/libs/modules/store/store.js";
 import { Auth } from "~/pages/auth/auth.jsx";
@@ -19,6 +19,7 @@ import { Explore } from "./pages/explore/explore.js";
 import { Landing } from "./pages/landing/landing.jsx";
 import { Profile } from "./pages/profile/profile.js";
 import { RouteDetails } from "./pages/route-description/route-details.js";
+import { Routes } from "./pages/routes/routes.js";
 
 pwa.register();
 
@@ -60,6 +61,16 @@ createRoot(document.querySelector("#root") as HTMLElement).render(
 									</ProtectedRoute>
 								),
 								path: AppRoute.PROFILE,
+							},
+							{
+								element: (
+									<ProtectedRoute
+										routePermissions={[PermissionKey.MANAGE_ROUTES]}
+									>
+										<Routes />
+									</ProtectedRoute>
+								),
+								path: AppRoute.ROUTES,
 							},
 						],
 						element: <App />,

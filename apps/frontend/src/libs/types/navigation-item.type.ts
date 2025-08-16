@@ -1,4 +1,4 @@
-import { type AppRoute } from "~/libs/enums/enums.js";
+import { type AppRoute, type PermissionKey } from "~/libs/enums/enums.js";
 import { type IconName, type ValueOf } from "~/libs/types/types.js";
 
 type NavigationItem = {
@@ -6,6 +6,7 @@ type NavigationItem = {
 	icon: IconName;
 	isLabelHidden?: boolean;
 	label: string;
+	pagePermissions?: ValueOf<typeof PermissionKey>[];
 };
 
 export { type NavigationItem };

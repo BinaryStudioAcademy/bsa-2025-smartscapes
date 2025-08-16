@@ -1,4 +1,4 @@
-import { AppRoute } from "~/libs/enums/enums.js";
+import { AppRoute, PermissionKey } from "~/libs/enums/enums.js";
 import { type NavigationItemsGroup } from "~/libs/types/types.js";
 
 const NAVIGATION_ITEMS_GROUPS: NavigationItemsGroup[] = [
@@ -9,6 +9,7 @@ const NAVIGATION_ITEMS_GROUPS: NavigationItemsGroup[] = [
 				href: AppRoute.ROUTES,
 				icon: "route",
 				label: "Manage routes",
+				pagePermissions: [PermissionKey.MANAGE_ROUTES],
 			},
 			{
 				href: AppRoute.CATEGORIES,

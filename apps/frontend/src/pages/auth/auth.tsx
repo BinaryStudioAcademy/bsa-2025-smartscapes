@@ -59,7 +59,7 @@ const Auth = (): React.JSX.Element => {
 	);
 
 	if (hasUser) {
-		return <Navigate to={AppRoute.APP} />;
+		return <Navigate replace to={AppRoute.APP} />;
 	}
 
 	return (
