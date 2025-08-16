@@ -1,14 +1,11 @@
 import {
 	Button,
 	CreatePOIModal,
-	Header,
 	Loader,
 	Select,
-	Sidebar,
 } from "~/libs/components/components.js";
 import { type SelectOption } from "~/libs/components/select/libs/types/types.js";
-import { NAVIGATION_ITEMS_GROUPS } from "~/libs/constants/constants.js";
-import { AppRoute, DataStatus } from "~/libs/enums/enums.js";
+import { DataStatus } from "~/libs/enums/enums.js";
 import {
 	useAppDispatch,
 	useAppForm,
@@ -40,9 +37,6 @@ const Dashboard = (): React.JSX.Element => {
 	const [uploadedImages, setUploadedImages] = useState<string[]>([]);
 	const [isUploading, setIsUploading] = useState<boolean>(false);
 	const fileInputReference = useRef<HTMLInputElement>(null);
-	const authenticatedUser = useAppSelector(
-		({ auth }) => auth.authenticatedUser,
-	);
 	const dispatch = useAppDispatch();
 
 	const colorOptions: SelectOption<string>[] = [
@@ -121,13 +115,6 @@ const Dashboard = (): React.JSX.Element => {
 	return (
 		<div className={styles["container"]}>
 			<div className={styles["components-container"]}>
-				<Header
-					actions={[{ label: "Sign in", to: AppRoute.SIGN_IN }]}
-					user={authenticatedUser}
-				/>
-				<div className={styles["sidebar-container"]}>
-					<Sidebar navigationItemsGroups={NAVIGATION_ITEMS_GROUPS} />
-				</div>
 				<Loader />
 				<div className={styles["carousel-container"]}>
 					<Carousel images={uploadedImages} />

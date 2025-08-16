@@ -1,5 +1,5 @@
-import { Header, Loader } from "~/libs/components/components.js";
-import { AppRoute, DataStatus } from "~/libs/enums/enums.js";
+import { Loader } from "~/libs/components/components.js";
+import { DataStatus } from "~/libs/enums/enums.js";
 import {
 	useAppDispatch,
 	useAppSelector,
@@ -19,10 +19,6 @@ const RouteDetails = (): React.JSX.Element => {
 	const dispatch = useAppDispatch();
 
 	const { id } = useParams<{ id: string }>();
-
-	const authenticatedUser = useAppSelector(
-		({ auth }) => auth.authenticatedUser,
-	);
 
 	useEffect(() => {
 		void dispatch(routeActions.getRouteById(Number(id)));
@@ -44,10 +40,6 @@ const RouteDetails = (): React.JSX.Element => {
 
 	return (
 		<>
-			<Header
-				actions={[{ label: "Sign in", to: AppRoute.SIGN_IN }]}
-				user={authenticatedUser}
-			/>
 			<main className={styles["container"]}>
 				<h1 className={styles["label"]}>{name}</h1>
 				<ImageGallery />

@@ -10,10 +10,6 @@
 	justify-content: space-between;
 }
 
-.sidebar-container {
-	align-self: flex-start;
-}
-
 .carousel-container {
 	width: 50%;
 	margin-bottom: 1rem;
