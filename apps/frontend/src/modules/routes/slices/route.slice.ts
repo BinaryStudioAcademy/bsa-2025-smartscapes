@@ -4,16 +4,18 @@ import { DataStatus } from "~/libs/enums/enums.js";
 import { type ValueOf } from "~/libs/types/types.js";
 
 import { type RouteGetByIdResponseDto } from "../libs/types/types.js";
-import { getRouteById } from "./actions.js";
+import { getAll, getRouteById } from "./actions.js";
 
 type State = {
 	dataStatus: ValueOf<typeof DataStatus>;
 	route: null | RouteGetByIdResponseDto;
+	routes: RouteGetByIdResponseDto[];
 };
 
 const initialState: State = {
 	dataStatus: DataStatus.IDLE,
 	route: null,
+	routes: [],
 };
 
 const { actions, name, reducer } = createSlice({
@@ -26,6 +28,17 @@ const { actions, name, reducer } = createSlice({
 			state.dataStatus = DataStatus.FULFILLED;
 		});
 		builder.addCase(getRouteById.rejected, (state) => {
+			state.dataStatus = DataStatus.REJECTED;
+		});
+
+		builder.addCase(getAll.pending, (state) => {
+			state.dataStatus = DataStatus.PENDING;
+		});
+		builder.addCase(getAll.fulfilled, (state, action) => {
+			state.routes = action.payload.data;
+			state.dataStatus = DataStatus.FULFILLED;
+		});
+		builder.addCase(getAll.rejected, (state) => {
 			state.dataStatus = DataStatus.REJECTED;
 		});
 	},

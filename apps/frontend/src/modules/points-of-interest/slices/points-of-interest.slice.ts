@@ -4,7 +4,7 @@ import { DataStatus } from "~/libs/enums/enums.js";
 import { type ValueOf } from "~/libs/types/types.js";
 import { type PointsOfInterestResponseDto } from "~/modules/points-of-interest/points-of-interest.js";
 
-import { create } from "./actions.js";
+import { create, getById } from "./actions.js";
 
 type State = {
 	createStatus: ValueOf<typeof DataStatus>;
@@ -29,6 +29,17 @@ const { actions, name, reducer } = createSlice({
 		});
 		builder.addCase(create.rejected, (state) => {
 			state.createStatus = DataStatus.REJECTED;
+		});
+
+		builder.addCase(getById.pending, (state) => {
+			state.dataStatus = DataStatus.PENDING;
+		});
+		builder.addCase(getById.fulfilled, (state, { payload }) => {
+			state.data = payload.data;
+			state.dataStatus = DataStatus.FULFILLED;
+		});
+		builder.addCase(getById.rejected, (state) => {
+			state.dataStatus = DataStatus.REJECTED;
 		});
 	},
 	initialState,
