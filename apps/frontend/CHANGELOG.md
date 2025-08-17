@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.27.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.26.0...@smartscapes/frontend-v1.27.0) (2025-08-17)
+
+
+### Features
+
+* **frontend:** adjust link styles ss-295 ([#400](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/400)) ([486c42e](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/486c42e4a26eecc513e408539ea9751f9fe982b2))
+
 ## [1.26.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.25.1...@smartscapes/frontend-v1.26.0) (2025-08-15)
 
 
