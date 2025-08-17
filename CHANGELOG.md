@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.34.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.33.0...v1.34.0) (2025-08-17)
+
+
+### Features
+
+* **frontend/backend/shared:** implement profile visibility feature ss-342 ([#404](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/404)) ([03849a7](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/03849a781aa66dfc914eee7cd94d17add870da7b))
+* **frontend:** cover dashboard items with permissions ss-336 ([#383](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/383)) ([a95e910](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a95e91037cddab36aec4d0d868b476a4bfd5c548))
+
 ## [1.33.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.32.0...v1.33.0) (2025-08-17)
 
 
