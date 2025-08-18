@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.39.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.39.0...v1.39.1) (2025-08-18)
+
+
+### Bug Fixes
+
+* **backend:** update helmet config for swagger ss-295 ([#429](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/429)) ([f4b0a43](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/f4b0a43111afa8da9902a972e06214c42d95a20c))
+
 ## [1.39.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.38.1...v1.39.0) (2025-08-18)
 
 
