@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.23.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.23.0...@smartscapes/backend-v1.23.1) (2025-08-18)
+
+
+### Bug Fixes
+
+* **backend:** update helmet config ss-220 ([#411](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/411)) ([c7e022f](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c7e022f5bd57fce8f0669c59326df0c7202e4c91))
+
 ## [1.23.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.22.0...@smartscapes/backend-v1.23.0) (2025-08-17)
 
 

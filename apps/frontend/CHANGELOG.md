@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.29.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.28.0...@smartscapes/frontend-v1.29.0) (2025-08-18)
+
+
+### Features
+
+* **frontend:** set up app redirection ss-407 ([#408](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/408)) ([c5b232a](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c5b232ae0d4fec855ac6183b19a9e3071cddf382))
+
 ## [1.28.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.27.0...@smartscapes/frontend-v1.28.0) (2025-08-17)
 
 
