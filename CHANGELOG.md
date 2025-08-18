@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.38.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.38.0...v1.38.1) (2025-08-18)
+
+
+### Bug Fixes
+
+* **root:** large image upload fix ss-220 ([#424](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/424)) ([d08c720](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d08c720aa527e03be8ecda9bc78d4b83a790e863))
+
 ## [1.38.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.37.0...v1.38.0) (2025-08-18)
 
 
