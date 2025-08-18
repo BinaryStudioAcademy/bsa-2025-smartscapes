@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.30.0...@smartscapes/frontend-v1.31.0) (2025-08-18)
+
+
+### Features
+
+* **frontend:** implement common layout component ss-130 ([#397](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/397)) ([2a8a731](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2a8a7318f7aa4db314317f0cccdbfc19b449a9b6))
+
 ## [1.30.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.29.2...@smartscapes/frontend-v1.30.0) (2025-08-18)
 
 
