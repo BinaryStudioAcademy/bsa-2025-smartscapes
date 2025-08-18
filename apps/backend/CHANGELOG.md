@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.24.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.23.2...@smartscapes/backend-v1.24.0) (2025-08-18)
+
+
+### Features
+
+* **frontend/backend/shared:** implement points of interest details page ss-245 ([#337](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/337)) ([26c5795](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/26c5795e69f7d5746b791b9f1276a60d24f38e10))
+
+
+### Bug Fixes
+
+* **backend:** solve validation complier error issue ss-415 ([#418](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/418)) ([1daf53e](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/1daf53e6616ae62caf52aa8a44d995458667327c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.22.1 to 1.23.0
+
 ## [1.23.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.23.1...@smartscapes/backend-v1.23.2) (2025-08-18)
 
 
