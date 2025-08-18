@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.23.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.23.1...@smartscapes/backend-v1.23.2) (2025-08-18)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.22.0 to 1.22.1
+
 ## [1.23.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.23.0...@smartscapes/backend-v1.23.1) (2025-08-18)
 
 
