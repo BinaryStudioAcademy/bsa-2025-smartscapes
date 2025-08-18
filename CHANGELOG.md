@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.35.0...v1.35.1) (2025-08-18)
+
+
+### Bug Fixes
+
+* **frontend:** remove unused users slice ss-407 ([#413](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/413)) ([121dd66](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/121dd6692f290b78e96eee12fc9d614ee1a006da))
+
 ## [1.35.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.34.0...v1.35.0) (2025-08-18)
 
 
