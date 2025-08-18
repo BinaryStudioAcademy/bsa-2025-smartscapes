@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.38.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.37.0...v1.38.0) (2025-08-18)
+
+
+### Features
+
+* **backend:** add planed path to routes ss-349 ([#422](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/422)) ([1e07262](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/1e072626ceebf6f9cff465e162768be7a7443e44))
+
 ## [1.37.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.36.0...v1.37.0) (2025-08-18)
 
 
