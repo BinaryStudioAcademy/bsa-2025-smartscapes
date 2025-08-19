@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.25.3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.25.2...@smartscapes/backend-v1.25.3) (2025-08-19)
+
+
+### Bug Fixes
+
+* **backend:** fix routes repository queries ss-432 ([#433](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/433)) ([02a1469](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/02a1469388d9d025e45c5119879140e4890b2279))
+
 ## [1.25.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.25.1...@smartscapes/backend-v1.25.2) (2025-08-18)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.39.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.39.1...v1.39.2) (2025-08-19)
+
+
+### Bug Fixes
+
+* **backend:** fix routes repository queries ss-432 ([#433](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/433)) ([02a1469](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/02a1469388d9d025e45c5119879140e4890b2279))
+
 ## [1.39.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.39.0...v1.39.1) (2025-08-18)
 
 
