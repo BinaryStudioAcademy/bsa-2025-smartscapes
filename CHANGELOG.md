@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.40.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.39.2...v1.40.0) (2025-08-19)
+
+
+### Features
+
+* **backend:** filter routes by category backend ss-345 ([#364](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/364)) ([62e59c3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/62e59c36067d9e5a3ccfec86afa54ffe6be1e0cd))
+
 ## [1.39.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.39.1...v1.39.2) (2025-08-19)
 
 
