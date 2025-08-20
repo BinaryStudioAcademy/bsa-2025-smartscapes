@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.28.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.27.0...@smartscapes/backend-v1.28.0) (2025-08-20)
+
+
+### Features
+
+* **backend/frontend/shared:** implement admin dashboard issue ss-189 ([#370](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/370)) ([3667c79](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3667c79969a6df4349ec690ec6b6766e253b470c))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.25.0 to 1.26.0
+
 ## [1.27.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.26.0...@smartscapes/backend-v1.27.0) (2025-08-19)
 
 

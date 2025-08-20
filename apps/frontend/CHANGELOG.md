@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.33.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.32.0...@smartscapes/frontend-v1.33.0) (2025-08-20)
+
+
+### Features
+
+* **backend/frontend/shared:** implement admin dashboard issue ss-189 ([#370](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/370)) ([3667c79](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3667c79969a6df4349ec690ec6b6766e253b470c))
+* **frontend:** add location to create poi modal ss-359 ([#380](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/380)) ([bc2df29](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/bc2df291a05d520534d9b43a385165c097562199))
+* **frontend:** show routes without geolocation ss-453 ([#454](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/454)) ([c48684b](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c48684b2e3943cc5234160ef601d5f33cfac29b0))
+
+
+### Bug Fixes
+
+* **frontend:** long description owerflowing container on POI detail page ss-437 ([#459](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/459)) ([8f6aad9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8f6aad9090794861ac24a9d01fd8cbd1bbb13f5b))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.25.0 to 1.26.0
+
 ## [1.32.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.31.1...@smartscapes/frontend-v1.32.0) (2025-08-19)
 
 

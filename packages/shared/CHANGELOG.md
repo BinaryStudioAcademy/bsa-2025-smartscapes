@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.26.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.25.0...@smartscapes/shared-v1.26.0) (2025-08-20)
+
+
+### Features
+
+* **backend/frontend/shared:** implement admin dashboard issue ss-189 ([#370](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/370)) ([3667c79](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3667c79969a6df4349ec690ec6b6766e253b470c))
+* **frontend:** add location to create poi modal ss-359 ([#380](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/380)) ([bc2df29](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/bc2df291a05d520534d9b43a385165c097562199))
+
 ## [1.25.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.24.0...@smartscapes/shared-v1.25.0) (2025-08-19)
 
 
