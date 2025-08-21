@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.43.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.42.0...v1.43.0) (2025-08-21)
+
+
+### Features
+
+* **backend/frontend:** avatar upload ss-388 ([#431](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/431)) ([c474ac5](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c474ac585f5d02eeb3883291798194980e8be7a6))
+
 ## [1.42.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.41.0...v1.42.0) (2025-08-20)
 
 
