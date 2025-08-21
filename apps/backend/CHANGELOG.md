@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.31.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.30.0...@smartscapes/backend-v1.31.0) (2025-08-21)
+
+
+### Features
+
+* **frontend/backend:** load and display pois list on route details page ss-390 ([#417](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/417)) ([adb34d0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/adb34d07f18f60ed1229abdcc02cea9c1b40e1a7))
+
+
+### Bug Fixes
+
+* **backend:** add routes to the name in find all routes repository ss-487 ([#489](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/489)) ([61c9de5](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/61c9de5eb77f1f3487d18465c533faba9b13eb0d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.27.1 to 1.28.0
+
 ## [1.30.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.29.0...@smartscapes/backend-v1.30.0) (2025-08-21)
 
 

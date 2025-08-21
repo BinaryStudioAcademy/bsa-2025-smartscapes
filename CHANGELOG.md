@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.45.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.44.1...v1.45.0) (2025-08-21)
+
+
+### Features
+
+* **frontend/backend:** load and display pois list on route details page ss-390 ([#417](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/417)) ([adb34d0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/adb34d07f18f60ed1229abdcc02cea9c1b40e1a7))
+* **frontend:** add create route modal ss-360 ([#442](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/442)) ([5cf4420](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/5cf4420ae90e199859cbef61d6cb39e140e00c78))
+
+
+### Bug Fixes
+
+* **backend:** add routes to the name in find all routes repository ss-487 ([#489](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/489)) ([61c9de5](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/61c9de5eb77f1f3487d18465c533faba9b13eb0d))
+* **frontend:** apply higher z index value for sidebar then routes panel ss-485 ([#488](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/488)) ([65ae090](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/65ae090fa1a6ce2b27bda765703890ab4909fd44))
+
 ## [1.44.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.44.0...v1.44.1) (2025-08-21)
 
 
