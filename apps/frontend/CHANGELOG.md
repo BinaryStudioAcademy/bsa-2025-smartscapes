@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.35.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.35.0...@smartscapes/frontend-v1.35.1) (2025-08-21)
+
+
+### Bug Fixes
+
+* **frontend:** update map location logic ss-474 ([#479](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/479)) ([d6d1583](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d6d15838d2a04e9fc112e6b329c31986eecce0dc))
+* **frontend:** update z indexes ss-473 ([#475](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/475)) ([bf1bb5f](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/bf1bb5fb96cd1de52f5ffdd897ae698d690ab162))
+
 ## [1.35.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.34.0...@smartscapes/frontend-v1.35.0) (2025-08-21)
 
 
