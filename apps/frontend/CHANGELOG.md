@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.35.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.34.0...@smartscapes/frontend-v1.35.0) (2025-08-21)
+
+
+### Features
+
+* **frontend:** add list to dropdown menu ss-338 ([#396](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/396)) ([60d7f20](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/60d7f208360e956c18fecab96ece0ef9b60d18c2))
+* **frontend:** extend route details page with edit feature ss-398 ([#445](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/445)) ([fc6cb39](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/fc6cb390439c80c643b9d3d3788ab9f7baaed3f1))
+
+
+### Bug Fixes
+
+* **backend/frontend/shared:** align code with the criteria ss-439 ([#451](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/451)) ([a9c7fa6](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a9c7fa69148efc86ba6e740e23de1bf44d13eca9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.27.0 to 1.27.1
+
 ## [1.34.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.33.0...@smartscapes/frontend-v1.34.0) (2025-08-21)
 
 
