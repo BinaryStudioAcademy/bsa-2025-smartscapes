@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.46.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.45.0...v1.46.0) (2025-08-22)
+
+
+### Features
+
+* **backend/frontend/shared:** implement admin dashboard issue ss-189 ([#465](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/465)) ([6c01549](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/6c015496d43eaf26feda0e68bab118f5b507d25a))
+
+
+### Bug Fixes
+
+* **frontend/backend:** fix upload max size message and carousel wheel event ss-434 ([#456](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/456)) ([2e939d1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2e939d1c96ad6a969509260a156f1f66e4375beb))
+
 ## [1.45.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.44.1...v1.45.0) (2025-08-21)
 
 
