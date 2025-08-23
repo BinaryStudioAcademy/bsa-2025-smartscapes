@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.39.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.38.0...@smartscapes/frontend-v1.39.0) (2025-08-23)
+
+
+### Features
+
+* **backend/frontend/shared:** merge pois find all endpoints into one ss-189 ([#515](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/515)) ([a5ce3e2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a5ce3e25681babba3462a05e6b55ca71c0e3ab59))
+* **frontend:** add separate data status for route-details patch ss-517 ([#520](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/520)) ([59c045a](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/59c045aa2a9d905b1c9ee27b4dedd0caddf53c0a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.30.0 to 1.31.0
+
 ## [1.38.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.37.0...@smartscapes/frontend-v1.38.0) (2025-08-23)
 
 

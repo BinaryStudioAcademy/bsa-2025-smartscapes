@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.31.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.30.0...@smartscapes/shared-v1.31.0) (2025-08-23)
+
+
+### Features
+
+* **backend/frontend/shared:** merge pois find all endpoints into one ss-189 ([#515](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/515)) ([a5ce3e2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a5ce3e25681babba3462a05e6b55ca71c0e3ab59))
+
 ## [1.30.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.29.0...@smartscapes/shared-v1.30.0) (2025-08-23)
 
 
