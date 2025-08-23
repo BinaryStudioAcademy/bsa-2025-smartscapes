@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.38.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.37.0...@smartscapes/frontend-v1.38.0) (2025-08-23)
+
+
+### Features
+
+* **frontend:** display first image as a map for poi details page ss-449 ([#502](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/502)) ([67e3e15](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/67e3e15ca7ce6510f11a730311796702700c74da))
+* **frontend:** feat add an ability to edit poi on poi description page ss-491 ([#503](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/503)) ([7e0d767](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/7e0d767ee1bc6d81d9a90481fbcd9b068793b305))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.29.0 to 1.30.0
+
 ## [1.37.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.36.0...@smartscapes/frontend-v1.37.0) (2025-08-22)
 
 
