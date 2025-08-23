@@ -21,6 +21,7 @@ type State = {
 	dataStatus: ValueOf<typeof DataStatus>;
 	formData: null | Partial<RouteCreateRequestDto>;
 	formDataStatus: ValueOf<typeof DataStatus>;
+	patchStatus: ValueOf<typeof DataStatus>;
 	route: null | RouteGetByIdResponseDto;
 	routes: RouteGetByIdResponseDto[];
 };
@@ -30,6 +31,7 @@ const initialState: State = {
 	dataStatus: DataStatus.IDLE,
 	formData: null,
 	formDataStatus: DataStatus.IDLE,
+	patchStatus: DataStatus.IDLE,
 	route: null,
 	routes: [],
 };
@@ -69,14 +71,14 @@ const { actions, name, reducer } = createSlice({
 		});
 
 		builder.addCase(patchRoute.pending, (state) => {
-			state.dataStatus = DataStatus.PENDING;
+			state.patchStatus = DataStatus.PENDING;
 		});
 		builder.addCase(patchRoute.fulfilled, (state, action) => {
 			state.route = action.payload.data;
-			state.dataStatus = DataStatus.FULFILLED;
+			state.patchStatus = DataStatus.FULFILLED;
 		});
 		builder.addCase(patchRoute.rejected, (state) => {
-			state.dataStatus = DataStatus.REJECTED;
+			state.patchStatus = DataStatus.REJECTED;
 		});
 
 		builder.addCase(restoreCreateRouteFormData.pending, (state) => {
