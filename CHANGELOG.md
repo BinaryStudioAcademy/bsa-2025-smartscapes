@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.49.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.48.0...v1.49.0) (2025-08-24)
+
+
+### Features
+
+* **backend/frontend/shared:** routes list ss-403 ([#494](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/494)) ([2732e7e](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2732e7eaac50163deeea3e387343507247d121d7))
+* **frontend:** user routes flow ss-347 ([#490](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/490)) ([4e44d46](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/4e44d46e04d506aab9c03b9ef17cd497917060fe))
+
 ## [1.48.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.47.0...v1.48.0) (2025-08-23)
 
 
