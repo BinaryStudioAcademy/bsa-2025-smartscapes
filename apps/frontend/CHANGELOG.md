@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.41.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.40.0...@smartscapes/frontend-v1.41.0) (2025-08-24)
+
+
+### Features
+
+* **frontend:** adjust styles for common components ss-1 ([#524](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/524)) ([d4f11e7](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d4f11e7dc36eb359b363265c629854dd72ece19d))
+
 ## [1.40.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.39.0...@smartscapes/frontend-v1.40.0) (2025-08-24)
 
 
