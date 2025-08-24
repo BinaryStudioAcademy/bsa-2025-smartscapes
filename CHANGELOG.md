@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.52.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.51.1...v1.52.0) (2025-08-24)
+
+
+### Features
+
+* **frontend:** add tabs navigation for mobile ss-1 ([#531](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/531)) ([0c46748](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/0c4674832233aae6d8fccdc2cafba4ab510f53b2))
+
 ## [1.51.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.51.0...v1.51.1) (2025-08-24)
 
 
