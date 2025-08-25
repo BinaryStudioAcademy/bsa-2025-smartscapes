@@ -21,9 +21,16 @@
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	font-size: var(--font-size-tiny);
-	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-strong);
 	background-color: var(--color-brand-800);
 	border-radius: 50%;
+}
+
+.small {
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-strong);
+}
+
+.large {
+	font-size: calc(var(--font-size-h1));
+	color: var(--color-base);
 }

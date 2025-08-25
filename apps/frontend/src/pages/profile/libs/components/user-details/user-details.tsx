@@ -62,20 +62,22 @@ const UserDetails = (): null | React.JSX.Element => {
 	return (
 		<div className={styles["user-details-container"]}>
 			<div className={styles["user-details-avatar"]}>
-				<Avatar size={100} user={authenticatedUser} />
-				<Button
-					label="Upload avatar"
-					onClick={handleTriggerFileUpload}
-					variant="outlined"
-				/>
-				<Button label="Delete avatar" variant="outlined-danger" />
-				<input
-					accept="image/*"
-					onChange={handleFileUpload}
-					ref={fileInputReference}
-					style={{ display: "none" }}
-					type="file"
-				/>
+				<Avatar size={128} user={authenticatedUser} variant="large" />
+				<div className={styles["user-upload-buttons"]}>
+					<Button
+						label="Upload avatar"
+						onClick={handleTriggerFileUpload}
+						variant="outlined"
+					/>
+					<Button label="Delete avatar" variant="outlined-danger" />
+					<input
+						accept="image/*"
+						onChange={handleFileUpload}
+						ref={fileInputReference}
+						style={{ display: "none" }}
+						type="file"
+					/>
+				</div>
 			</div>
 			<ProfileForm onSubmit={handleFormSubmit} user={authenticatedUser} />
 		</div>

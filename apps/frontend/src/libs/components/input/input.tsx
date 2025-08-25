@@ -21,6 +21,7 @@ type Properties<T extends FieldValues> = {
 		ComponentProps<typeof InputIcon>,
 		"label" | "name" | "onClick"
 	>;
+	isReadonly?: boolean;
 	label: string;
 	name: FieldPath<T>;
 	placeholder?: string;
@@ -32,6 +33,7 @@ const Input = <T extends FieldValues>({
 	control,
 	errors,
 	iconRight,
+	isReadonly = false,
 	label,
 	name,
 	placeholder = "",
@@ -52,10 +54,12 @@ const Input = <T extends FieldValues>({
 						styles["input"],
 						hasError && styles["input-error"],
 						iconRight && styles["input-right-icon-space"],
+						isReadonly && styles["input-readonly"],
 					)}
 					name={field.name}
 					onChange={field.onChange}
 					placeholder={placeholder}
+					readOnly={isReadonly}
 					type={type}
 					value={field.value}
 				/>

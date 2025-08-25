@@ -8,24 +8,26 @@ import {
 
 import styles from "./styles.module.css";
 
+type FormValues = AuthenticatedUserPatchRequestDto & { email: string };
+
 type Properties = {
 	onSubmit: (data: AuthenticatedUserPatchRequestDto) => void;
 	user: UserAuthResponseDto;
 };
 
 const ProfileForm = ({ onSubmit, user }: Properties): React.JSX.Element => {
-	const { firstName, isVisibleProfile, lastName } = user;
+	const { email, firstName, isVisibleProfile, lastName } = user;
 
-	const { control, errors, handleSubmit } =
-		useAppForm<AuthenticatedUserPatchRequestDto>({
-			defaultValues: {
-				firstName,
-				isVisibleProfile,
-				lastName,
-			},
-			mode: "onChange",
-			validationSchema: authenticatedUserPatchValidationSchema,
-		});
+	const { control, errors, handleSubmit } = useAppForm<FormValues>({
+		defaultValues: {
+			email,
+			firstName,
+			isVisibleProfile,
+			lastName,
+		},
+		mode: "onChange",
+		validationSchema: authenticatedUserPatchValidationSchema,
+	});
 
 	return (
 		<form className={styles["form"]} onSubmit={handleSubmit(onSubmit)}>
@@ -41,6 +43,14 @@ const ProfileForm = ({ onSubmit, user }: Properties): React.JSX.Element => {
 				errors={errors}
 				label="Last Name"
 				name="lastName"
+				type="text"
+			/>
+			<Input
+				control={control}
+				errors={errors}
+				isReadonly
+				label="Email"
+				name="email"
 				type="text"
 			/>
 			<Checkbox

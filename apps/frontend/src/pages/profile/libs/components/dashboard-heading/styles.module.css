@@ -1,0 +1,25 @@
+.heading {
+	margin: 0 0 48px;
+}
+
+.title {
+	margin: 0 0 8px;
+	font-size: var(--font-size-h1);
+	font-weight: var(--font-weight-semibold);
+	line-height: 1.2;
+	color: var(--color-text-strong);
+}
+
+.subtitle {
+	margin: 0;
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-regular);
+	line-height: 1.5;
+	color: var(--color-text-weak);
+}
+
+@media (width <= 480px) {
+	.heading {
+		margin-bottom: 28px;
+	}
+}

@@ -5,7 +5,8 @@ import {
 	type FieldValues,
 } from "react-hook-form";
 
-import { FieldError } from "~/libs/components/components.js";
+import { FieldError, Icon } from "~/libs/components/components.js";
+import { combineClassNames } from "~/libs/helpers/helpers.js";
 import { useFormController } from "~/libs/hooks/hooks.js";
 
 import styles from "./styles.module.css";
@@ -29,17 +30,22 @@ const Checkbox = <T extends FieldValues>({
 
 	const error = errors[name]?.message;
 	const hasError = Boolean(error);
+	const isChecked = field.value;
 
 	return (
 		<label className={styles["container"]}>
 			<input
 				autoComplete={autocomplete}
-				defaultChecked={field.value}
+				checked={isChecked}
+				className={combineClassNames(styles["input"], "visually-hidden")}
 				name={name}
 				onChange={field.onChange}
 				type="checkbox"
-				value={field.value}
 			/>
+			<span className={styles["custom-checkbox"]}>
+				{isChecked && <Icon height={8} name="check" width={8} />}
+			</span>
+			<span className="visually-hidden">{label}</span>
 			{label}
 			{hasError && <FieldError description={error as string} />}
 		</label>

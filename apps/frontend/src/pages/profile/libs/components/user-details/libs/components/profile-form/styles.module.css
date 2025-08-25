@@ -3,7 +3,7 @@
 	flex-direction: column;
 	gap: 24px;
 	width: 100%;
-	padding: 24px 0;
+	padding: 24px 0 0;
 }
 
 .form-button {
@@ -18,6 +18,6 @@
 
 @media screen and (width <= 480px) {
 	.form {
-		padding: 8px 0;
+		padding: 16px 0;
 	}
 }

@@ -23,6 +23,7 @@ const authenticatedUserPatch = z
 			})
 			.optional(),
 		isVisibleProfile: z.boolean().optional(),
+
 		lastName: z
 			.string()
 			.trim()
@@ -40,7 +41,7 @@ const authenticatedUserPatch = z
 			})
 			.optional(),
 	})
-	.refine((data) => data.firstName || data.lastName || data.isVisibleProfile, {
+	.refine((data) => Object.keys(data).length > 0, {
 		message: UserValidationMessage.ONE_FIELD_REQUIRED,
 	});
 
