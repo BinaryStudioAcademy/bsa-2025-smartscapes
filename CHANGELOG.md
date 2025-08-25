@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.56.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.55.0...v1.56.0) (2025-08-25)
+
+
+### Features
+
+* **frontend/backend:** ability to upload images to the route page ss-476 ([#513](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/513)) ([e4fa4eb](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e4fa4ebad3fbdee53a403e1d157bfeaa554e1d03))
+
+
+### Bug Fixes
+
+* **backend:** fix user routes request ss-534 ([#548](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/548)) ([69123cd](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/69123cd01c58783fb15a2678eeeded290f74a0de))
+
 ## [1.55.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.54.0...v1.55.0) (2025-08-25)
 
 
