@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.34.0...@smartscapes/shared-v1.34.1) (2025-08-25)
+
+
+### Bug Fixes
+
+* **backend:** fix user routes request ss-534 ([#538](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/538)) ([86b0af4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/86b0af4876e43d79ec249f221e5555f58c00d427))
+
 ## [1.34.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.33.0...@smartscapes/shared-v1.34.0) (2025-08-25)
 
 

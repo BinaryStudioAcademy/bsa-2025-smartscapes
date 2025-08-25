@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.38.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.37.0...@smartscapes/backend-v1.38.0) (2025-08-25)
+
+
+### Features
+
+* **frontend/backend:** create and display follow notification ss-438 ([#522](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/522)) ([49f60f6](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/49f60f6a3b4fa87da3525311909c1fd6526b5e12))
+
+
+### Bug Fixes
+
+* **backend:** fix user routes request ss-534 ([#538](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/538)) ([86b0af4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/86b0af4876e43d79ec249f221e5555f58c00d427))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.34.0 to 1.34.1
+
 ## [1.37.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.36.0...@smartscapes/backend-v1.37.0) (2025-08-25)
 
 
