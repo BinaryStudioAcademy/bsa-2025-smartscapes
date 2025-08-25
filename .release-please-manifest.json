@@ -1,7 +1,7 @@
 {
-	".": "1.52.0",
-	"apps/backend": "1.35.1",
-	"apps/frontend": "1.43.0",
-	"packages/shared": "1.32.1",
-	"tests": "0.1.2"
+	".": "1.53.0",
+	"apps/backend": "1.36.0",
+	"apps/frontend": "1.44.0",
+	"packages/shared": "1.33.0",
+	"tests": "0.1.3"
 }

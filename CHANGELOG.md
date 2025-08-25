@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.53.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.52.0...v1.53.0) (2025-08-25)
+
+
+### Features
+
+* **frontend/backend/shared:** add user profile page and follow feature ss-402 ([#457](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/457)) ([15f325c](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/15f325cddd64c275054f9865f7775932250b108d))
+* **frontend:** add construct route page ss-340 ([#436](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/436)) ([1a86a4c](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/1a86a4c2c828c968a392be5aa1588b53126b6d6a))
+
 ## [1.52.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.51.1...v1.52.0) (2025-08-24)
 
 
