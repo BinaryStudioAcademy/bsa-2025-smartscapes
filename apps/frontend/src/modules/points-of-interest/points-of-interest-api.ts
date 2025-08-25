@@ -39,6 +39,18 @@ class PointOfInterestApi extends BaseHTTPApi {
 		return await response.json();
 	}
 
+	public async delete(id: number): Promise<APIResponse<boolean>> {
+		const response = await this.load<APIResponse<boolean>>(
+			this.getFullEndpoint(PointsOfInterestApiPath.$ID, { id: String(id) }),
+			{
+				hasAuth: true,
+				method: "DELETE",
+			},
+		);
+
+		return await response.json();
+	}
+
 	public async findAll(
 		payload: PointsOfInterestGetAllQuery,
 	): Promise<

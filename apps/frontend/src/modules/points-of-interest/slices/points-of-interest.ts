@@ -1,4 +1,4 @@
-import { create, findAll, getById, patch } from "./actions.js";
+import { create, findAll, getById, patch, remove } from "./actions.js";
 import { actions as poiDetailsActions } from "./points-of-interest-details.slice.js";
 import { actions as poisActions } from "./points-of-interest.slice.js";
 
@@ -9,6 +9,7 @@ const allActions = {
 	findAll,
 	getById,
 	patch,
+	remove,
 };
 
 export { allActions as actions };
