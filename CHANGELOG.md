@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.54.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.53.0...v1.54.0) (2025-08-25)
+
+
+### Features
+
+* **frontend/backend/shared:** add an ability to leave a review comment for the route ss-389 ([#461](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/461)) ([5d24796](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/5d24796c92442dc692d03605f91657ec60b36a1e))
+
 ## [1.53.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.52.0...v1.53.0) (2025-08-25)
 
 
