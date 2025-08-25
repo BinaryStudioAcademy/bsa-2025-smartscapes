@@ -21,6 +21,7 @@ const Pagination = ({
 		handleGoToPrevious,
 		handleGoToStart,
 		handlePageSizeChange,
+		page,
 		pageSize,
 	} = paginationSettings;
 
@@ -45,10 +46,26 @@ const Pagination = ({
 					Page {paginationSettings.page} of {totalPages}
 				</span>
 				<div className={styles["navigation-buttons-container"]}>
-					<NavigationButton label="«" onClick={handleGoToStart} />
-					<NavigationButton label="‹" onClick={handleGoToPrevious} />
-					<NavigationButton label="›" onClick={handleGoToNext} />
-					<NavigationButton label="»" onClick={handleGoToEnd} />
+					<NavigationButton
+						isDisabled={page <= range.min}
+						label="«"
+						onClick={handleGoToStart}
+					/>
+					<NavigationButton
+						isDisabled={page <= range.min}
+						label="‹"
+						onClick={handleGoToPrevious}
+					/>
+					<NavigationButton
+						isDisabled={page >= totalPages}
+						label="›"
+						onClick={handleGoToNext}
+					/>
+					<NavigationButton
+						isDisabled={page >= totalPages}
+						label="»"
+						onClick={handleGoToEnd}
+					/>
 				</div>
 			</div>
 		</div>
