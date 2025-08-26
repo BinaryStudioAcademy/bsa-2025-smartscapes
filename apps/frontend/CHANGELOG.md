@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.50.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.49.0...@smartscapes/frontend-v1.50.0) (2025-08-26)
+
+
+### Features
+
+* **frontend/shared:** update profile page design ss-448 ([#482](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/482)) ([2b45448](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2b454483f05a54964e9dbdcba12cd1951d8e917a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.35.0 to 1.36.0
+
 ## [1.49.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.48.0...@smartscapes/frontend-v1.49.0) (2025-08-26)
 
 

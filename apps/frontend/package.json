@@ -1,7 +1,7 @@
 {
 	"name": "@smartscapes/frontend",
 	"private": true,
-	"version": "1.49.0",
+	"version": "1.50.0",
 	"type": "module",
 	"engines": {
 		"node": ">=22.10.0 <23.0.0",
@@ -19,7 +19,7 @@
 	"dependencies": {
 		"@hookform/resolvers": "5.1.1",
 		"@reduxjs/toolkit": "2.8.2",
-		"@smartscapes/shared": "1.35.0",
+		"@smartscapes/shared": "1.36.0",
 		"@tanstack/react-table": "8.21.3",
 		"clsx": "2.1.1",
 		"date-fns": "4.1.0",

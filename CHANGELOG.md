@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.59.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.58.0...v1.59.0) (2025-08-26)
+
+
+### Features
+
+* **frontend/shared:** update profile page design ss-448 ([#482](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/482)) ([2b45448](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2b454483f05a54964e9dbdcba12cd1951d8e917a))
+
 ## [1.58.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.57.0...v1.58.0) (2025-08-26)
 
 
