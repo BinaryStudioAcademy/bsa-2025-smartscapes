@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.40.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.39.0...@smartscapes/backend-v1.40.0) (2025-08-26)
+
+
+### Features
+
+* **backend/frontend/shared:** implement edit and delete actions to pois ss-495 ([#543](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/543)) ([9c660ac](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/9c660ac75984b3c592339049f8dfa0cace25b078))
+
 ## [1.39.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.38.0...@smartscapes/backend-v1.39.0) (2025-08-25)
 
 
