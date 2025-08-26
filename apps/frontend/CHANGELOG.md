@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.49.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.48.0...@smartscapes/frontend-v1.49.0) (2025-08-26)
+
+
+### Features
+
+* **frontend:** integrate route creation with construct route flow ss-542 ([#557](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/557)) ([61785d0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/61785d049110d2919f7ba3eedd561ec8055341ee))
+
 ## [1.48.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.47.0...@smartscapes/frontend-v1.48.0) (2025-08-26)
 
 
