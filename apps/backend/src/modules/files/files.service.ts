@@ -50,6 +50,31 @@ class FileService implements Service {
 		return item.toObject();
 	}
 
+	public async delete(id: number): Promise<boolean> {
+		const isDeleted = this.fileRepository.delete(id);
+
+		return await isDeleted;
+	}
+
+	public async deleteFile(payload: { id: number }): Promise<boolean> {
+		const { id } = payload;
+
+		const file = await this.fileRepository.findById(id);
+
+		if (!file) {
+			throw new FilesError({
+				message: FileExceptionMessage.INVALID_ID,
+				status: HTTPCode.UNPROCESSED_ENTITY,
+			});
+		}
+
+		await this.awsFileService.deleteFile(file.toObject().url);
+
+		const isDeleted = this.delete(id);
+
+		return await isDeleted;
+	}
+
 	public async getAll(): Promise<FileUploadResponseDto[]> {
 		const items = await this.fileRepository.findAll();
 

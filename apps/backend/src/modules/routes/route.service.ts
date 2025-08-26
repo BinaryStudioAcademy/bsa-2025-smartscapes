@@ -1,6 +1,7 @@
+import { type MultipartFile } from "@fastify/multipart";
 import { type Knex } from "knex";
 
-import { HTTPCode } from "~/libs/enums/enums.js";
+import { FileFolderName, HTTPCode } from "~/libs/enums/enums.js";
 import {
 	MapboxAPIGeometric,
 	MapboxAPIProfile,
@@ -8,12 +9,14 @@ import {
 } from "~/libs/modules/mapbox/mapbox.js";
 import { type CollectionResult, type Service } from "~/libs/types/types.js";
 
+import { type FileService } from "../files/files.service.js";
 import { type PlannedPathResponseDto } from "../planned-paths/libs/types/types.js";
 import { type PlannedPathService } from "../planned-paths/planned-paths.js";
 import { type PointsOfInterestService } from "../points-of-interest/points-of-interest.service.js";
 import { RoutesExceptionMessage } from "./libs/enums/enums.js";
 import { RoutesError } from "./libs/exceptions/exceptions.js";
 import {
+	type FileUploadResponseDto,
 	type RouteCreateRequestDto,
 	type RouteFindAllOptions,
 	type RouteGetAllItemResponseDto,
@@ -25,6 +28,7 @@ import { RouteModel } from "./route.model.js";
 import { type RouteRepository } from "./route.repository.js";
 
 type ConstructorParameters = {
+	fileService: FileService;
 	mapboxDirectionsApi: MapboxDirectionsApi;
 	plannedPathService: PlannedPathService;
 	pointsOfInterestService: PointsOfInterestService;
@@ -32,6 +36,8 @@ type ConstructorParameters = {
 };
 
 class RouteService implements Service {
+	private fileService: FileService;
+
 	private mapboxDirectionApi: MapboxDirectionsApi;
 
 	private plannedPathService: PlannedPathService;
@@ -41,11 +47,13 @@ class RouteService implements Service {
 	private routesRepository: RouteRepository;
 
 	public constructor({
+		fileService,
 		mapboxDirectionsApi,
 		plannedPathService,
 		pointsOfInterestService,
 		routesRepository,
 	}: ConstructorParameters) {
+		this.fileService = fileService;
 		this.routesRepository = routesRepository;
 		this.pointsOfInterestService = pointsOfInterestService;
 		this.mapboxDirectionApi = mapboxDirectionsApi;
@@ -127,6 +135,12 @@ class RouteService implements Service {
 		return isDeleted;
 	}
 
+	public async deleteImage(id: number): Promise<boolean> {
+		const response = await this.fileService.deleteFile({ id });
+
+		return response;
+	}
+
 	public async findAll(
 		options: null | RouteFindAllOptions,
 	): Promise<CollectionResult<RouteGetAllItemResponseDto>> {
@@ -170,6 +184,21 @@ class RouteService implements Service {
 		}
 
 		return item.toObject();
+	}
+
+	public async uploadImage(
+		id: number,
+		file: MultipartFile,
+	): Promise<FileUploadResponseDto> {
+		const payload = {
+			entityId: id,
+			file,
+			folder: FileFolderName.ROUTES,
+		};
+
+		const image = await this.fileService.uploadFile(payload);
+
+		return image;
 	}
 
 	private async ensurePoisExist(pois: number[]): Promise<void> {

@@ -5,6 +5,7 @@ import { toastNotifier } from "~/libs/modules/toast-notifier/toast-notifier.js";
 import {
 	type APIResponse,
 	type AsyncThunkConfig,
+	type FileUploadResponseDto,
 	type PaginationMeta,
 } from "~/libs/types/types.js";
 import {
@@ -25,6 +26,7 @@ import {
 	type RouteCreateRequestDto,
 	type RouteFindAllOptions,
 	type RouteGetByIdResponseDto,
+	type UploadImageActionPayload,
 } from "../libs/types/types.js";
 import { name as constructRouteSliceName } from "./construct-route.slice.js";
 import { name as routeDetailsSliceName } from "./route-details.slice.js";
@@ -72,6 +74,42 @@ const getAll = createAsyncThunk<
 	const { routesApi } = extra;
 
 	return await routesApi.getAll(options);
+});
+
+const uploadImage = createAsyncThunk<
+	APIResponse<FileUploadResponseDto>,
+	UploadImageActionPayload,
+	AsyncThunkConfig
+>(`${routesSliceName}/upload-image`, async (payload, { extra }) => {
+	const { routesApi, toastNotifier } = extra;
+
+	const { file, id } = payload;
+
+	const image = await routesApi.uploadImage({ file, id });
+
+	toastNotifier.showSuccess("Image was uploaded");
+
+	return image;
+});
+
+const deleteImage = createAsyncThunk<
+	APIResponse<{ id: number; isDeleted: boolean }>,
+	number,
+	AsyncThunkConfig
+>(`${routesSliceName}/delete-image`, async (id, { extra }) => {
+	const { routesApi, toastNotifier } = extra;
+
+	const response = await routesApi.deleteImage(id);
+
+	toastNotifier.showSuccess("Image was deleted");
+
+	return {
+		data: {
+			id,
+			isDeleted: response.data,
+		},
+		error: null,
+	};
 });
 
 const preserveCreateRouteFormData = createAsyncThunk<
@@ -175,6 +213,7 @@ export {
 	constructRoute,
 	create,
 	createReview,
+	deleteImage,
 	discardCreateRouteFormData,
 	findPointsOfInterest,
 	getAll,
@@ -183,4 +222,5 @@ export {
 	patch,
 	preserveCreateRouteFormData,
 	restoreCreateRouteFormData,
+	uploadImage,
 };

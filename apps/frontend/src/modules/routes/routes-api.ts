@@ -2,7 +2,10 @@ import { APIPath, ContentType } from "~/libs/enums/enums.js";
 import { BaseHTTPApi } from "~/libs/modules/api/api.js";
 import { type HTTP } from "~/libs/modules/http/http.js";
 import { type Storage } from "~/libs/modules/storage/storage.js";
-import { type APIResponse } from "~/libs/types/types.js";
+import {
+	type APIResponse,
+	type FileUploadResponseDto,
+} from "~/libs/types/types.js";
 
 import { RoutesApiPath } from "./libs/enums/enums.js";
 import {
@@ -12,6 +15,7 @@ import {
 	type RouteCreateRequestDto,
 	type RouteFindAllOptions,
 	type RouteGetByIdResponseDto,
+	type UploadImageActionPayload,
 } from "./libs/types/types.js";
 
 type Constructor = {
@@ -51,6 +55,18 @@ class RoutesApi extends BaseHTTPApi {
 				hasAuth: true,
 				method: "POST",
 				payload: JSON.stringify(payload),
+			},
+		);
+
+		return await response.json();
+	}
+
+	public async deleteImage(id: number): Promise<APIResponse<boolean>> {
+		const response = await this.load<APIResponse<boolean>>(
+			this.getFullEndpoint(RoutesApiPath.$ID_IMAGES, { id: id.toString() }),
+			{
+				hasAuth: true,
+				method: "DELETE",
 			},
 		);
 
@@ -98,6 +114,27 @@ class RoutesApi extends BaseHTTPApi {
 				hasAuth: true,
 				method: "PATCH",
 				payload: JSON.stringify(payload),
+			},
+		);
+
+		return await response.json();
+	}
+
+	public async uploadImage(
+		payload: UploadImageActionPayload,
+	): Promise<APIResponse<FileUploadResponseDto>> {
+		const { file, id } = payload;
+
+		const formData = new FormData();
+
+		formData.append("file", file);
+
+		const response = await this.load<APIResponse<FileUploadResponseDto>>(
+			this.getFullEndpoint(RoutesApiPath.$ID_IMAGES, { id: id.toString() }),
+			{
+				hasAuth: true,
+				method: "POST",
+				payload: formData,
 			},
 		);
 

@@ -1,5 +1,6 @@
 .card {
 	gap: 24px;
+	min-width: 0;
 	background: var(--color-base);
 }
 
@@ -18,7 +19,10 @@
 
 .content {
 	gap: 24px;
+	max-width: 750px;
 	font-size: var(--font-size-small);
 	line-height: 1.5;
 	color: var(--color-text-strong);
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
 }

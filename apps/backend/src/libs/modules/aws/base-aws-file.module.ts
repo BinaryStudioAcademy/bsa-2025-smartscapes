@@ -1,4 +1,5 @@
 import {
+	DeleteObjectCommand,
 	PutObjectCommand,
 	S3Client,
 	S3ServiceException,
@@ -31,6 +32,41 @@ class AWSFileService {
 			},
 			region: config.ENV.AWS.REGION,
 		});
+	}
+
+	public async deleteFile(fileUrl: string): Promise<void> {
+		try {
+			const url = new URL(fileUrl);
+
+			const key = url.pathname.replace(/^\/+/, "");
+
+			const command = new DeleteObjectCommand({
+				Bucket: this.bucketName,
+				Key: key,
+			});
+
+			await this.s3Client.send(command);
+
+			this.logger.info(`File deleted from AWS S3: ${key}`);
+		} catch (error) {
+			if (error instanceof S3ServiceException) {
+				const s3Error = error;
+				const httpStatusCode =
+					"httpStatusCode" in s3Error.$metadata
+						? s3Error.$metadata.httpStatusCode
+						: HTTPCode.BAD_REQUEST;
+
+				throw new AWSFileUploadError({
+					message: AwsExceptionMessage.FILE_UPLOADING_ERROR,
+					status: httpStatusCode as ValueOf<typeof HTTPCode>,
+				});
+			}
+
+			throw new AWSFileUploadError({
+				message: AwsExceptionMessage.FILE_UPLOADING_ERROR,
+				status: HTTPCode.BAD_REQUEST,
+			});
+		}
 	}
 
 	public async uploadFile(

@@ -44,6 +44,7 @@ class RouteRepository implements Repository {
 				this.routesModel.raw("to_json(duration)::json as duration"),
 				this.routesModel.raw("ST_AsGeoJSON(geometry)::json as geometry"),
 				"created_by_user_id",
+				this.routesModel.raw("'[]'::json as images"),
 			]);
 
 		return RouteEntity.initialize(result);
@@ -62,13 +63,18 @@ class RouteRepository implements Repository {
 
 		const query = this.routesModel
 			.query()
-			.withGraphFetched("pois")
-			.modifyGraph("pois", (builder) => {
-				builder.select(
-					"points_of_interest.id",
-					"points_of_interest.name",
-					"routes_to_pois.visit_order",
-				);
+			.withGraphFetched("[pois(selectPoiData), images(selectFileData)]")
+			.modifiers({
+				selectFileData(builder) {
+					builder.select("files.id", "files.url");
+				},
+				selectPoiData(builder) {
+					builder.select(
+						"points_of_interest.id",
+						"points_of_interest.name",
+						"routes_to_pois.visit_order",
+					);
+				},
 			})
 			.select([
 				"routes.id",
@@ -119,8 +125,11 @@ class RouteRepository implements Repository {
 	public async findById(id: number): Promise<null | RouteEntity> {
 		const route = await this.routesModel
 			.query()
-			.withGraphFetched("pois(selectPoi)")
+			.withGraphFetched("[pois(selectPoi), images(selectFileData)]")
 			.modifiers({
+				selectFileData(builder) {
+					builder.select("files.id", "files.url");
+				},
 				selectPoi(builder) {
 					builder.select(
 						"points_of_interest.id",
@@ -155,8 +164,11 @@ class RouteRepository implements Repository {
 		const [updatedRoute] = await this.routesModel
 			.query()
 			.patch(entity)
-			.withGraphFetched("pois(selectPoi)")
+			.withGraphFetched("[pois(selectPoi), images(selectFileData)]")
 			.modifiers({
+				selectFileData(builder) {
+					builder.select("files.id", "files.url");
+				},
 				selectPoi(builder) {
 					builder.select("points_of_interest.id", "routes_to_pois.visit_order");
 				},

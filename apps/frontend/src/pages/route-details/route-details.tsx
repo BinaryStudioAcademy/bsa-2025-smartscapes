@@ -1,11 +1,9 @@
-import image1 from "~/assets/images/route-details/placeholder-image-1.png";
-import image2 from "~/assets/images/route-details/placeholder-image-2.png";
-import image3 from "~/assets/images/route-details/placeholder-image-3.png";
 import {
 	Button,
 	FeatureGallery,
 	Input,
 	Loader,
+	MapProvider,
 	TextArea,
 } from "~/libs/components/components.js";
 import { DataStatus, PermissionKey } from "~/libs/enums/enums.js";
@@ -17,6 +15,7 @@ import {
 	useCallback,
 	useEffect,
 	useParams,
+	useRef,
 	useState,
 } from "~/libs/hooks/hooks.js";
 import { type ReviewRequestDto } from "~/modules/reviews/reviews.js";
@@ -54,6 +53,27 @@ const RouteDetails = (): React.JSX.Element => {
 		user &&
 			checkHasPermission([PermissionKey.MANAGE_ROUTES], user.group.permissions),
 	);
+	const fileInputReference = useRef<HTMLInputElement | null>(null);
+
+	const handleFileUpload = useCallback(
+		(event: React.ChangeEvent<HTMLInputElement>) => {
+			const file = event.target.files?.[0];
+
+			if (!file) {
+				return;
+			}
+
+			void dispatch(
+				routeActions.uploadImage({ file, id: route?.id as number }),
+			);
+			event.target.value = "";
+		},
+		[dispatch, route],
+	);
+
+	const handleTriggerFileUpload = useCallback(() => {
+		fileInputReference.current?.click();
+	}, []);
 
 	const handleToggleEditMode = useCallback(() => {
 		setIsEditMode((isEditMode) => !isEditMode);
@@ -87,6 +107,13 @@ const RouteDetails = (): React.JSX.Element => {
 			setIsEditMode(false);
 		}
 	}, [dispatch, setIsEditMode, route, getValues]);
+
+	const handleDeleteImage = useCallback(
+		(id: number) => {
+			void dispatch(routeActions.deleteImage(id));
+		},
+		[dispatch],
+	);
 
 	useEffect(() => {
 		void dispatch(routeActions.getById(Number(routeId)));
@@ -123,7 +150,7 @@ const RouteDetails = (): React.JSX.Element => {
 		return <></>;
 	}
 
-	const { description, id, name, pois } = route;
+	const { description, id, images, name, pois } = route;
 
 	const hasDescription = Boolean(description);
 
@@ -157,11 +184,44 @@ const RouteDetails = (): React.JSX.Element => {
 				</div>
 				<FeatureGallery
 					slides={[
-						{ content: image1, type: "image" },
-						{ content: image2, type: "image" },
-						{ content: image3, type: "image" },
+						{
+							content: <MapProvider />,
+						},
+						...images.map((image) => ({
+							content: (
+								<img
+									alt="point of interest"
+									className={styles["image"]}
+									src={image.url}
+								/>
+							),
+							...(isEditMode && {
+								onDelete: (): void => {
+									handleDeleteImage(image.id);
+								},
+							}),
+						})),
 					]}
 				/>
+
+				{isEditMode && (
+					<>
+						<input
+							accept="image/*"
+							onChange={handleFileUpload}
+							ref={fileInputReference}
+							style={{ display: "none" }}
+							type="file"
+						/>
+						<div className={styles["upload-button"]}>
+							<Button
+								label="Upload image"
+								onClick={handleTriggerFileUpload}
+								variant="outlined"
+							/>
+						</div>
+					</>
+				)}
 				{isEditMode ? (
 					<TextArea
 						control={control}

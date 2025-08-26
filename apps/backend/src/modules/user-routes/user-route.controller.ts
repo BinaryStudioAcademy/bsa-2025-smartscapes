@@ -6,18 +6,17 @@ import {
 } from "~/libs/modules/controller/libs/types/types.js";
 import { HTTPCode } from "~/libs/modules/http/http.js";
 import { type Logger } from "~/libs/modules/logger/libs/types/logger.type.js";
+import { type UserAuthResponseDto } from "~/modules/users/users.js";
 
 import { UserRouteApiPath } from "./libs/enums/enum.js";
 import {
-	type UserRouteCreateRequestDto,
-	type UserRouteParameters,
-	type UserRoutePatchRequestDto,
+	type UserRouteFinishRequestDto,
+	type UserRouteQueryRequestDto,
 	type UserRouteResponseDto,
 } from "./libs/types/type.js";
 import {
-	userRouteCreateValidationSchema,
-	userRouteParametersValidationSchema,
-	userRoutePatchValidationSchema,
+	userRouteFinishValidationSchema,
+	userRouteQueryValidationSchema,
 } from "./libs/validation-schemas/validation-schemas.js";
 import { type UserRouteService } from "./user-route.service.js";
 
@@ -46,26 +45,11 @@ import { type UserRouteService } from "./user-route.service.js";
  *           enum: ["LineString"]
  *           example: "LineString"
  *
- *     UserRouteCreateRequestDto:
+ *     UserRouteFinishRequestDto:
  *       type: object
  *       required:
- *         - routeId
- *       properties:
- *         routeId:
- *           type: integer
- *           example: 7
- *           description: ID of the route to track
- *
- *     UserRoutePatchRequestDto:
- *       type: object
- *       required:
- *         - routeId
  *         - actualGeometry
  *       properties:
- *         routeId:
- *           type: integer
- *           example: 7
- *           description: ID of the route being finished
  *         actualGeometry:
  *           $ref: '#/components/schemas/UserRouteGeometry'
  *
@@ -120,10 +104,9 @@ class UserRouteController extends BaseController {
 		this.addRoute({
 			handler: this.create.bind(this),
 			method: "POST",
-			path: UserRouteApiPath.$ID,
+			path: UserRouteApiPath.CREATE,
 			validation: {
-				body: userRouteCreateValidationSchema,
-				params: userRouteParametersValidationSchema,
+				query: userRouteQueryValidationSchema,
 			},
 		});
 
@@ -132,8 +115,8 @@ class UserRouteController extends BaseController {
 			method: "PATCH",
 			path: UserRouteApiPath.FINISH,
 			validation: {
-				body: userRoutePatchValidationSchema,
-				params: userRouteParametersValidationSchema,
+				body: userRouteFinishValidationSchema,
+				query: userRouteQueryValidationSchema,
 			},
 		});
 
@@ -142,45 +125,35 @@ class UserRouteController extends BaseController {
 			method: "PATCH",
 			path: UserRouteApiPath.START,
 			validation: {
-				body: userRouteCreateValidationSchema,
-				params: userRouteParametersValidationSchema,
+				query: userRouteQueryValidationSchema,
 			},
 		});
 
 		this.addRoute({
 			handler: this.getAllByUserId.bind(this),
 			method: "GET",
-			path: UserRouteApiPath.$ID,
-			validation: {
-				params: userRouteParametersValidationSchema,
-			},
+			path: UserRouteApiPath.ROOT,
 		});
 	}
 
 	/**
 	 * @swagger
-	 * /user-routes/{userId}:
+	 * /user-routes/create:
 	 *   post:
 	 *     security:
 	 *       - bearerAuth: []
 	 *     tags:
 	 *       - User Routes
 	 *     summary: Create a new user route
-	 *     description: Create a new user route for tracking user's journey through a specific route
+	 *     description: Create a new user route for tracking user's journey through a specific route. User ID is derived from JWT token.
 	 *     parameters:
-	 *       - in: path
-	 *         name: userId
+	 *       - in: query
+	 *         name: routeId
 	 *         required: true
 	 *         schema:
 	 *           type: integer
-	 *           example: 1
-	 *         description: ID of the user creating the route
-	 *     requestBody:
-	 *       required: true
-	 *       content:
-	 *         application/json:
-	 *           schema:
-	 *             $ref: '#/components/schemas/UserRouteCreateRequestDto'
+	 *         description: ID of the route to track
+	 *         example: 7
 	 *     responses:
 	 *       201:
 	 *         description: User route created successfully
@@ -209,21 +182,113 @@ class UserRouteController extends BaseController {
 	 *                   plannedGeometry:
 	 *                     type: "LineString"
 	 *                     coordinates: [[30.528909, 50.455232], [30.528209, 50.415232]]
+	 */
+	public async create(
+		options: APIHandlerOptions<{
+			query: UserRouteQueryRequestDto;
+		}>,
+	): Promise<APIHandlerResponse<UserRouteResponseDto>> {
+		const { query, user } = options;
+		const { routeId } = query;
+		const { id: userId } = user as UserAuthResponseDto;
+
+		const createdRoute = await this.userRouteService.create({
+			routeId,
+			userId,
+		});
+
+		return {
+			payload: { data: createdRoute },
+			status: HTTPCode.CREATED,
+		};
+	}
+
+	/**
+	 * @swagger
+	 * /user-routes/finish:
+	 *   patch:
+	 *     security:
+	 *       - bearerAuth: []
+	 *     tags:
+	 *       - User Routes
+	 *     summary: Finish a user route
+	 *     description: Finish a user route by providing the actual geometry traveled and updating status to completed. User ID is derived from JWT token.
+	 *     parameters:
+	 *       - in: query
+	 *         name: routeId
+	 *         required: true
+	 *         schema:
+	 *           type: integer
+	 *         description: ID of the route being finished
+	 *         example: 7
+	 *     requestBody:
+	 *       required: true
+	 *       content:
+	 *         application/json:
+	 *           schema:
+	 *             $ref: '#/components/schemas/UserRouteFinishRequestDto'
+	 *     responses:
+	 *       200:
+	 *         description: User route finished successfully
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 payload:
+	 *                   type: object
+	 *                   properties:
+	 *                     data:
+	 *                       $ref: '#/components/schemas/UserRouteResponseDto'
+	 *             example:
+	 *               payload:
+	 *                 data:
+	 *                   id: 1
+	 *                   routeId: 7
+	 *                   userId: 1
+	 *                   status: "completed"
+	 *                   startedAt: "2025-08-21T16:37:51.437Z"
+	 *                   completedAt: "2025-08-21T16:38:11.183Z"
+	 *                   actualGeometry:
+	 *                     type: "LineString"
+	 *                     coordinates: [[30.528909, 50.455232], [30.528209, 50.415232]]
+	 *                   plannedGeometry:
+	 *                     type: "LineString"
+	 *                     coordinates: [[30.528909, 50.455232], [30.528209, 50.415232]]
+	 */
+	public async finish(
+		options: APIHandlerOptions<{
+			body: UserRouteFinishRequestDto;
+			query: UserRouteQueryRequestDto;
+		}>,
+	): Promise<APIHandlerResponse<UserRouteResponseDto>> {
+		const { body, query, user } = options;
+		const { actualGeometry } = body;
+		const { routeId } = query;
+		const { id: userId } = user as UserAuthResponseDto;
+
+		const updatedRoute = await this.userRouteService.finish({
+			actualGeometry,
+			routeId,
+			userId,
+		});
+
+		return {
+			payload: { data: updatedRoute },
+			status: HTTPCode.OK,
+		};
+	}
+
+	/**
+	 * @swagger
+	 * /user-routes:
 	 *   get:
 	 *     security:
 	 *       - bearerAuth: []
 	 *     tags:
 	 *       - User Routes
 	 *     summary: Get all user routes
-	 *     description: Get all user routes for a specific user including their status, timestamps, and geometry information
-	 *     parameters:
-	 *       - in: path
-	 *         name: userId
-	 *         required: true
-	 *         schema:
-	 *           type: integer
-	 *           example: 1
-	 *         description: ID of the user whose routes to retrieve
+	 *     description: Get all user routes for the authenticated user including their status, timestamps, and geometry information. User ID is derived from JWT token.
 	 *     responses:
 	 *       200:
 	 *         description: User routes retrieved successfully
@@ -279,108 +344,11 @@ class UserRouteController extends BaseController {
 	 *                       type: "LineString"
 	 *                       coordinates: [[30.528909, 50.455232], [30.528209, 50.415232]]
 	 */
-	public async create(
-		options: APIHandlerOptions<{
-			body: UserRouteCreateRequestDto;
-			params: UserRouteParameters;
-		}>,
-	): Promise<APIHandlerResponse<UserRouteResponseDto>> {
-		const { body, params } = options;
-		const { routeId } = body;
-		const { userId } = params;
-
-		const createdRoute = await this.userRouteService.create({
-			routeId,
-			userId,
-		});
-
-		return {
-			payload: { data: createdRoute },
-			status: HTTPCode.CREATED,
-		};
-	}
-
-	/**
-	 * @swagger
-	 * /user-routes/{userId}/finish:
-	 *   patch:
-	 *     security:
-	 *       - bearerAuth: []
-	 *     tags:
-	 *       - User Routes
-	 *     summary: Finish a user route
-	 *     description: Finish a user route by providing the actual geometry traveled and updating status to completed
-	 *     parameters:
-	 *       - in: path
-	 *         name: userId
-	 *         required: true
-	 *         schema:
-	 *           type: integer
-	 *           example: 1
-	 *         description: ID of the user finishing the route
-	 *     requestBody:
-	 *       required: true
-	 *       content:
-	 *         application/json:
-	 *           schema:
-	 *             $ref: '#/components/schemas/UserRoutePatchRequestDto'
-	 *     responses:
-	 *       200:
-	 *         description: User route finished successfully
-	 *         content:
-	 *           application/json:
-	 *             schema:
-	 *               type: object
-	 *               properties:
-	 *                 payload:
-	 *                   type: object
-	 *                   properties:
-	 *                     data:
-	 *                       $ref: '#/components/schemas/UserRouteResponseDto'
-	 *             example:
-	 *               payload:
-	 *                 data:
-	 *                   id: 1
-	 *                   routeId: 7
-	 *                   userId: 1
-	 *                   status: "completed"
-	 *                   startedAt: "2025-08-21T16:37:51.437Z"
-	 *                   completedAt: "2025-08-21T16:38:11.183Z"
-	 *                   actualGeometry:
-	 *                     type: "LineString"
-	 *                     coordinates: [[30.528909, 50.455232], [30.528209, 50.415232]]
-	 *                   plannedGeometry:
-	 *                     type: "LineString"
-	 *                     coordinates: [[30.528909, 50.455232], [30.528209, 50.415232]]
-	 */
-	public async finish(
-		options: APIHandlerOptions<{
-			body: UserRoutePatchRequestDto;
-			params: UserRouteParameters;
-		}>,
-	): Promise<APIHandlerResponse<UserRouteResponseDto>> {
-		const { body, params } = options;
-		const { actualGeometry, routeId } = body;
-		const { userId } = params;
-
-		const updatedRoute = await this.userRouteService.finish({
-			actualGeometry,
-			routeId,
-			userId,
-		});
-
-		return {
-			payload: { data: updatedRoute },
-			status: HTTPCode.OK,
-		};
-	}
-
 	public async getAllByUserId(
-		options: APIHandlerOptions<{
-			params: UserRouteParameters;
-		}>,
+		options: APIHandlerOptions,
 	): Promise<APIHandlerResponse<UserRouteResponseDto[]>> {
-		const { userId } = options.params;
+		const { user } = options;
+		const { id: userId } = user as UserAuthResponseDto;
 
 		const userRoutes = await this.userRouteService.getAllByUserId(userId);
 
@@ -392,28 +360,22 @@ class UserRouteController extends BaseController {
 
 	/**
 	 * @swagger
-	 * /user-routes/{userId}/start:
+	 * /user-routes/start:
 	 *   patch:
 	 *     security:
 	 *       - bearerAuth: []
 	 *     tags:
 	 *       - User Routes
 	 *     summary: Start a user route
-	 *     description: Start a user route by changing status from not_started to active and setting started_at timestamp
+	 *     description: Start a user route by changing status from not_started to active and setting started_at timestamp. User ID is derived from JWT token.
 	 *     parameters:
-	 *       - in: path
-	 *         name: userId
+	 *       - in: query
+	 *         name: routeId
 	 *         required: true
 	 *         schema:
 	 *           type: integer
-	 *           example: 1
-	 *         description: ID of the user starting the route
-	 *     requestBody:
-	 *       required: true
-	 *       content:
-	 *         application/json:
-	 *           schema:
-	 *             $ref: '#/components/schemas/UserRouteCreateRequestDto'
+	 *         description: ID of the route to start
+	 *         example: 7
 	 *     responses:
 	 *       200:
 	 *         description: User route started successfully
@@ -445,12 +407,12 @@ class UserRouteController extends BaseController {
 	 */
 	public async start(
 		options: APIHandlerOptions<{
-			body: UserRouteCreateRequestDto;
-			params: UserRouteParameters;
+			query: UserRouteQueryRequestDto;
 		}>,
 	): Promise<APIHandlerResponse<UserRouteResponseDto>> {
-		const { routeId } = options.body;
-		const { userId } = options.params;
+		const { query, user } = options;
+		const { routeId } = query;
+		const { id: userId } = user as UserAuthResponseDto;
 
 		const updatedRoute = await this.userRouteService.start({
 			routeId,

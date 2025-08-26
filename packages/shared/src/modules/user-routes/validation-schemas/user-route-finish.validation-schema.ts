@@ -7,7 +7,7 @@ import {
 } from "../../../libs/enums/enums.js";
 import { UserRouteValidationMessage } from "../libs/enums/enums.js";
 
-const userRoutePatch = z.strictObject({
+const userRouteFinish = z.strictObject({
 	actualGeometry: z.object({
 		coordinates: z
 			.array(
@@ -41,9 +41,6 @@ const userRoutePatch = z.strictObject({
 			message: UserRouteValidationMessage.INVALID_LOCATION_TYPE,
 		}),
 	}),
-	routeId: z.number({
-		message: UserRouteValidationMessage.ROUTE_ID_INVALID_TYPE,
-	}),
 });
 
-export { userRoutePatch };
+export { userRouteFinish };

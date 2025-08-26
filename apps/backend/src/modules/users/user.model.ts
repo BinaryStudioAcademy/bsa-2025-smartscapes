@@ -1,5 +1,6 @@
 import { type QueryBuilder, type RelationMappings } from "objection";
 
+import { FileFolderName } from "~/libs/enums/enums.js";
 import {
 	AbstractModel,
 	DatabaseTableName,
@@ -35,7 +36,7 @@ class UserModel extends AbstractModel {
 		return {
 			avatar: {
 				filter: (query: QueryBuilder<FileModel>): void => {
-					query.where("folder", "avatars");
+					query.where("folder", FileFolderName.AVATARS);
 				},
 				join: {
 					from: "users.id",

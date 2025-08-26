@@ -2,6 +2,7 @@ import {
 	constructRoute,
 	create,
 	createReview,
+	deleteImage,
 	discardCreateRouteFormData,
 	findPointsOfInterest,
 	getAll,
@@ -10,6 +11,7 @@ import {
 	patch,
 	preserveCreateRouteFormData,
 	restoreCreateRouteFormData,
+	uploadImage,
 } from "./actions.js";
 import { actions as constructRouteActions } from "./construct-route.slice.js";
 import { actions as routeDetailsActions } from "./route-details.slice.js";
@@ -20,8 +22,10 @@ const allActions = {
 	...routeDetailsActions,
 	...constructRouteActions,
 	constructRoute,
+	...constructRouteActions,
 	create,
 	createReview,
+	deleteImage,
 	discardCreateRouteFormData,
 	findPointsOfInterest,
 	getAll,
@@ -31,6 +35,7 @@ const allActions = {
 	preserveCreateRouteFormData,
 	restoreCreateRouteFormData,
 	routesActions,
+	uploadImage,
 };
 
 export { allActions as actions };

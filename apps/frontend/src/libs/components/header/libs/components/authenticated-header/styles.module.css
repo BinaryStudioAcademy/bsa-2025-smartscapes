@@ -1,11 +1,10 @@
 .user-profile-wrapper {
 	position: relative;
+	display: flex;
+	gap: 8px;
+	align-items: center;
 	border-radius: 8px;
 	transition: background 0.3s ease;
-}
-
-.user-profile-wrapper:hover {
-	background: var(--color-fill-hover);
 }
 
 .user-info {
@@ -16,6 +15,10 @@
 	cursor: pointer;
 	background: none;
 	border: none;
+}
+
+.user-info:hover {
+	background: var(--color-fill-weak);
 }
 
 .name {

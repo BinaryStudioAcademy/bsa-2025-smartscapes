@@ -12,4 +12,4 @@ const notificationController = new NotificationController(
 	notificationService,
 );
 
-export { notificationController };
+export { notificationController, notificationService };

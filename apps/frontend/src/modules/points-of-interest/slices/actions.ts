@@ -65,4 +65,16 @@ const patch = createAsyncThunk<
 	return patchResult;
 });
 
-export { create, findAll, getById, patch };
+const remove = createAsyncThunk<number, number, AsyncThunkConfig>(
+	`${poiSliceName}/delete`,
+	async (id, { extra }) => {
+		const { pointOfInterestApi, toastNotifier } = extra;
+
+		await pointOfInterestApi.delete(id);
+		toastNotifier.showSuccess(PointOfInterestNotification.DELETED);
+
+		return id;
+	},
+);
+
+export { create, findAll, getById, patch, remove };

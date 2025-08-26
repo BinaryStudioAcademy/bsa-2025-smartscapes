@@ -1,6 +1,7 @@
 type IconName =
 	| "analytics"
 	| "arrowDown"
+	| "bell"
 	| "caretDown"
 	| "caretUp"
 	| "close"

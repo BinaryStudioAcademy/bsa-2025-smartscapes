@@ -81,6 +81,53 @@ class FilesController extends BaseController {
 			method: "GET",
 			path: FilesApiPath.ROOT,
 		});
+
+		this.addRoute({
+			handler: this.delete.bind(this),
+			method: "DELETE",
+			path: FilesApiPath.$ID,
+		});
+	}
+
+	/**
+	 * @swagger
+	 * /files/{id}:
+	 *   delete:
+	 *     security:
+	 *       - bearerAuth: []
+	 *     tags: [Files]
+	 *     summary: Delete a file
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         required: true
+	 *         schema:
+	 *           type: string
+	 *     responses:
+	 *       200:
+	 *         description: File deleted successfully
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 data:
+	 *                   type: boolean
+	 */
+
+	public async delete(
+		options: APIHandlerOptions<{
+			params: { id: number };
+		}>,
+	): Promise<APIHandlerResponse<boolean>> {
+		const id = Number(options.params.id);
+
+		const isDeleted = await this.fileService.delete(id);
+
+		return {
+			payload: { data: isDeleted },
+			status: HTTPCode.OK,
+		};
 	}
 
 	/**

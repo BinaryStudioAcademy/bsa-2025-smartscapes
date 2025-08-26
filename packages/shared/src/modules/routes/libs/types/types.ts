@@ -5,3 +5,4 @@ export { type RouteFindAllOptions } from "./route-find-all-options.type.js";
 export { type RouteGetAllItemResponseDto } from "./route-get-all-item-response-dto.type.js";
 export { type RouteGetByIdResponseDto } from "./route-get-by-id-response-dto.type.js";
 export { type RoutePatchRequestDto } from "./route-patch-request.dto.js";
+export { type RouteUploadImageResponseDto } from "./route-upload-image-response-dto.type.js";

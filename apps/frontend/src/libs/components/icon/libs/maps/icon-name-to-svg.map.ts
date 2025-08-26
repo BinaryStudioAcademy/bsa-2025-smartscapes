@@ -1,5 +1,6 @@
 import Analytics from "~/assets/images/icons/analytics.svg?react";
 import ArrowDown from "~/assets/images/icons/arrow-down.svg?react";
+import Bell from "~/assets/images/icons/bell.svg?react";
 import CaretDown from "~/assets/images/icons/caret-down.svg?react";
 import CaretUp from "~/assets/images/icons/caret-up.svg?react";
 import Close from "~/assets/images/icons/close.svg?react";
@@ -25,6 +26,7 @@ const iconNameToSvg: Record<
 > = {
 	analytics: Analytics,
 	arrowDown: ArrowDown,
+	bell: Bell,
 	caretDown: CaretDown,
 	caretUp: CaretUp,
 	close: Close,

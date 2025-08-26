@@ -1,4 +1,5 @@
 export { type PatchActionPayload } from "./patch-action-payload.type.js";
+export { type UploadImageActionPayload } from "./upload-image-action-payload.type.js";
 export {
 	type PlannedPathResponseDto,
 	type RouteConstructRequestDto,

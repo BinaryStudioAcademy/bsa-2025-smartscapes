@@ -1,3 +1,5 @@
+import { type MultipartFile } from "@fastify/multipart";
+
 import { APIPath, HTTPCode, PermissionKey } from "~/libs/enums/enums.js";
 import { checkHasPermission, setRateLimit } from "~/libs/hooks/hooks.js";
 import {
@@ -16,6 +18,7 @@ import {
 	type RouteGetAllItemResponseDto,
 	type RouteGetByIdResponseDto,
 	type RoutePatchRequestDto,
+	type RouteUploadImageResponseDto,
 } from "./libs/types/types.js";
 import {
 	routesConstructValidationSchema,
@@ -154,6 +157,20 @@ class RouteController extends BaseController {
 			path: RoutesApiPath.ROOT,
 			preHandlers: [checkHasPermission(PermissionKey.MANAGE_ROUTES)],
 			validation: { body: routesCreateValidationSchema },
+		});
+
+		this.addRoute({
+			handler: this.uploadImage.bind(this),
+			method: "POST",
+			path: RoutesApiPath.$ID_IMAGES,
+			preHandlers: [checkHasPermission(PermissionKey.MANAGE_ROUTES)],
+		});
+
+		this.addRoute({
+			handler: this.deleteImage.bind(this),
+			method: "DELETE",
+			path: RoutesApiPath.$ID_IMAGES,
+			preHandlers: [checkHasPermission(PermissionKey.MANAGE_ROUTES)],
 		});
 
 		this.addRoute({
@@ -449,17 +466,17 @@ class RouteController extends BaseController {
 	 *                     $ref: '#/components/schemas/RouteListItem'
 	 * */
 
-	public async findAll(
+	public async deleteImage(
 		options: APIHandlerOptions<{
-			query?: RouteFindAllOptions;
+			params: { id: number };
 		}>,
-	): Promise<APIHandlerResponse<RouteGetAllItemResponseDto[]>> {
-		const { query = null } = options;
+	): Promise<APIHandlerResponse<boolean>> {
+		const id = Number(options.params.id);
 
-		const { items } = await this.routeService.findAll(query);
+		const isDeleted = await this.routeService.deleteImage(id);
 
 		return {
-			payload: { data: items },
+			payload: { data: isDeleted },
 			status: HTTPCode.OK,
 		};
 	}
@@ -506,15 +523,17 @@ class RouteController extends BaseController {
 	 *                       example: "Unauthorized access"
 	 */
 
-	public async findById(
-		options: APIHandlerOptions<{ params: { id: string } }>,
-	): Promise<APIHandlerResponse<RouteGetByIdResponseDto>> {
-		const id = Number(options.params.id);
+	public async findAll(
+		options: APIHandlerOptions<{
+			query?: RouteFindAllOptions;
+		}>,
+	): Promise<APIHandlerResponse<RouteGetAllItemResponseDto[]>> {
+		const { query = null } = options;
 
-		const route = await this.routeService.findById(id);
+		const { items } = await this.routeService.findAll(query);
 
 		return {
-			payload: { data: route },
+			payload: { data: items },
 			status: HTTPCode.OK,
 		};
 	}
@@ -588,6 +607,60 @@ class RouteController extends BaseController {
 	 *                       example: "You don't have permission to perform this action."
 	 */
 
+	public async findById(
+		options: APIHandlerOptions<{ params: { id: string } }>,
+	): Promise<APIHandlerResponse<RouteGetByIdResponseDto>> {
+		const id = Number(options.params.id);
+
+		const route = await this.routeService.findById(id);
+
+		return {
+			payload: { data: route },
+			status: HTTPCode.OK,
+		};
+	}
+
+	/**
+	 * @swagger
+	 * /routes/{id}/image:
+	 *   post:
+	 *     summary: Upload an image
+	 *     description: Upload an image to the route
+	 *     tags:
+	 *       - Route
+	 *     security:
+	 *       - bearerAuth: []
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         required: true
+	 *         schema:
+	 *           type: string
+	 *     requestBody:
+	 *       required: true
+	 *       content:
+	 *         multipart/form-data:
+	 *           schema:
+	 *             type: object
+	 *             required:
+	 *               - file
+	 *             properties:
+	 *               file:
+	 *                 type: string
+	 *                 format: binary
+	 *                 description: File to upload (image/jpeg or image/png)
+	 *     responses:
+	 *       201:
+	 *         description: Image uploaded succesfully
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 data:
+	 *                   $ref: '#/components/schemas/FileUploadResponseDto'
+	 */
+
 	public async patch(
 		options: APIHandlerOptions<{
 			body: RoutePatchRequestDto;
@@ -604,6 +677,50 @@ class RouteController extends BaseController {
 
 		return {
 			payload: { data: route },
+			status: HTTPCode.OK,
+		};
+	}
+
+	/**
+	 * @swagger
+	 * /files/{id}/image:
+	 *   delete:
+	 *     security:
+	 *       - bearerAuth: []
+	 *     tags: [Files]
+	 *     summary: Delete a file
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         required: true
+	 *         schema:
+	 *           type: string
+	 *     responses:
+	 *       200:
+	 *         description: File deleted successfully
+	 *         content:
+	 *           application/json:
+	 *             schema:
+	 *               type: object
+	 *               properties:
+	 *                 data:
+	 *                   type: boolean
+	 */
+
+	public async uploadImage(
+		options: APIHandlerOptions<{
+			body: {
+				file: MultipartFile;
+			};
+			params: { id: string };
+		}>,
+	): Promise<APIHandlerResponse<RouteUploadImageResponseDto>> {
+		const id = Number(options.params.id);
+
+		const image = await this.routeService.uploadImage(id, options.body.file);
+
+		return {
+			payload: { data: image },
 			status: HTTPCode.OK,
 		};
 	}

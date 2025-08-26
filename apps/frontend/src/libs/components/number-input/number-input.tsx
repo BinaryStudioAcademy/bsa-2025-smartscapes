@@ -1,5 +1,5 @@
 import { IconButton } from "~/libs/components/components.js";
-import { useCallback } from "~/libs/hooks/hooks.js";
+import { useCallback, useState } from "~/libs/hooks/hooks.js";
 
 import styles from "./styles.module.css";
 
@@ -12,6 +12,7 @@ type Properties = {
 	value: number;
 };
 
+const MIN_INPUT_WIDTH_CH = 2;
 const STEP_VALUE = 1;
 
 const NumberInput = ({
@@ -19,33 +20,62 @@ const NumberInput = ({
 	range,
 	value,
 }: Properties): React.JSX.Element => {
-	const handleIncrement = useCallback((): void => {
-		const newValue = value + STEP_VALUE;
-		onChange(newValue);
-	}, [onChange, value]);
+	const [localValue, setLocalValue] = useState<string>(String(value));
 
-	const handleDecrement = useCallback((): void => {
-		const newValue = value - STEP_VALUE;
-		onChange(newValue);
-	}, [onChange, value]);
-
-	const handleInputChange = useCallback(
-		(event: React.ChangeEvent<HTMLInputElement>) => {
-			const inputValue = Number(event.target.value);
-
-			onChange(inputValue);
+	const handleValueChange = useCallback(
+		(newValue: number) => {
+			if (newValue >= range.min && newValue <= range.max) {
+				onChange(newValue);
+				setLocalValue(String(newValue));
+			}
 		},
-		[onChange],
+		[onChange, range.min, range.max],
 	);
+
+	const handleIncrement = useCallback(() => {
+		handleValueChange(value + STEP_VALUE);
+	}, [value, handleValueChange]);
+
+	const handleDecrement = useCallback(() => {
+		handleValueChange(value - STEP_VALUE);
+	}, [value, handleValueChange]);
+
+	const handleInput = useCallback(
+		(event: React.FormEvent<HTMLInputElement>) => {
+			const input = event.currentTarget.value;
+
+			if (!/^\d*$/.test(input)) {
+				event.preventDefault();
+
+				return;
+			}
+
+			setLocalValue(input);
+
+			const numberValue = Number(input);
+
+			if (numberValue >= range.min && numberValue <= range.max) {
+				onChange(numberValue);
+			}
+		},
+		[onChange, range.min, range.max],
+	);
+
+	const inputWidthCh =
+		Math.max(localValue.length, MIN_INPUT_WIDTH_CH).toString() + "ch";
 
 	return (
 		<div className={styles["container"]}>
 			<div className={styles["wrapper"]}>
 				<input
 					className={styles["input"]}
-					onChange={handleInputChange}
+					max={range.max}
+					min={range.min}
+					onInput={handleInput}
+					step={STEP_VALUE}
+					style={{ width: inputWidthCh }}
 					type="number"
-					value={value}
+					value={localValue}
 				/>
 				<div className={styles["buttons"]}>
 					<IconButton

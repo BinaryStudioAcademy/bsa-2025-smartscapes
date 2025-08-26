@@ -47,6 +47,16 @@ const createMockRouteService = (): Partial<RouteService> => ({
 				type: "LineString" as const,
 			},
 			id,
+			images: [
+				{
+					id: 1,
+					url: "https://s3.amazonaws.com/test/1.png",
+				},
+				{
+					id: 2,
+					url: "https://s3.amazonaws.com/test/2.png",
+				},
+			],
 			name: "Test Route",
 			pois: [
 				{

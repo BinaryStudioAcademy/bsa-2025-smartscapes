@@ -37,6 +37,16 @@ describe("RouteRepository", () => {
 			type: "LineString",
 		} as LineStringGeometry,
 		id: 1,
+		images: [
+			{
+				id: 1,
+				url: "https://s3.amazonaws.com/test/1.png",
+			},
+			{
+				id: 2,
+				url: "https://s3.amazonaws.com/test/2.png",
+			},
+		],
 		name: "Test Route",
 		pois: [{ id: 1, name: "Test POI", visitOrder: 1 }],
 	};
@@ -47,6 +57,7 @@ describe("RouteRepository", () => {
 		duration: mockRoute.duration,
 		geometry: mockRoute.geometry,
 		id: mockRoute.id,
+		images: [],
 		name: mockRoute.name,
 		pois: [] as { id: number; name: string; visitOrder: number }[],
 	};
@@ -70,7 +81,11 @@ describe("RouteRepository", () => {
 
 	it("create should create and return new route", async () => {
 		const routeEntity = createMockRouteEntity();
-		const routeObject = routeEntity.toObject();
+		const routeObject = {
+			...routeEntity.toObject(),
+			id: null,
+			images: [],
+		};
 
 		databaseTracker.on.insert(DatabaseTableName.ROUTES).response([routeObject]);
 		databaseTracker.on.insert(DatabaseTableName.ROUTES_TO_POIS).response([]);
@@ -102,6 +117,8 @@ describe("RouteRepository", () => {
 			.select(DatabaseTableName.ROUTES)
 			.response([mockRouteObject]);
 
+		databaseTracker.on.select(DatabaseTableName.FILES).response([]);
+
 		const result = await routesRepository.findAll(null);
 
 		assert.deepStrictEqual(result, [mockRouteEntity]);
@@ -119,6 +136,8 @@ describe("RouteRepository", () => {
 		databaseTracker.on
 			.select(DatabaseTableName.ROUTES)
 			.response([mockRouteObject]);
+
+		databaseTracker.on.select(DatabaseTableName.FILES).response([]);
 
 		const result = await routesRepository.findAll(mockOptions);
 

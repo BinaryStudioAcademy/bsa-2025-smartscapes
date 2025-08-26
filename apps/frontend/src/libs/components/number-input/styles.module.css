@@ -16,13 +16,13 @@
 }
 
 .input {
-	width: 16px;
 	padding: 0;
 	font-size: var(--font-size-tiny);
 	line-height: 1.5;
 	color: var(--color-text-strong);
 	outline: none;
 	border: none;
+	transition: width 150ms ease;
 }
 
 .input::-webkit-outer-spin-button,

@@ -58,7 +58,7 @@ class UserRouteService implements Service {
 	}): Promise<UserRouteResponseDto> {
 		const { actualGeometry, routeId, userId } = payload;
 
-		const userRoute = await this.getByRouteId(routeId);
+		const userRoute = await this.getByRouteIdAndUserId(routeId, userId);
 
 		this.ensureUserIsOwner(userRoute.userId, userId);
 
@@ -99,7 +99,7 @@ class UserRouteService implements Service {
 	}): Promise<UserRouteResponseDto> {
 		const { routeId, userId } = payload;
 
-		const userRoute = await this.getByRouteId(routeId);
+		const userRoute = await this.getByRouteIdAndUserId(routeId, userId);
 
 		this.ensureUserIsOwner(userRoute.userId, userId);
 
@@ -176,9 +176,13 @@ class UserRouteService implements Service {
 		}
 	}
 
-	private async getByRouteId(routeId: number): Promise<UserRouteResponseDto> {
+	private async getByRouteIdAndUserId(
+		routeId: number,
+		userId: number,
+	): Promise<UserRouteResponseDto> {
 		const [userRoute] = await this.userRouteRepository.findByFilter({
 			routeId,
+			userId,
 		});
 
 		if (!userRoute) {

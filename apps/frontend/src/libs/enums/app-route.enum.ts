@@ -8,6 +8,7 @@ const AppRoute = {
 	POINTS_OF_INTEREST: "/app/points-of-interest",
 	POINTS_OF_INTEREST_$ID: "/app/points-of-interest/:id",
 	PROFILE: "/app/profile",
+	PUBLIC_PROFILE_$ID: "/app/users/:id",
 	ROOT: "/",
 	ROUTES: "/app/routes",
 	ROUTES_$ID: "/app/routes/:id",

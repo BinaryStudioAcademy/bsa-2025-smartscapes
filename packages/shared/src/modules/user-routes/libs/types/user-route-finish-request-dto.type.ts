@@ -1,8 +1,7 @@
 import { type LineStringGeometry } from "../../../../libs/types/types.js";
 
-type UserRoutePatchRequestDto = {
+type UserRouteFinishRequestDto = {
 	actualGeometry: LineStringGeometry;
-	routeId: number;
 };
 
-export { type UserRoutePatchRequestDto };
+export { type UserRouteFinishRequestDto };

@@ -1,5 +1,7 @@
 import { type Entity, type LineStringGeometry } from "~/libs/types/types.js";
 
+import { type RouteUploadImageResponseDto } from "./libs/types/types.js";
+
 class RouteEntity implements Entity {
 	private createdByUserId: number;
 
@@ -12,6 +14,8 @@ class RouteEntity implements Entity {
 	private geometry: LineStringGeometry;
 
 	private id: null | number;
+
+	private images: RouteUploadImageResponseDto[];
 
 	private name: string;
 
@@ -28,6 +32,7 @@ class RouteEntity implements Entity {
 		duration,
 		geometry,
 		id,
+		images,
 		name,
 		pois,
 	}: {
@@ -37,6 +42,7 @@ class RouteEntity implements Entity {
 		duration: number;
 		geometry: LineStringGeometry;
 		id: null | number;
+		images: RouteUploadImageResponseDto[];
 		name: string;
 		pois: {
 			id: number;
@@ -52,6 +58,7 @@ class RouteEntity implements Entity {
 		this.description = description;
 		this.pois = pois;
 		this.createdByUserId = createdByUserId;
+		this.images = images;
 	}
 
 	public static initialize(data: {
@@ -61,6 +68,7 @@ class RouteEntity implements Entity {
 		duration: number;
 		geometry: LineStringGeometry;
 		id: number;
+		images: RouteUploadImageResponseDto[];
 		name: string;
 		pois: {
 			id: number;
@@ -75,6 +83,7 @@ class RouteEntity implements Entity {
 			duration: data.duration,
 			geometry: data.geometry,
 			id: data.id,
+			images: data.images,
 			name: data.name,
 			pois: data.pois,
 		});
@@ -86,6 +95,7 @@ class RouteEntity implements Entity {
 		duration,
 		geometry,
 		id,
+		images,
 		name,
 		pois,
 	}: {
@@ -94,6 +104,7 @@ class RouteEntity implements Entity {
 		duration: number;
 		geometry: LineStringGeometry;
 		id: number;
+		images: RouteUploadImageResponseDto[];
 		name: string;
 		pois: {
 			id: number;
@@ -108,6 +119,7 @@ class RouteEntity implements Entity {
 			duration,
 			geometry,
 			id,
+			images,
 			name,
 			pois,
 		});
@@ -140,6 +152,7 @@ class RouteEntity implements Entity {
 			duration,
 			geometry,
 			id: null,
+			images: [],
 			name,
 			pois,
 		});
@@ -151,6 +164,7 @@ class RouteEntity implements Entity {
 		duration: number;
 		geometry: LineStringGeometry;
 		id: number;
+		images: RouteUploadImageResponseDto[];
 		name: string;
 		pois: {
 			id: number;
@@ -164,6 +178,7 @@ class RouteEntity implements Entity {
 			duration: this.duration,
 			geometry: this.geometry,
 			id: this.id as number,
+			images: this.images,
 			name: this.name,
 			pois: this.pois as {
 				id: number;
@@ -203,6 +218,7 @@ class RouteEntity implements Entity {
 		duration: number;
 		geometry: LineStringGeometry;
 		id: number;
+		images: RouteUploadImageResponseDto[];
 		name: string;
 		pois: {
 			id: number;
@@ -217,6 +233,7 @@ class RouteEntity implements Entity {
 			duration: this.duration,
 			geometry: this.geometry,
 			id: this.id as number,
+			images: this.images,
 			name: this.name,
 			pois: this.pois as Required<
 				Pick<RouteEntity["pois"][number], "id" | "name" | "visitOrder">

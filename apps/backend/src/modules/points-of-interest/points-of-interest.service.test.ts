@@ -1,6 +1,11 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
+import { HTTPCode } from "~/libs/enums/enums.js";
+import { configureString } from "~/libs/helpers/helpers.js";
+import { PointOfInterestExceptionMessage } from "~/modules/points-of-interest/libs/enums/enums.js";
+import { PointOfInterestError } from "~/modules/points-of-interest/libs/exceptions/exceptions.js";
+
 import { PointsOfInterestEntity } from "./points-of-interest.entity.js";
 import { type PointsOfInterestRepository } from "./points-of-interest.repository.js";
 import { PointsOfInterestService } from "./points-of-interest.service.js";
@@ -292,5 +297,55 @@ describe("PointsOfInterestService", () => {
 			total: mockTotal,
 			totalPages,
 		});
+	});
+
+	it("delete should throw error when point of interest included in a route", async () => {
+		const pointWithRoute = PointsOfInterestEntity.initialize({
+			...mockPointOfInterest,
+			routes: [
+				{
+					createdByUserId: 0,
+					description: "",
+					distance: 0,
+					duration: 0,
+					geometry: {
+						coordinates: [],
+						type: "LineString",
+					},
+					id: 1,
+					images: [],
+					name: "Test Route",
+					pois: [],
+				},
+			],
+		});
+
+		const pointsOfInterestRepository = {
+			delete: (() =>
+				Promise.resolve(true)) as PointsOfInterestRepository["delete"],
+			findById: (() =>
+				Promise.resolve(
+					pointWithRoute,
+				)) as PointsOfInterestRepository["findById"],
+		} as PointsOfInterestRepository;
+
+		const pointsOfInterestService = new PointsOfInterestService(
+			pointsOfInterestRepository,
+		);
+
+		try {
+			await pointsOfInterestService.delete(EXISTING_ID);
+			assert.fail("Expected delete to throw an error");
+		} catch (error) {
+			assert.ok(error instanceof PointOfInterestError);
+			assert.strictEqual(
+				error.message,
+				configureString(
+					PointOfInterestExceptionMessage.CANNOT_DELETE_INCLUDED_IN_ROUTE,
+					{ routeName: "Test Route" },
+				),
+			);
+			assert.strictEqual(error.status, HTTPCode.BAD_REQUEST);
+		}
 	});
 });

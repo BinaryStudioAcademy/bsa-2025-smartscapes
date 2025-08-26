@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 import { type Slide } from "~/libs/types/types.js";
 
+import { Icon } from "../components.js";
 import styles from "./styles.module.css";
 
 type Properties = {
@@ -16,17 +17,19 @@ const FeatureGallery = ({ slides }: Properties): React.JSX.Element => {
 	const [firstSlide, ...otherSlides] = slides;
 
 	const renderSlide = (slide: Slide): React.ReactElement => {
-		if (slide.type === "image") {
-			return (
-				<img
-					alt="point of interest"
-					className={styles["image"]}
-					src={slide.content as string}
-				/>
-			);
-		}
-
-		return <div className={styles["component"]}>{slide.content}</div>;
+		return (
+			<div className={styles["slide-wrapper"]}>
+				{slide.content}
+				{slide.onDelete && (
+					<button
+						className={styles["delete-icon-wrapper"]}
+						onClick={slide.onDelete}
+					>
+						<Icon height={18} name="trash" width={16} />
+					</button>
+				)}
+			</div>
+		);
 	};
 
 	return (

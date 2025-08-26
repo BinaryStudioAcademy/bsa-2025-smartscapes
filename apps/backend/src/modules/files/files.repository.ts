@@ -29,10 +29,32 @@ class FileRepository implements Repository {
 		return FileEntity.initialize(file);
 	}
 
+	public async delete(id: number): Promise<boolean> {
+		const isDeleted = await this.fileModel.query().deleteById(id);
+
+		return Boolean(isDeleted);
+	}
+
 	public async findAll(): Promise<FileEntity[]> {
 		const files = await this.fileModel.query().select("*").limit(FILES_LIMIT);
 
 		return files.map((file) => FileEntity.initialize(file));
+	}
+
+	public async findById(id: number): Promise<FileEntity | null> {
+		const file = await this.fileModel
+			.query()
+			.select(
+				"files.id",
+				"files.url",
+				"files.folder",
+				"files.entityId",
+				"files.contentType",
+			)
+			.where("id", id)
+			.first();
+
+		return file ? FileEntity.initialize(file) : null;
 	}
 }
 
