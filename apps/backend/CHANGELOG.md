@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.41.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.40.1...@smartscapes/backend-v1.41.0) (2025-08-27)
+
+
+### Features
+
+* **backend/frontend/shared:** implement user bookmarks feature ss-497 ([#552](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/552)) ([c4d5e13](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c4d5e1375611810c114a451aa83bbe00824605f7))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.36.0 to 1.37.0
+
 ## [1.40.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.40.0...@smartscapes/backend-v1.40.1) (2025-08-26)
 
 
