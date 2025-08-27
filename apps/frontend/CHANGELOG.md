@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.54.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.53.0...@smartscapes/frontend-v1.54.0) (2025-08-27)
+
+
+### Features
+
+* **frontend/backend/shared:** add an ability to assign category to routes ss-496 ([#551](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/551)) ([23fadeb](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/23fadebf1d097e3ee81ee21d5e1b7fd128d502a8))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.39.0 to 1.40.0
+
 ## [1.53.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.52.0...@smartscapes/frontend-v1.53.0) (2025-08-27)
 
 
