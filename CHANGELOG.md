@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.61.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.60.0...v1.61.0) (2025-08-27)
+
+
+### Features
+
+* **frontend/backend/shared:** add routes table ss-504 ([#563](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/563)) ([5847400](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/5847400dbd4f5625a3fd4a7488871500c9f151ff))
+* **frontend/backend:** add categories table ss-505 ([#566](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/566)) ([8ee4139](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8ee413964c9a8041ff38169779193e7dbf5340c2))
+
 ## [1.60.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.59.0...v1.60.0) (2025-08-27)
 
 
