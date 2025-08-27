@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.43.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.42.0...@smartscapes/backend-v1.43.0) (2025-08-27)
+
+
+### Features
+
+* **frontend:** user route navigate ss-501 ([#558](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/558)) ([8d56411](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8d56411cea39997ded2c8a0545397df9d28638ff))
+
+
+### Bug Fixes
+
+* **backend:** add poi findAll sort ss-547 ([#570](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/570)) ([e743d50](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e743d50281192635fe6e1e1e6cf574ff7df9fb1f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.38.0 to 1.39.0
+
 ## [1.42.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.41.0...@smartscapes/backend-v1.42.0) (2025-08-27)
 
 

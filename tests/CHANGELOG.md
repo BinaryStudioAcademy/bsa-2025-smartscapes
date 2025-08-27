@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.10](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/tests-v0.1.9...@smartscapes/tests-v0.1.10) (2025-08-27)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.38.0 to 1.39.0
+
 ## [0.1.9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/tests-v0.1.8...@smartscapes/tests-v0.1.9) (2025-08-27)
 
 

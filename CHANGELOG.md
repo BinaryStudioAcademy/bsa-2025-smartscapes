@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.62.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.61.0...v1.62.0) (2025-08-27)
+
+
+### Features
+
+* **frontend:** user route navigate ss-501 ([#558](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/558)) ([8d56411](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8d56411cea39997ded2c8a0545397df9d28638ff))
+
+
+### Bug Fixes
+
+* **backend:** add poi findAll sort ss-547 ([#570](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/570)) ([e743d50](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e743d50281192635fe6e1e1e6cf574ff7df9fb1f))
+* **frontend:** swap poi coordinates to correctly display location ss-571 ([#572](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/572)) ([58e4561](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/58e4561b88cb2e4128abc1f716895d9f8b13f719))
+
 ## [1.61.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.60.0...v1.61.0) (2025-08-27)
 
 
