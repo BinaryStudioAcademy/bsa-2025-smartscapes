@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.56.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.55.0...@smartscapes/frontend-v1.56.0) (2025-08-28)
+
+
+### Features
+
+* **frontend:** add constructed route to the map ss-574 ([#578](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/578)) ([d280b47](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d280b472022744f892b1d8e1366ce879d781b7f3))
+
 ## [1.55.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.54.0...@smartscapes/frontend-v1.55.0) (2025-08-28)
 
 
