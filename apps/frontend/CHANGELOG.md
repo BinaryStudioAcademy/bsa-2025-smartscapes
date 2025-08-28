@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.57.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.57.0...@smartscapes/frontend-v1.57.1) (2025-08-28)
+
+
+### Bug Fixes
+
+* **frontend:** dashboard routes history ss-581 ([#583](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/583)) ([b4e0348](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b4e03485825dab912df783b522516de45f94bbf1))
+
 ## [1.57.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.56.0...@smartscapes/frontend-v1.57.0) (2025-08-28)
 
 
