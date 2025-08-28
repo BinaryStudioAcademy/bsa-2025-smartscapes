@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.57.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.56.0...@smartscapes/frontend-v1.57.0) (2025-08-28)
+
+
+### Features
+
+* **frontend/shared:** add small ui adjustments and improvements ss-1 ([#584](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/584)) ([8cc897d](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8cc897d5bf6d472d09eb07856d9fdeac539f70c9))
+* **frontend:** synchronize explore routes list with the map ss-472 ([#554](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/554)) ([8575b86](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8575b860c29c78ad8aa9e2fc2459611efc93fbb6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.41.0 to 1.42.0
+
 ## [1.56.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.55.0...@smartscapes/frontend-v1.56.0) (2025-08-28)
 
 

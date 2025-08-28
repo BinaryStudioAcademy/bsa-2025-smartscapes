@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.46.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.45.0...@smartscapes/backend-v1.46.0) (2025-08-28)
+
+
+### Features
+
+* **frontend/shared:** add small ui adjustments and improvements ss-1 ([#584](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/584)) ([8cc897d](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/8cc897d5bf6d472d09eb07856d9fdeac539f70c9))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.41.0 to 1.42.0
+
 ## [1.45.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.44.0...@smartscapes/backend-v1.45.0) (2025-08-28)
 
 
