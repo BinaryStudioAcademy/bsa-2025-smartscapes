@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.45.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.44.0...@smartscapes/backend-v1.45.0) (2025-08-28)
+
+
+### Features
+
+* **frontend/backend:** route-history ss-508 ([#562](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/562)) ([2f2c68b](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2f2c68b4bbed641b2247a711639396e639418f54))
+* **frontend:** add get directions to the route button ss-509 ([#561](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/561)) ([b8bcd18](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b8bcd1814aadf972c2f4638e8fe35dc8bb36e4a1))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.40.0 to 1.41.0
+
 ## [1.44.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.43.0...@smartscapes/backend-v1.44.0) (2025-08-27)
 
 
