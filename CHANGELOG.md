@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.68.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.67.0...v1.68.0) (2025-08-28)
+
+
+### Features
+
+* **backend/frontend:** load and display saved routes on dashboard page ss-586 ([#600](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/600)) ([117ece7](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/117ece78d1b36753c1b1a165824e398431ca1134))
+
 ## [1.67.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.66.1...v1.67.0) (2025-08-28)
 
 
