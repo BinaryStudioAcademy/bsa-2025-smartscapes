@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.43.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.42.0...@smartscapes/shared-v1.43.0) (2025-08-28)
+
+
+### Features
+
+* **backend:** pull popular user-routes ss-536 ([#590](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/590)) ([b4b3ae9](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b4b3ae921c7f648d6499935775dbecc936d7bfd9))
+* **frontend/backend/shared:** display activities and reviews on user public profile ss-545 ([#593](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/593)) ([9766bb5](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/9766bb55e9e0aee6b226720b0a34490cc979a017))
+* **frontend:** add ability search routes on explore page and infinity scroll ss-510 ([#591](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/591)) ([68de4e3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/68de4e39d0fab8f61ed09f0ff557ad79b76e3124))
+
 ## [1.42.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.41.0...@smartscapes/shared-v1.42.0) (2025-08-28)
 
 
