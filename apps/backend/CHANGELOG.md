@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.46.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.46.0...@smartscapes/backend-v1.46.1) (2025-08-28)
+
+
+### Bug Fixes
+
+* **frontend/backend:** creating items in tables ss-575 ([#587](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/587)) ([6270668](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/62706683ca2d2abe41412b7e818991385cc8f0ad))
+
 ## [1.46.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.45.0...@smartscapes/backend-v1.46.0) (2025-08-28)
 
 
