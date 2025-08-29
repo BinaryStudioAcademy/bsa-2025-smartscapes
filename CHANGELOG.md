@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.69.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.69.0...v1.69.1) (2025-08-29)
+
+
+### Bug Fixes
+
+* **frontend:** render notfound if user cant be got from server ss-568 ([#598](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/598)) ([7c22e90](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/7c22e90c9035d1274e80413e6309f7c383b52d95))
+* **frontend:** update notification popover styles ss-607 ([#610](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/610)) ([c46452a](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/c46452a75d0b7b5478afdccd90742b9cc86662e7))
+* **frontend:** use different interaction styles depending on map ss-1 ([#611](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/611)) ([56fe590](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/56fe59024bb6d1f1611d9fdafd97db028827565b))
+
 ## [1.69.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.68.0...v1.69.0) (2025-08-29)
 
 
