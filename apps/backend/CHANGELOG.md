@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.48.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.48.0...@smartscapes/backend-v1.48.1) (2025-08-29)
+
+
+### Bug Fixes
+
+* **backend:** fix pois order ss-605 ([#609](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/609)) ([7a01db6](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/7a01db6ca98cbfda589ebef2fb44229b1c87caf1))
+
 ## [1.48.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.47.0...@smartscapes/backend-v1.48.0) (2025-08-28)
 
 
