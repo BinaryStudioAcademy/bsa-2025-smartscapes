@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.71.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.70.1...v1.71.0) (2025-08-29)
+
+
+### Features
+
+* **frontend:** add maps instead of poi placeholders ss-632 ([#637](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/637)) ([2cdafb0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/2cdafb0c13f8c25a97ea9ec361f2eaacaf846d07))
+* **frontend:** landing page imrovement ss-626 ([#633](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/633)) ([e44712b](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e44712bbc912824095ed564263b478988df56b43))
+* **frontend:** update poi placeholder ss-627 ([#628](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/628)) ([d12cb2e](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/d12cb2e114de9ed6c921217b653a2694f2e38e62))
+
+
+### Bug Fixes
+
+* **frontend:** hard-reset categories ss-621 ([#636](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/636)) ([3bfddbe](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/3bfddbec1d34ce9c0b0c47c79e99e6cce6161fa5))
+* **frontend:** route cards not displayed corectly in pwa ss-624 ([#638](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/638)) ([49377b3](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/49377b3ed9a23f6e637b1bee916ca40f8647a9e5))
+
 ## [1.70.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.70.0...v1.70.1) (2025-08-29)
 
 
