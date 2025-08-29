@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.61.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.61.0...@smartscapes/frontend-v1.61.1) (2025-08-29)
+
+
+### Bug Fixes
+
+* **frontend:** add responsive styles ss-608 ([#618](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/618)) ([b923012](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/b92301205eb87032d5ae1215b00343a765a9584e))
+* **frontend:** add space between follow button and label ss-539 ([#623](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/623)) ([6b39573](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/6b395732010bc8b319c285bdbf02ed718031260d))
+* **frontend:** fix bug that page limit doesnt work for less than default vaule ss-576 ([#614](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/614)) ([a598d11](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a598d11336662db2d8782a084558894714e162be))
+
 ## [1.61.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.60.2...@smartscapes/frontend-v1.61.0) (2025-08-29)
 
 

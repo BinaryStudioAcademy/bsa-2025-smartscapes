@@ -1,6 +1,6 @@
 {
 	"name": "smartscapes",
-	"version": "1.70.0",
+	"version": "1.70.1",
 	"type": "module",
 	"workspaces": [
 		"apps/backend",
