@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.60.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.59.0...@smartscapes/frontend-v1.60.0) (2025-08-29)
+
+
+### Features
+
+* **frontend:** unify ui elements and remove unnecessary components ss-1 ([#603](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/603)) ([19f979d](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/19f979d221e376cb55e1f4a13cfd1637c71f2720))
+
 ## [1.59.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/frontend-v1.58.0...@smartscapes/frontend-v1.59.0) (2025-08-28)
 
 
