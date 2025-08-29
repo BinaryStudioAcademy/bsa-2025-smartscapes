@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.69.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.69.1...v1.69.2) (2025-08-29)
+
+
+### Bug Fixes
+
+* **frontend:** improve history page responsiveness ss-1 ([#616](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/616)) ([60fa873](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/60fa873d3d19edf9f082f0256f26eb967d8729a8))
+
 ## [1.69.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.69.0...v1.69.1) (2025-08-29)
 
 
