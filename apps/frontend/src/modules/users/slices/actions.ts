@@ -53,7 +53,7 @@ const getActivities = createAsyncThunk<
 >(`${sliceName}/get-user-activities`, async (id, { extra }) => {
 	const { userRouteApi } = extra;
 
-	const response = await userRouteApi.getAllByUserId({ id });
+	const response = await userRouteApi.getAllByUserId();
 
 	return response;
 });

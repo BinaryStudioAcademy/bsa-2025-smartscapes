@@ -70,7 +70,7 @@ class UserRouteApi extends BaseHTTPApi {
 	}
 
 	public async getAllByUserId(
-		query: UserRouteGetAllQueryRequestDto,
+		query?: UserRouteGetAllQueryRequestDto,
 	): Promise<APIResponse<UserRouteResponseDto[]>> {
 		const response = await this.load<APIResponse<UserRouteResponseDto[]>>(
 			this.getFullEndpoint(UserRouteApiPath.ROOT, {}),

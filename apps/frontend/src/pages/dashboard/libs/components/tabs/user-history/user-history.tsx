@@ -20,7 +20,6 @@ const UserHistory = (): null | React.JSX.Element => {
 		if (authenticatedUser) {
 			void dispatch(
 				userRoutesActions.getAllByUserId({
-					id: authenticatedUser.id,
 					status: UserRouteStatus.COMPLETED,
 				}),
 			);

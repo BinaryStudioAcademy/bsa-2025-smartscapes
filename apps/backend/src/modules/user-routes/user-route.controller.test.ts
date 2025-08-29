@@ -4,13 +4,14 @@ import { describe, it } from "node:test";
 import { type APIHandlerOptions } from "~/libs/modules/controller/controller.js";
 import { HTTPCode } from "~/libs/modules/http/http.js";
 import { type Logger } from "~/libs/modules/logger/logger.js";
+import { type UserAuthResponseDto } from "~/modules/users/users.js";
 
 import {
 	type UserRouteDeleteParameters,
 	type UserRouteFinishRequestDto,
+	type UserRouteGetAllQueryRequestDto,
 	type UserRouteQueryRequestDto,
 	type UserRouteResponseDto,
-	type UserRouteStatusType,
 } from "./libs/types/types.js";
 import { UserRouteController } from "./user-route.controller.js";
 import { type UserRouteService } from "./user-route.service.js";
@@ -171,11 +172,12 @@ describe("UserRouteController", () => {
 	describe("getAll", () => {
 		it("should get all user routes and return 200 status with array of routes", async () => {
 			const options: APIHandlerOptions<{
-				query: { id: number; status?: UserRouteStatusType };
+				query: UserRouteGetAllQueryRequestDto;
+				user: UserAuthResponseDto;
 			}> = {
 				body: undefined,
 				params: undefined,
-				query: { id: 1, status: "active" },
+				query: { status: "active" },
 				user: {
 					avatarUrl: null,
 					email: "",

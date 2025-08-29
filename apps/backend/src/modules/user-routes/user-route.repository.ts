@@ -84,7 +84,6 @@ class UserRouteRepository implements Repository {
 			.modify((builder) => {
 				if (filters.userId) {
 					builder.where("user_routes.user_id", filters.userId);
-					builder.where("reviews.user_id", filters.userId);
 				}
 
 				if (filters.status) {

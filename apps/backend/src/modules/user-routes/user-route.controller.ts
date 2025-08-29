@@ -453,11 +453,16 @@ class UserRouteController extends BaseController {
 	public async getAll(
 		options: APIHandlerOptions<{
 			query: UserRouteGetAllQueryRequestDto;
+			user: UserAuthResponseDto;
 		}>,
 	): Promise<APIHandlerResponse<UserRouteResponseDto[]>> {
-		const { query } = options;
+		const { query, user } = options;
+		const { id: userId } = user as UserAuthResponseDto;
 
-		const userRoutes = await this.userRouteService.getAll(query);
+		const userRoutes = await this.userRouteService.getAll({
+			...query,
+			userId,
+		});
 
 		return {
 			payload: { data: userRoutes },
