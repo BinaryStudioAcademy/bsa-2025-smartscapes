@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.45.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.44.0...@smartscapes/shared-v1.45.0) (2025-08-29)
+
+
+### Features
+
+* **frontend/backend/shared:** display routes cards ss-507 ([#595](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/595)) ([36ca0f0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/36ca0f0cc60623614f677df9a4067f35aeeb0826))
+
 ## [1.44.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/shared-v1.43.0...@smartscapes/shared-v1.44.0) (2025-08-28)
 
 

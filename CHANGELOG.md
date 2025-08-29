@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.70.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.69.2...v1.70.0) (2025-08-29)
+
+
+### Features
+
+* **frontend/backend/shared:** display routes cards ss-507 ([#595](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/595)) ([36ca0f0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/36ca0f0cc60623614f677df9a4067f35aeeb0826))
+
+
+### Bug Fixes
+
+* **frontend:** handle-value-set for poi after entering edit mode ss-550 ([#619](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/619)) ([a9864d8](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/a9864d81c65113e3cf326f5cc1a516674106b87e))
+
 ## [1.69.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.69.1...v1.69.2) (2025-08-29)
 
 

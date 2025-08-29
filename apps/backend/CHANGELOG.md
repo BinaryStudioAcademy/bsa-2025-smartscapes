@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.49.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.48.2...@smartscapes/backend-v1.49.0) (2025-08-29)
+
+
+### Features
+
+* **frontend/backend/shared:** display routes cards ss-507 ([#595](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/595)) ([36ca0f0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/36ca0f0cc60623614f677df9a4067f35aeeb0826))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @smartscapes/shared bumped from 1.44.0 to 1.45.0
+
 ## [1.48.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.48.1...@smartscapes/backend-v1.48.2) (2025-08-29)
 
 
