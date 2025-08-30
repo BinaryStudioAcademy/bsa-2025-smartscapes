@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.71.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.71.0...v1.71.1) (2025-08-30)
+
+
+### Bug Fixes
+
+* **frontend/backend/shared:** resolve query string filtering issues ss-620 ([#640](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/640)) ([87c2b66](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/87c2b663cf6f1379230684927bcfccd871bc3285))
+
 ## [1.71.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.70.1...v1.71.0) (2025-08-29)
 
 
