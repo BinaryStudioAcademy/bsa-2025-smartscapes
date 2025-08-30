@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.49.2](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.49.1...@smartscapes/backend-v1.49.2) (2025-08-30)
+
+
+### Bug Fixes
+
+* **frontend:** fit to coordinates check ss-646 ([#647](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/647)) ([598c1d4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/598c1d456e2535d17692eea5141a68c5d063af82))
+
 ## [1.49.1](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/@smartscapes/backend-v1.49.0...@smartscapes/backend-v1.49.1) (2025-08-30)
 
 
