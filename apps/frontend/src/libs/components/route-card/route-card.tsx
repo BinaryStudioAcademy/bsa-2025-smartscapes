@@ -1,6 +1,9 @@
-import { Icon, Link, MapProvider } from "~/libs/components/components.js";
+import { Icon, Link } from "~/libs/components/components.js";
 import { AppRoute } from "~/libs/enums/enums.js";
-import { configureString } from "~/libs/helpers/helpers.js";
+import {
+	configureString,
+	generateStaticMapUrl,
+} from "~/libs/helpers/helpers.js";
 import { useCallback, useMemo } from "~/libs/hooks/hooks.js";
 import { type RouteGetAllItemResponseDto } from "~/libs/types/types.js";
 
@@ -12,7 +15,7 @@ type Properties = {
 };
 
 const RouteCard = ({ onClick, route }: Properties): React.JSX.Element => {
-	const { geometry, id, images, name, pois } = route;
+	const { id, images, name, pois } = route;
 
 	const coverImage = images.at(0)?.url;
 
@@ -26,9 +29,11 @@ const RouteCard = ({ onClick, route }: Properties): React.JSX.Element => {
 		}));
 	}, [pois]);
 
-	const routeLine = useMemo(() => {
-		return { geometry, id: String(id) };
-	}, [geometry, id]);
+	const staticMapUrl = useMemo(() => {
+		return generateStaticMapUrl({
+			markers,
+		});
+	}, [markers]);
 
 	return (
 		<li className={styles["route-card"]}>
@@ -38,11 +43,10 @@ const RouteCard = ({ onClick, route }: Properties): React.JSX.Element => {
 						<img alt={name} className={styles["image"]} src={coverImage} />
 					) : (
 						<div className={styles["image-placeholder"]}>
-							<MapProvider
-								isInteractive={false}
-								markers={markers}
-								routeLine={routeLine}
-								shouldFitToBounds
+							<img
+								alt={`Map preview for ${name}`}
+								className={styles["image"]}
+								src={staticMapUrl}
 							/>
 						</div>
 					)}

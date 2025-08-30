@@ -1,5 +1,6 @@
 export { checkHasPermission } from "./check-has-permission.helper.js";
 export { combineClassNames } from "./combine-class-names.helper.js";
+export { generateStaticMapUrl } from "./generate-static-map-url.helper.js";
 export { getFormattedDate } from "./get-formatted-date.helper.js";
 export { getFormattedLengthString } from "./get-formatted-length-string.helper.js";
 export { getPermittedNavigationItems } from "./get-permitted-navigation-items.helper.js";

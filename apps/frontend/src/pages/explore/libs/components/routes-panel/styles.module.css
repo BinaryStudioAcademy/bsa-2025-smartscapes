@@ -9,20 +9,23 @@
 	padding: 0 32px 24px;
 	margin: 32px;
 	overflow-y: scroll;
-	scrollbar-width: none;
+	scrollbar-width: thin;
 	scroll-behavior: smooth;
 	background-color: var(--color-base);
 	border-radius: 8px;
 }
 
+.sticky-header {
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	background-color: var(--color-base);
+}
+
 @media (orientation: landscape) {
 	.sticky-header {
-		position: sticky;
-		top: 0;
-		z-index: 100;
 		padding: 24px 32px;
 		margin: 0 -32px;
-		background-color: var(--color-base);
 		border-radius: 8px 8px 0 0;
 	}
 
@@ -33,7 +36,29 @@
 
 @media (width <= 1280px) and (orientation: landscape) {
 	.container {
+		gap: 8px;
 		width: 330px;
+		padding: 0 16px 24px;
+	}
+
+	.sticky-header {
+		padding: 8px;
+		margin: 0 -16px;
+	}
+
+	.title {
+		display: none;
+	}
+
+	.search-container {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+@media (width <= 960px) and (orientation: landscape) {
+	.container {
+		width: 180px;
 		padding: 0 16px 24px;
 	}
 }
@@ -45,8 +70,8 @@
 		left: 0;
 		width: 100%;
 		max-width: none;
-		max-height: 350px;
-		padding: 16px 24px 0;
+		max-height: 200px;
+		padding: 8px 8px 0;
 		margin: 0;
 		overflow: visible;
 	}
