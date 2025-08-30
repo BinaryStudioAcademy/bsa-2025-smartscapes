@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.73.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.72.0...v1.73.0) (2025-08-30)
+
+
+### Features
+
+* **backend:** fix profile visibility ss-1 ([#648](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/648)) ([e3d472f](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/e3d472f972e7e0d7ad117a4666de2b644003d798))
+
+
+### Bug Fixes
+
+* **frontend:** fit to coordinates check ss-646 ([#647](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/issues/647)) ([598c1d4](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/commit/598c1d456e2535d17692eea5141a68c5d063af82))
+
 ## [1.72.0](https://github.com/BinaryStudioAcademy/bsa-2025-smartscapes/compare/v1.71.1...v1.72.0) (2025-08-30)
 
 
